@@ -1,0 +1,6 @@
+Module,File,Algorithm,Performance,Function
+Kogge-Stone Adder,ksa.v,Parallel prefix,O(log₂N)=6 stages,32-bit add/sub for ALU
+Vedic Multiplier,vedic_mul_32.v,Urdhva-Tiryakbhyam,"Combinational, 5-level hierarchical",64-bit unsigned product
+PCPI Vedic Wrapper,picorv32_pcpi_vedic_mul.v,3-stage pipeline,3 clock cycles (30 ns),MULH/MULHSU/MULHU/MUL
+Baseline Sequential MUL,picorv32.v (built-in),Shift-and-add,36 clock cycles (360 ns),Reference implementation
+Baseline Ripple-Carry,rca.v,Full-adder chain,O(N)=32 stages,Comparison reference

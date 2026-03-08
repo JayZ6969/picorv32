@@ -1,0 +1,6 @@
+Test Suite,Passed,Failed,Pass Rate
+KSA 32-bit add/sub (unit),2075,0,100.0%
+Vedic 32×32 multiply (unit),68395,0,100.0%
+GF(2) formal algebra,13,0,100.0%
+PCPI MUL baseline (64-samp),64,0,100.0%
+PCPI Vedic MUL (64-samp),64,0,100.0%

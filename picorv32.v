@@ -75,6 +75,8 @@ module picorv32 #(
 	parameter [ 0:0] ENABLE_PCPI = 0,
 	parameter [ 0:0] ENABLE_MUL = 0,
 	parameter [ 0:0] ENABLE_FAST_MUL = 0,
+	parameter [ 0:0] ENABLE_VEDIC_MUL = 0, // Vedic 32x32 PCPI multiplier (overrides FAST_MUL when set)
+	parameter [ 0:0] USE_KSA = 0,          // Kogge-Stone adder replaces ripple add/sub in ALU
 	parameter [ 0:0] ENABLE_DIV = 0,
 	parameter [ 0:0] ENABLE_IRQ = 0,
 	parameter [ 0:0] ENABLE_IRQ_QREGS = 1,
@@ -166,7 +168,7 @@ module picorv32 #(
 	localparam integer regfile_size = (ENABLE_REGS_16_31 ? 32 : 16) + 4*ENABLE_IRQ*ENABLE_IRQ_QREGS;
 	localparam integer regindex_bits = (ENABLE_REGS_16_31 ? 5 : 4) + ENABLE_IRQ*ENABLE_IRQ_QREGS;
 
-	localparam WITH_PCPI = ENABLE_PCPI || ENABLE_MUL || ENABLE_FAST_MUL || ENABLE_DIV;
+	localparam WITH_PCPI = ENABLE_PCPI || ENABLE_MUL || ENABLE_FAST_MUL || ENABLE_VEDIC_MUL || ENABLE_DIV;
 
 	localparam [35:0] TRACE_BRANCH = {4'b 0001, 32'b 0};
 	localparam [35:0] TRACE_ADDR   = {4'b 0010, 32'b 0};
@@ -269,7 +271,20 @@ module picorv32 #(
 	reg        pcpi_int_wait;
 	reg        pcpi_int_ready;
 
-	generate if (ENABLE_FAST_MUL) begin
+	generate if (ENABLE_VEDIC_MUL) begin
+		picorv32_pcpi_vedic_mul pcpi_mul (
+			.clk       (clk            ),
+			.resetn    (resetn         ),
+			.pcpi_valid(pcpi_valid     ),
+			.pcpi_insn (pcpi_insn      ),
+			.pcpi_rs1  (pcpi_rs1       ),
+			.pcpi_rs2  (pcpi_rs2       ),
+			.pcpi_wr   (pcpi_mul_wr    ),
+			.pcpi_rd   (pcpi_mul_rd    ),
+			.pcpi_wait (pcpi_mul_wait  ),
+			.pcpi_ready(pcpi_mul_ready )
+		);
+	end else if (ENABLE_FAST_MUL) begin
 		picorv32_pcpi_fast_mul pcpi_mul (
 			.clk       (clk            ),
 			.resetn    (resetn         ),
@@ -325,8 +340,8 @@ module picorv32 #(
 	always @* begin
 		pcpi_int_wr = 0;
 		pcpi_int_rd = 32'bx;
-		pcpi_int_wait  = |{ENABLE_PCPI && pcpi_wait,  (ENABLE_MUL || ENABLE_FAST_MUL) && pcpi_mul_wait,  ENABLE_DIV && pcpi_div_wait};
-		pcpi_int_ready = |{ENABLE_PCPI && pcpi_ready, (ENABLE_MUL || ENABLE_FAST_MUL) && pcpi_mul_ready, ENABLE_DIV && pcpi_div_ready};
+		pcpi_int_wait  = |{ENABLE_PCPI && pcpi_wait,  (ENABLE_MUL || ENABLE_FAST_MUL || ENABLE_VEDIC_MUL) && pcpi_mul_wait,  ENABLE_DIV && pcpi_div_wait};
+		pcpi_int_ready = |{ENABLE_PCPI && pcpi_ready, (ENABLE_MUL || ENABLE_FAST_MUL || ENABLE_VEDIC_MUL) && pcpi_mul_ready, ENABLE_DIV && pcpi_div_ready};
 
 		(* parallel_case *)
 		case (1'b1)
@@ -334,7 +349,7 @@ module picorv32 #(
 				pcpi_int_wr = ENABLE_PCPI ? pcpi_wr : 0;
 				pcpi_int_rd = ENABLE_PCPI ? pcpi_rd : 0;
 			end
-			(ENABLE_MUL || ENABLE_FAST_MUL) && pcpi_mul_ready: begin
+			(ENABLE_MUL || ENABLE_FAST_MUL || ENABLE_VEDIC_MUL) && pcpi_mul_ready: begin
 				pcpi_int_wr = pcpi_mul_wr;
 				pcpi_int_rd = pcpi_mul_rd;
 			end
@@ -1226,9 +1241,27 @@ module picorv32 #(
 	reg [31:0] alu_shl, alu_shr;
 	reg alu_eq, alu_ltu, alu_lts;
 
+	// ---------------------------------------------------------------------------
+	// KSA combinational wires (used when USE_KSA=1)
+	// ---------------------------------------------------------------------------
+	wire [31:0] ksa_sum;
+	wire        ksa_cout;
+	generate if (USE_KSA) begin : KSA_INST
+		ksa #(.WIDTH(32)) u_ksa (
+			.a   (reg_op1),
+			.b   (reg_op2),
+			.sub (instr_sub),
+			.sum (ksa_sum),
+			.cout(ksa_cout)
+		);
+	end else begin : KSA_STUB
+		assign ksa_sum  = 32'bx;
+		assign ksa_cout = 1'bx;
+	end endgenerate
+
 	generate if (TWO_CYCLE_ALU) begin
 		always @(posedge clk) begin
-			alu_add_sub <= instr_sub ? reg_op1 - reg_op2 : reg_op1 + reg_op2;
+			alu_add_sub <= USE_KSA ? ksa_sum : (instr_sub ? reg_op1 - reg_op2 : reg_op1 + reg_op2);
 			alu_eq <= reg_op1 == reg_op2;
 			alu_lts <= $signed(reg_op1) < $signed(reg_op2);
 			alu_ltu <= reg_op1 < reg_op2;
@@ -1237,7 +1270,7 @@ module picorv32 #(
 		end
 	end else begin
 		always @* begin
-			alu_add_sub = instr_sub ? reg_op1 - reg_op2 : reg_op1 + reg_op2;
+			alu_add_sub = USE_KSA ? ksa_sum : (instr_sub ? reg_op1 - reg_op2 : reg_op1 + reg_op2);
 			alu_eq = reg_op1 == reg_op2;
 			alu_lts = $signed(reg_op1) < $signed(reg_op2);
 			alu_ltu = reg_op1 < reg_op2;
