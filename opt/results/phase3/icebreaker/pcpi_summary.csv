@@ -1,0 +1,7 @@
+metric,baseline_seq,vedic,speedup
+avg_cycles,36.00,3.00,12.00x
+min_cycles,36,3,12.00x
+max_cycles,36,3,12.00x
+avg_latency_ns,360.00,30.00,12.00x
+pass_count,64,64,N/A
+fail_count,0,0,N/A

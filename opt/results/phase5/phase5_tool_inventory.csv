@@ -1,0 +1,10 @@
+tool,available
+yosys,yes
+nextpnr-ice40,yes
+icetime,yes
+verilator,yes
+openroad,no
+magic,no
+netgen,no
+klayout,no
+sby,no

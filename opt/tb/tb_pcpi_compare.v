@@ -9,8 +9,8 @@
 // picorv32_pcpi_vedic_mul (opt):  3 cycles   (fixed pipeline latency)
 //
 // Emits:
-//   results/pcpi_latency.csv    — per-operation latency histogram
-//   results/pcpi_summary.csv    — aggregate statistics
+//   results/phase2/pcpi_latency.csv    — per-operation latency histogram
+//   results/phase2/pcpi_summary.csv    — aggregate statistics
 //
 // Run:
 //   iverilog -o build/tb_pcpi_compare tb_pcpi_compare.v \
@@ -112,11 +112,11 @@ module tb_pcpi_compare;
     // Main
     // -----------------------------------------------------------------------
     initial begin
-        $dumpfile("build/dump_pcpi_compare.vcd");
+        $dumpfile("dump_pcpi_compare.vcd");
         $dumpvars(0, tb_pcpi_compare);
 
-        fd_lat = $fopen("results/pcpi_latency.csv", "w");
-        fd_sum = $fopen("results/pcpi_summary.csv", "w");
+        fd_lat = $fopen("results/phase2/pcpi_latency.csv", "w");
+        fd_sum = $fopen("results/phase2/pcpi_summary.csv", "w");
         $fwrite(fd_lat, "sample,a_hex,b_hex,expected_lo,base_cycles,ved_cycles,base_result,ved_result,base_ok,ved_ok\n");
 
         clk = 0; resetn = 0;

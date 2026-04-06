@@ -3,7 +3,7 @@
 generate_report.py — Project Report Generator
 PicoRV32 Optimization: Kogge-Stone Adder + Vedic Multiplier
 
-Reads simulation CSVs from results/ and generates:
+Reads simulation CSVs from results/phase2 and generates:
   1. PCPI MUL latency comparison charts
   2. Functional verification summary chart
   3. Theoretical logic-depth complexity chart (KSA vs RCA)
@@ -27,10 +27,11 @@ from tabulate import tabulate
 # Resolve paths
 # ---------------------------------------------------------------------------
 SCRIPT_DIR  = os.path.dirname(os.path.abspath(__file__))
-# Script lives in opt/results/ — use that as the results dir
+# Script lives in opt/results/; phase outputs are under opt/results/phase2/
 RESULTS_DIR = SCRIPT_DIR
+PHASE2_DIR = os.path.join(RESULTS_DIR, "phase2")
 
-OUT_DIR = RESULTS_DIR
+OUT_DIR = PHASE2_DIR
 os.makedirs(OUT_DIR, exist_ok=True)
 
 # ---------------------------------------------------------------------------
@@ -82,11 +83,16 @@ KSA_DEPTH  = {n: math.ceil(math.log2(n)) + 1  for n in [4, 8, 16, 32, 64]}
 # ---------------------------------------------------------------------------
 # 1. Load PCPI latency CSVs
 # ---------------------------------------------------------------------------
-pcpi_lat_csv  = os.path.join(RESULTS_DIR, "pcpi_latency.csv")
-pcpi_sum_csv  = os.path.join(RESULTS_DIR, "pcpi_summary.csv")
+pcpi_lat_csv  = os.path.join(PHASE2_DIR, "pcpi_latency.csv")
+pcpi_sum_csv  = os.path.join(PHASE2_DIR, "pcpi_summary.csv")
+pcpi_lat_csv_legacy = os.path.join(RESULTS_DIR, "pcpi_latency.csv")
+pcpi_sum_csv_legacy = os.path.join(RESULTS_DIR, "pcpi_summary.csv")
 
 def load_pcpi():
-    if not os.path.isfile(pcpi_lat_csv):
+    lat_path = pcpi_lat_csv if os.path.isfile(pcpi_lat_csv) else pcpi_lat_csv_legacy
+    sum_path = pcpi_sum_csv if os.path.isfile(pcpi_sum_csv) else pcpi_sum_csv_legacy
+
+    if not os.path.isfile(lat_path):
         print(f"[WARN] {pcpi_lat_csv} not found – using synthetic data")
         df = pd.DataFrame({"base_cycles": [36]*64, "ved_cycles": [3]*64,
                            "base_ok": [1]*64, "ved_ok": [1]*64})
@@ -98,8 +104,8 @@ def load_pcpi():
         })
         return df, summ
 
-    df   = pd.read_csv(pcpi_lat_csv)
-    summ = pd.read_csv(pcpi_sum_csv)
+    df   = pd.read_csv(lat_path)
+    summ = pd.read_csv(sum_path)
     return df, summ
 
 df_lat, df_sum = load_pcpi()

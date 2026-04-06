@@ -1,6 +1,7 @@
 
 CROSS=riscv32-unknown-elf-
 CFLAGS=
+ICE40_SIM_CELLS=$(shell yosys-config --datdir/ice40/cells_sim.v 2>/dev/null || echo /usr/share/yosys/ice40/cells_sim.v)
 
 # ---- iCE40 HX8K Breakout Board ----
 
@@ -14,10 +15,10 @@ hx8kdemo.json: hx8kdemo.v spimemio.v simpleuart.v picosoc.v ../picorv32.v
 	yosys -ql hx8kdemo.log -p 'synth_ice40 -top hx8kdemo -json hx8kdemo.json' $^
 
 hx8kdemo_tb.vvp: hx8kdemo_tb.v hx8kdemo.v spimemio.v simpleuart.v picosoc.v ../picorv32.v spiflash.v
-	iverilog -s testbench -o $@ $^ `yosys-config --datdir/ice40/cells_sim.v` -DNO_ICE40_DEFAULT_ASSIGNMENTS
+	iverilog -s testbench -o $@ $^ $(ICE40_SIM_CELLS) -DNO_ICE40_DEFAULT_ASSIGNMENTS
 
 hx8kdemo_syn_tb.vvp: hx8kdemo_tb.v hx8kdemo_syn.v spiflash.v
-	iverilog -s testbench -o $@ $^ `yosys-config --datdir/ice40/cells_sim.v` -DNO_ICE40_DEFAULT_ASSIGNMENTS
+	iverilog -s testbench -o $@ $^ $(ICE40_SIM_CELLS) -DNO_ICE40_DEFAULT_ASSIGNMENTS
 
 hx8kdemo_syn.v: hx8kdemo.json
 	yosys -p 'read_json hx8kdemo.json; write_verilog hx8kdemo_syn.v'
@@ -59,11 +60,33 @@ icebsynsim: icebreaker_syn_tb.vvp icebreaker_fw.hex
 icebreaker.json: icebreaker.v ice40up5k_spram.v spimemio.v simpleuart.v picosoc.v ../picorv32.v
 	yosys -ql icebreaker.log -p 'synth_ice40 -dsp -top icebreaker -json icebreaker.json' $^
 
+# ---- iCE40 IceBreaker FIT profile (resource-constrained UP5K build) ----
+
+icebreaker_fit.json: icebreaker_fit.v ice40up5k_spram.v spimemio.v simpleuart.v picosoc.v ../picorv32.v
+	yosys -ql icebreaker_fit.log -p 'synth_ice40 -dsp -top icebreaker_fit -json icebreaker_fit.json' $^
+
+icebreaker_fit_tb.vvp: icebreaker_tb.v icebreaker_fit.v ice40up5k_spram.v spimemio.v simpleuart.v picosoc.v ../picorv32.v spiflash.v
+	iverilog -s testbench -o $@ $^ $(ICE40_SIM_CELLS) -DNO_ICE40_DEFAULT_ASSIGNMENTS
+
+icebreaker_fit_syn.v: icebreaker_fit.json
+	yosys -p 'read_json icebreaker_fit.json; write_verilog icebreaker_fit_syn.v'
+
+icebreaker_fit.asc: icebreaker.pcf icebreaker_fit.json
+	nextpnr-ice40 --freq 13 --up5k --package sg48 --asc icebreaker_fit.asc --pcf icebreaker.pcf --json icebreaker_fit.json
+
+icebreaker_fit.bin: icebreaker_fit.asc
+	icetime -d up5k -c 12 -mtr icebreaker_fit.rpt icebreaker_fit.asc
+	icepack icebreaker_fit.asc icebreaker_fit.bin
+
+icebfitprog: icebreaker_fit.bin icebreaker_fw.bin
+	iceprog icebreaker_fit.bin
+	iceprog -o 1M icebreaker_fw.bin
+
 icebreaker_tb.vvp: icebreaker_tb.v icebreaker.v ice40up5k_spram.v spimemio.v simpleuart.v picosoc.v ../picorv32.v spiflash.v
-	iverilog -s testbench -o $@ $^ `yosys-config --datdir/ice40/cells_sim.v` -DNO_ICE40_DEFAULT_ASSIGNMENTS
+	iverilog -s testbench -o $@ $^ $(ICE40_SIM_CELLS) -DNO_ICE40_DEFAULT_ASSIGNMENTS
 
 icebreaker_syn_tb.vvp: icebreaker_tb.v icebreaker_syn.v spiflash.v
-	iverilog -s testbench -o $@ $^ `yosys-config --datdir/ice40/cells_sim.v` -DNO_ICE40_DEFAULT_ASSIGNMENTS
+	iverilog -s testbench -o $@ $^ $(ICE40_SIM_CELLS) -DNO_ICE40_DEFAULT_ASSIGNMENTS
 
 icebreaker_syn.v: icebreaker.json
 	yosys -p 'read_json icebreaker.json; write_verilog icebreaker_syn.v'

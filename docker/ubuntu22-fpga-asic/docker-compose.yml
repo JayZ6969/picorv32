@@ -1,0 +1,16 @@
+services:
+  fpga-asic-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: picorv32-ubuntu22-fpga-asic:latest
+    container_name: picorv32-fpga-asic-dev
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    volumes:
+      - ../../:/workspace
+      - /dev/bus/usb:/dev/bus/usb
+    privileged: true
+    environment:
+      - TZ=UTC

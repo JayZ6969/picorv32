@@ -1,0 +1,18 @@
+metric,value
+phase,4
+lint_status,pass
+lint_errors,0
+lint_warnings_total,20
+lint_warnings_unwaived,0
+yosys_check_status,pass
+yosys_check_warnings,0
+yosys_cell_count,616
+cdc_status,pass-proxy
+cdc_note,single-clock-domain (clk)
+formal_status,pass-reference
+formal_note,"phase2 GF(2) passed=13, failed=0"
+constraints_status,present
+baseline_avg_cycles,36.00
+optimized_avg_cycles,3.00
+baseline_speedup,12.00x
+readiness_status,ready

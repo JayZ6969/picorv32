@@ -1,0 +1,9 @@
+metric,value
+board,icebreaker
+artifact_prefix,icebreaker_fit
+target_freq_mhz,12.000
+critical_path_delay_ns,61.650000
+estimated_fmax_mhz,16.220000
+timing_met,yes
+yosys_cell_count,4880
+json_module_count,50

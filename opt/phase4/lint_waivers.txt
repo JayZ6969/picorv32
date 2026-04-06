@@ -1,0 +1,6 @@
+# Verilator warning-class waivers for Phase 4 sign-off summary
+# One warning class per line (e.g. UNUSED, BLKSEQ)
+# Lines starting with # are comments.
+
+UNUSED
+BLKSEQ

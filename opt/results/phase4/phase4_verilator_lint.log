@@ -1,0 +1,81 @@
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:2209:14: Bits of signal are not used: 'waddr'[5]
+                                                                               : ... In instance picorv32_regs
+ 2209 |  input [5:0] waddr,
+      |              ^~~~~
+                 ... Use "/* verilator lint_off UNUSED */" and lint_on around source to disable this message.
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:2210:14: Bits of signal are not used: 'raddr1'[5]
+                                                                               : ... In instance picorv32_regs
+ 2210 |  input [5:0] raddr1,
+      |              ^~~~~~
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:2211:14: Bits of signal are not used: 'raddr2'[5]
+                                                                               : ... In instance picorv32_regs
+ 2211 |  input [5:0] raddr2,
+      |              ^~~~~~
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:183:13: Signal is not used: 'dbg_insn_addr'
+                                                                              : ... In instance picorv32_axi.picorv32_core
+  183 |  reg [31:0] dbg_insn_addr;
+      |             ^~~~~~~~~~~~~
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:185:7: Signal is not used: 'dbg_mem_valid'
+                                                                             : ... In instance picorv32_axi.picorv32_core
+  185 |  wire dbg_mem_valid = mem_valid;
+      |       ^~~~~~~~~~~~~
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:186:7: Signal is not used: 'dbg_mem_instr'
+                                                                             : ... In instance picorv32_axi.picorv32_core
+  186 |  wire dbg_mem_instr = mem_instr;
+      |       ^~~~~~~~~~~~~
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:187:7: Signal is not used: 'dbg_mem_ready'
+                                                                             : ... In instance picorv32_axi.picorv32_core
+  187 |  wire dbg_mem_ready = mem_ready;
+      |       ^~~~~~~~~~~~~
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:188:14: Signal is not used: 'dbg_mem_addr'
+                                                                              : ... In instance picorv32_axi.picorv32_core
+  188 |  wire [31:0] dbg_mem_addr  = mem_addr;
+      |              ^~~~~~~~~~~~
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:189:14: Signal is not used: 'dbg_mem_wdata'
+                                                                              : ... In instance picorv32_axi.picorv32_core
+  189 |  wire [31:0] dbg_mem_wdata = mem_wdata;
+      |              ^~~~~~~~~~~~~
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:190:14: Signal is not used: 'dbg_mem_wstrb'
+                                                                              : ... In instance picorv32_axi.picorv32_core
+  190 |  wire [ 3:0] dbg_mem_wstrb = mem_wstrb;
+      |              ^~~~~~~~~~~~~
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:191:14: Signal is not used: 'dbg_mem_rdata'
+                                                                              : ... In instance picorv32_axi.picorv32_core
+  191 |  wire [31:0] dbg_mem_rdata = mem_rdata;
+      |              ^~~~~~~~~~~~~
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:390:7: Signal is not used: 'mem_busy'
+                                                                             : ... In instance picorv32_axi.picorv32_core
+  390 |  wire mem_busy = |{mem_do_prefetch, mem_do_rinst, mem_do_rdata, mem_do_wdata};
+      |       ^~~~~~~~
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:711:14: Signal is not used: 'dbg_rs1val'
+                                                                              : ... In instance picorv32_axi.picorv32_core
+  711 |   reg [31:0] dbg_rs1val;
+      |              ^~~~~~~~~~
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:712:14: Signal is not used: 'dbg_rs2val'
+                                                                              : ... In instance picorv32_axi.picorv32_core
+  712 |   reg [31:0] dbg_rs2val;
+      |              ^~~~~~~~~~
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:713:7: Signal is not used: 'dbg_rs1val_valid'
+                                                                             : ... In instance picorv32_axi.picorv32_core
+  713 |   reg dbg_rs1val_valid;
+      |       ^~~~~~~~~~~~~~~~
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:714:7: Signal is not used: 'dbg_rs2val_valid'
+                                                                             : ... In instance picorv32_axi.picorv32_core
+  714 |   reg dbg_rs2val_valid;
+      |       ^~~~~~~~~~~~~~~~
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:784:6: Signal is not used: 'dbg_valid_insn'
+                                                                             : ... In instance picorv32_axi.picorv32_core
+  784 |  reg dbg_valid_insn;
+      |      ^~~~~~~~~~~~~~
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:1199:15: Signal is not used: 'dbg_ascii_state'
+                                                                               : ... In instance picorv32_axi.picorv32_core
+ 1199 |   reg [127:0] dbg_ascii_state;
+      |               ^~~~~~~~~~~~~~~
+%Warning-UNUSED: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:1248:14: Signal is not used: 'ksa_cout'
+                                                                               : ... In instance picorv32_axi.picorv32_core
+ 1248 |  wire        ksa_cout;
+      |              ^~~~~~~~
+%Warning-BLKSEQ: /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:1439:20: Blocking assignments (=) in sequential (flop or latch) block
+                                                                               : ... Suggest delayed assignments (<=)
+ 1439 |   set_mem_do_rinst = 0;
+      |                    ^

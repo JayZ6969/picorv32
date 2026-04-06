@@ -1,0 +1,9 @@
+metric,value
+variant,baseline_picorv32
+setup_slack_ns,21.683
+hold_slack_ns,1.084
+critical_path_delay_ns,61.650000
+cmos_cell_count,9773
+core_area_um2,9773.000
+total_power_mw,14.073
+cmos_synth_status,pass

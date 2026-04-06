@@ -28,6 +28,14 @@
 # Usage
 # -----
 #
+# By default this shell does not build the custom riscv-gnu-toolchain source
+# tree (which can fail behind firewalls due to git:// submodule fetches).
+# To opt in to that build, run:
+#
+#     $ nix-shell --arg includeRiscvToolchain true
+#
+# Otherwise, use a system-installed RISC-V toolchain on PATH.
+#
 # At the top-level of the picorv32 directory, simply run the 'nix-shell' command,
 # which will then drop you into a bash prompt:
 #
@@ -79,13 +87,14 @@
 #
 
 { architecture ? "rv32imc"
+, includeRiscvToolchain ? false
 }:
 
 # TODO FIXME: fix this to a specific version of nixpkgs.
 # ALSO: maybe use cachix to make it easier for contributors(?)
-with import <nixpkgs> {};
-
 let
+  pkgs = import <nixpkgs> {};
+
   # risc-v toolchain source code. TODO FIXME: this should be replaced with
   # upstream versions of GCC. in the future we could also include LLVM (the
   # upstream nixpkgs LLVM expression should be built with it in time)
@@ -101,7 +110,7 @@ let
   # given an architecture like 'rv32i', this will generate the given
   # toolchain derivation based on the above source code.
   make-riscv-toolchain = arch:
-    stdenv.mkDerivation rec {
+    pkgs.stdenv.mkDerivation rec {
       name    = "riscv-${arch}-toolchain-${version}";
       version = "${riscv-toolchain-ver}-${builtins.substring 0 7 src.rev}";
       src     = riscv-src;
@@ -128,12 +137,14 @@ let
     # these are generally useful packages for tests, verification, synthesis
     # and deployment, etc
     [ python3 gcc
-      yosys symbiyosys nextpnr arachne-pnr icestorm
+      yosys sby nextpnr icestorm
       z3 boolector yices
-      verilog verilator
-      # also include the RISC-V toolchain
-      riscv-toolchain
-    ];
+      iverilog verilator
+    ]
+    ++ (if pkgs ? "arachne-pnr" then [ pkgs."arachne-pnr" ] else [])
+    ++ (if includeRiscvToolchain then [ riscv-toolchain ] else []);
 
 # Export a usable shell environment
-in runCommand "picorv32-shell" { inherit buildInputs; } ""
+in pkgs.mkShell {
+  inherit buildInputs;
+}
