@@ -1,0 +1,16 @@
+# Yosys equivalence check: vedic_mul_16x16 vs reference multiplier
+# Uses equiv_make + equiv_simple to avoid a monolithic SAT miter.
+
+read_verilog rtl/vedic/vedic_mul_2x2.v
+read_verilog rtl/vedic/vedic_mul_4x4.v
+read_verilog rtl/vedic/vedic_mul_8x8.v
+read_verilog rtl/vedic/vedic_mul_16x16.v
+read_verilog formal/vedic/vedic_mul_16x16_ref.v
+
+equiv_make vedic_mul_16x16 vedic_mul_16x16_ref equiv_16x16
+prep -top equiv_16x16
+flatten
+opt -full
+opt_clean -purge
+equiv_simple -seq 1
+equiv_status -assert

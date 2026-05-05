@@ -1,0 +1,25 @@
+Session: picorv32_phase4 (detached Byobu/tmux)
+
+`run_phase4_byobu_inner.sh` runs `complete_phase4.sh` with **default** settings:
+skips Vedic 16×16 / 32×32, runs **F3 + F4**, **F5** (RVFI MUL-only), report
+`--skip-large-vedic --with-rvfi`.
+For **full Phase 4** (F4 + filtered full F5; still skips F2 16×16 / 32×32 unless
+**`PHASE4_LARGE_VEDIC=1`**):
+
+`PHASE4_QUICK=0 bash opt/scripts/formal/run_phase4_byobu_inner.sh` — expect a long run
+(**`make -C checks`**). Add **`PHASE4_LARGE_VEDIC=1`** only if you also want F2 16×16
+and 32×32 (**often multi-day**).
+
+Attach from a terminal:
+  byobu attach -t picorv32_phase4
+  # or:  tmux attach -t picorv32_phase4
+
+Detach without stopping the run:  F6  (Byobu)  or  Ctrl-b d  (tmux)
+
+Logs:
+  opt/formal/logs/phase4_byobu.log   (tee of full script stdout)
+  opt/formal/phase4_report.txt       (after script completes)
+
+Stop the run from another shell:
+  tmux send-keys -t picorv32_phase4 C-c
+  # or kill the session:  tmux kill-session -t picorv32_phase4

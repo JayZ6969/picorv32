@@ -1,0 +1,22 @@
+[tasks]
+prove
+
+[options]
+prove: mode prove
+prove: depth 1
+
+[engines]
+smtbmc z3
+
+[script]
+read_verilog -formal vedic_8x8_formal.v
+read_verilog vedic_mul_2x2.v
+read_verilog vedic_mul_4x4.v
+read_verilog vedic_mul_8x8.v
+prep -top vedic_8x8_formal
+
+[files]
+formal/vedic/vedic_8x8_formal.v
+rtl/vedic/vedic_mul_2x2.v
+rtl/vedic/vedic_mul_4x4.v
+rtl/vedic/vedic_mul_8x8.v

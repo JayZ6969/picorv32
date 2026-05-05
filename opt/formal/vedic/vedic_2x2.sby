@@ -1,0 +1,16 @@
+[options]
+mode prove
+depth 1
+expect pass
+
+[engines]
+smtbmc z3
+
+[script]
+read_verilog vedic_mul_2x2.v
+read_verilog -sv vedic_NxN_formal.sv
+prep -top vedic_2x2_formal
+
+[files]
+opt/rtl/vedic/vedic_mul_2x2.v
+opt/formal/vedic/vedic_NxN_formal.sv

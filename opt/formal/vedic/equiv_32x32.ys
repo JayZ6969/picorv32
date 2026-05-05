@@ -1,0 +1,20 @@
+# Yosys equivalence check: vedic_mul_32x32 vs reference multiplier
+# Uses equiv_make + equiv_simple to avoid a monolithic SAT miter.
+
+read_verilog rtl/vedic/vedic_mul_2x2.v
+read_verilog rtl/vedic/vedic_mul_4x4.v
+read_verilog rtl/vedic/vedic_mul_8x8.v
+read_verilog rtl/vedic/vedic_mul_16x16.v
+read_verilog rtl/ksa/ksa_adder.v
+read_verilog rtl/ksa/ksa_64bit_pipelined.v
+read_verilog rtl/csa/csa_cell.v
+read_verilog rtl/vedic/vedic_mul_32x32.v
+read_verilog formal/vedic/vedic_mul_32x32_ref.v
+
+equiv_make vedic_mul_32x32 vedic_mul_32x32_ref equiv_32x32
+prep -top equiv_32x32
+flatten
+opt -full
+opt_clean -purge
+equiv_simple -seq 4
+equiv_status -assert

@@ -1,0 +1,26 @@
+[tasks]
+prove
+
+[options]
+prove: mode prove
+prove: depth 5
+
+[engines]
+smtbmc z3
+
+[script]
+read_verilog -formal vedic_32x32_ag_formal.v
+read_verilog vedic_mul_16x16_contract.v
+read_verilog ksa_adder.v
+read_verilog ksa_64bit_pipelined.v
+read_verilog csa_cell.v
+read_verilog vedic_mul_32x32.v
+prep -top vedic_32x32_ag_formal
+
+[files]
+formal/vedic/vedic_32x32_ag_formal.v
+formal/vedic/vedic_mul_16x16_contract.v
+rtl/ksa/ksa_adder.v
+rtl/ksa/ksa_64bit_pipelined.v
+rtl/csa/csa_cell.v
+rtl/vedic/vedic_mul_32x32.v

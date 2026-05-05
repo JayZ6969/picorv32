@@ -1,0 +1,16 @@
+[options]
+mode prove
+depth 1
+expect pass
+
+[engines]
+smtbmc z3
+
+[script]
+read_verilog -sv ksa_formal.sv
+read_verilog ksa_adder.v
+prep -top ksa_formal
+
+[files]
+opt/formal/ksa/ksa_formal.sv
+opt/rtl/ksa/ksa_adder.v

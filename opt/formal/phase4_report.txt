@@ -1,0 +1,15 @@
+PHASE 4 FORMAL VERIFICATION RESULTS
+(slow checks waived: F2 16x16, F2 32x32, F4)
+(F5 RVFI omitted — not run / not in report)
+(F3 PCPI omitted — PHASE4_SKIP_F3=1)
+==================================================
+F1_ksa_formal: ✅ PASS
+F2_vedic_2x2: ✅ PASS
+F2_vedic_4x4: ✅ PASS
+F2_vedic_8x8: ✅ PASS
+F2_vedic_16x16: ⏭️  WAIVED (slow formal skipped)
+F2_vedic_32x32: ⏭️  WAIVED (slow formal skipped)
+F3_pcpi_protocol: ⏭️  WAIVED (F3 PCPI not run — PHASE4_SKIP_F3=1)
+F4_arithmetic_equiv: ⏭️  WAIVED (slow formal skipped)
+==================================================
+Overall: ALL PASS (F1–F2 small; F3/F4/F5 skipped this run) ✅

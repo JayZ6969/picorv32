@@ -1,0 +1,71 @@
+[pcpi_protocol] Workdir: opt/formal/_work_pcpi_protocol  (e.g. tail -f opt/formal/_work_pcpi_protocol/basecase.log while SMT runs)
+[pcpi_protocol] Running Yosys (solver=z3)...
+1. Executing Verilog-2005 frontend: opt/rtl/vedic/vedic_mul_2x2.v
+2. Executing Verilog-2005 frontend: opt/rtl/vedic/vedic_mul_4x4.v
+3. Executing Verilog-2005 frontend: opt/rtl/vedic/vedic_mul_8x8.v
+4. Executing Verilog-2005 frontend: opt/rtl/vedic/vedic_mul_16x16.v
+5. Executing Verilog-2005 frontend: opt/rtl/vedic/vedic_mul_32x32.v
+6. Executing Verilog-2005 frontend: opt/rtl/ksa/ksa_adder.v
+7. Executing Verilog-2005 frontend: opt/rtl/ksa/ksa_64bit_pipelined.v
+8. Executing Verilog-2005 frontend: opt/rtl/csa/csa_cell.v
+9. Executing Verilog-2005 frontend: opt/rtl/pcpi/pcpi_vedic_mul.v
+10. Executing Verilog-2005 frontend: opt/formal/pcpi/pcpi_formal.sv
+11. Executing PREP pass.
+11.1. Executing HIERARCHY pass (managing design hierarchy).
+11.2. Executing PROC pass (convert processes to netlists).
+11.3. Executing OPT_EXPR pass (perform const folding).
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+11.5. Executing CHECK pass (checking for obvious problems).
+11.6. Executing OPT pass (performing simple optimizations).
+11.7. Executing WREDUCE pass (reducing word size of cells).
+11.8. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+11.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+11.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+11.11. Executing OPT pass (performing simple optimizations).
+11.12. Printing statistics.
+11.13. Executing CHECK pass (checking for obvious problems).
+12. Executing ASYNC2SYNC pass.
+13. Executing SMT2 backend.
+End of script. Logfile hash: faec6b0b8e
+CPU: user 2.97s system 0.06s, MEM: 72.77 MB total, 60.55 MB resident
+Yosys 0.9 (git sha1 1979e0b)
+Time spent: 25% 1x hierarchy (0 sec), 20% 5x opt_clean (0 sec), ...
+[pcpi_protocol] Running SMT basecase (depth=12)...
+##   0:00:00  Solver: z3
+##   0:00:00  Checking assumptions in step 0..
+##   0:00:01  Checking assertions in step 0..
+##   0:00:01  Checking assumptions in step 1..
+##   0:00:02  Checking assertions in step 1..
+##   0:00:02  Checking assumptions in step 2..
+ (2 seconds) /-\              ##   0:00:05  Checking assertions in step 2..
+##   0:00:05  Checking assumptions in step 3..
+##   0:00:05  Checking assertions in step 3..
+##   0:00:05  Checking assumptions in step 4..
+##   0:00:06  Checking assertions in step 4..
+##   0:00:06  Checking assumptions in step 5..
+##   0:00:08  Checking assertions in step 5..
+##   0:00:08  Checking assumptions in step 6..
+##   0:00:09  Checking assertions in step 6..
+##   0:00:09  Checking assumptions in step 7..
+##   0:00:11  Checking assertions in step 7..
+##   0:00:11  Checking assumptions in step 8..
+##   0:00:12  Checking assertions in step 8..
+##   0:00:12  Checking assumptions in step 9..
+ (2 seconds) /-\|/               (3 seconds) -\|/-\|/-\               (4 seconds) |/-\|/-\|/               (5 seconds) -\|/-\|/-\               (6 seconds) |/-\|/-\|/               (7 seconds) -\|/-\|/-\               (8 seconds) |/-\|/-\|/               (9 seconds) -\|/-              ##   0:00:22  Checking assertions in step 9..
+##   0:00:22  Checking assumptions in step 10..
+ (2 seconds) /-\|/               (3 seconds) -\|/-              ##   0:00:25  Checking assertions in step 10..
+##   0:00:25  Checking assumptions in step 11..
+##   0:00:27  Checking assertions in step 11..
+##   0:00:28  Status: PASSED
+[pcpi_protocol] Running SMT induction (depth=12)...
+##   0:00:00  Solver: z3
+##   0:00:00  Trying induction in step 12..
+##   0:00:01  Trying induction in step 11..
+##   0:00:02  Trying induction in step 10..
+##   0:00:02  Temporal induction successful.
+##   0:00:02  Status: PASSED
+
+[pcpi_protocol] Basecase:  ✅ PASS (rc=0)
+[pcpi_protocol] Induction: ✅ PASS (rc=0)
+[pcpi_protocol] ✅ PROVED by k-induction
+DONE (PASS, rc=0)
