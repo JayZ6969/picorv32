@@ -1,0 +1,17 @@
+
+============================================================================
+PHASE 2 PERFORMANCE METRICS -- AVAILABLE CONFIGURATIONS
+============================================================================
+Metric                      baseline_A_mul    baseline_B_mul  baseline_A_bench  baseline_B_bench     optimized_mul   optimized_bench   baseline_A_pcpi   baseline_B_pcpi    optimized_pcpi optimized_pcpi_ra
+----------------------------------------------------------------------------
+total_cycles                      547.0000          181.0000        83824.0000        14224.0000          216.0000        16624.0000                 -                 -                 -                 -
+stall_cycles                      387.0000            0.0000        73200.0000            0.0000           84.0000         9000.0000                 -                 -                 -                 -
+stall_pct                          70.7495            0.0000           87.3258            0.0000           38.8889           54.1386                 -                 -                 -                 -
+effective_ipc                       0.0658            0.1989            0.0361            0.2127            0.1667            0.1820                 -                 -                 -                 -
+avg_pcpi_latency                         -                 -                 -                 -                 -                 -           61.0000            3.0000            7.0000            7.0000
+
+Speedup vs Baseline A (mul_test): 2.53x
+Speedup vs Baseline B (mul_test): 0.84x
+Speedup vs Baseline A (bench):    5.04x
+
+CSV written: synth/reports/phase2_performance.csv

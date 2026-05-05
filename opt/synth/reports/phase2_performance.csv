@@ -1,0 +1,11 @@
+config,avg_latency,avg_pcpi_latency,avg_pcpi_wait_cycles,avg_wait_cycles,effective_ipc,fail_count,insn_retired,latency_sum,max_pcpi_latency,min_pcpi_latency,op_count,stall_cycles,stall_pct,test_status,total_cycles,total_mul_ops,total_pcpi_wait_cycles,wait_cycle_sum
+baseline_A_mul,,,,,0.065814,,36.0,,,,,387.0,70.749543,,547.0,,,
+baseline_B_mul,,,,,0.198895,,36.0,,,,,0.0,0.0,,181.0,,,
+baseline_A_bench,,,,,0.036088,,3025.0,,,,,73200.0,87.325826,,83824.0,,,
+baseline_B_bench,,,,,0.212669,,3025.0,,,,,0.0,0.0,,14224.0,,,
+optimized_mul,,,,,0.166667,,36.0,,,,,84.0,38.888889,,216.0,,,
+optimized_bench,,,,,0.181966,,3025.0,,,,,9000.0,54.138595,,16624.0,,,
+baseline_A_pcpi,61.0,61.0,,59.96875,,,,1952.0,,,32.0,,,,,,,1919.0
+baseline_B_pcpi,3.0,3.0,,0.0,,,,96.0,,,32.0,,,,,,,0.0
+optimized_pcpi,,7.0,6.0,,,0.0,,,7.0,7.0,,,,1.0,,4047.0,24282.0,
+optimized_pcpi_rand1k,,7.0,6.0,,,0.0,,,7.0,7.0,,,,1.0,,4047.0,24282.0,

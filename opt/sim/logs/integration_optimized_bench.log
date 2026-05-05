@@ -1,0 +1,23 @@
+WARNING: tb/integration/tb_picorv32_top.v:81: $readmemh(firmware/bench/bench.hex): Not enough words in the file for the requested range [0:8191].
+VCD: disabled (pass +dump_vcd to enable)
+Core released from reset at time 35000
+Firmware completed at cycle 16624
+METRIC total_cycles 16624
+METRIC stall_cycles 9000
+METRIC insn_retired 3025
+METRIC stall_pct 54.138595
+METRIC effective_ipc 0.181966
+
+=== Checking Memory Signature ===
+PASS: MUL 5x7 = 00000023
+PASS: MUL -1x-1 lower = 00000001
+PASS: MUL overflow lower = fffffffe
+PASS: MULH max*max upper = 3fffffff
+PASS: MULH -1*-1 upper = 00000000
+PASS: MULHSU -1*UINT_MAX upper = ffffffff
+PASS: MULHU UINT_MAX*UINT_MAX upper = fffffffe
+
+=========================================
+INTEGRATION RESULTS: 7 PASSED, 0 FAILED
+STATUS: ALL PASS
+=========================================

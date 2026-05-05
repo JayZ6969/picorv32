@@ -1,0 +1,8 @@
+Total signal transitions: 20301
+Timestamps: 400
+Total cycles: 195
+Transitions per cycle: 104.107692
+METRIC switching_transitions 20301
+METRIC timestamps 400
+METRIC total_cycles 195
+METRIC switching_per_cycle 104.107692

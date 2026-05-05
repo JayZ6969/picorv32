@@ -1,0 +1,222 @@
+VCD: disabled (pass +dump_vcd to enable)
+=========================================
+PCPI Vedic Multiplier Testbench Starting
+=========================================
+
+[1] MUL Instruction Tests
+PCPI_METRIC funct3=0 rs1=00000000 rs2=00000000 latency=7 wait_cycles=6 result=00000000
+PCPI_METRIC funct3=0 rs1=00000001 rs2=00000001 latency=7 wait_cycles=6 result=00000001
+PCPI_METRIC funct3=0 rs1=00000005 rs2=00000007 latency=7 wait_cycles=6 result=00000023
+PCPI_METRIC funct3=0 rs1=ffffffff rs2=00000001 latency=7 wait_cycles=6 result=ffffffff
+PCPI_METRIC funct3=0 rs1=ffffffff rs2=ffffffff latency=7 wait_cycles=6 result=00000001
+PCPI_METRIC funct3=0 rs1=80000000 rs2=00000002 latency=7 wait_cycles=6 result=00000000
+
+[2] MULH Instruction Tests
+PCPI_METRIC funct3=1 rs1=ffffffff rs2=ffffffff latency=7 wait_cycles=6 result=00000000
+PCPI_METRIC funct3=1 rs1=80000000 rs2=80000000 latency=7 wait_cycles=6 result=40000000
+PCPI_METRIC funct3=1 rs1=7fffffff rs2=7fffffff latency=7 wait_cycles=6 result=3fffffff
+PCPI_METRIC funct3=1 rs1=ffffffff rs2=80000000 latency=7 wait_cycles=6 result=00000000
+PCPI_METRIC funct3=1 rs1=00000064 rs2=000000c8 latency=7 wait_cycles=6 result=00000000
+
+[3] MULHSU Instruction Tests
+PCPI_METRIC funct3=2 rs1=ffffffff rs2=ffffffff latency=7 wait_cycles=6 result=ffffffff
+PCPI_METRIC funct3=2 rs1=80000000 rs2=ffffffff latency=7 wait_cycles=6 result=80000000
+PCPI_METRIC funct3=2 rs1=7fffffff rs2=ffffffff latency=7 wait_cycles=6 result=7ffffffe
+PCPI_METRIC funct3=2 rs1=ffffffff rs2=00000001 latency=7 wait_cycles=6 result=ffffffff
+PCPI_METRIC funct3=2 rs1=00000001 rs2=ffffffff latency=7 wait_cycles=6 result=00000000
+
+[4] MULHU Instruction Tests
+PCPI_METRIC funct3=3 rs1=ffffffff rs2=ffffffff latency=7 wait_cycles=6 result=fffffffe
+PCPI_METRIC funct3=3 rs1=80000000 rs2=80000000 latency=7 wait_cycles=6 result=40000000
+PCPI_METRIC funct3=3 rs1=00010000 rs2=00010000 latency=7 wait_cycles=6 result=00000001
+PCPI_METRIC funct3=3 rs1=00010000 rs2=00010000 latency=7 wait_cycles=6 result=00000001
+
+[5] Back-to-Back Transaction Test
+PCPI_METRIC funct3=0 rs1=0000000a rs2=0000000a latency=7 wait_cycles=6 result=00000064
+PCPI_METRIC funct3=0 rs1=00000014 rs2=00000014 latency=7 wait_cycles=6 result=00000190
+PCPI_METRIC funct3=0 rs1=0000001e rs2=0000001e latency=7 wait_cycles=6 result=00000384
+PCPI_METRIC funct3=0 rs1=00000028 rs2=00000028 latency=7 wait_cycles=6 result=00000640
+PCPI_METRIC funct3=0 rs1=00000032 rs2=00000032 latency=7 wait_cycles=6 result=000009c4
+
+[5b] Back-to-Back Stress Test (20 ops, no inserted idle cycles)
+PCPI_METRIC funct3=0 rs1=01010001 rs2=80000001 latency=7 wait_cycles=6 result=81010001 stress=1
+PCPI_METRIC funct3=1 rs1=01000020 rs2=80000012 latency=7 wait_cycles=6 result=ff7ffff0 stress=1
+PCPI_METRIC funct3=2 rs1=01030043 rs2=80000023 latency=7 wait_cycles=6 result=00818021 stress=1
+PCPI_METRIC funct3=3 rs1=01020062 rs2=80000034 latency=7 wait_cycles=6 result=00810031 stress=1
+PCPI_METRIC funct3=0 rs1=01050085 rs2=80000045 latency=7 wait_cycles=6 result=c65923d9 stress=1
+PCPI_METRIC funct3=1 rs1=010400a4 rs2=80000056 latency=7 wait_cycles=6 result=ff7dffae stress=1
+PCPI_METRIC funct3=2 rs1=010700c7 rs2=80000067 latency=7 wait_cycles=6 result=00838063 stress=1
+PCPI_METRIC funct3=3 rs1=010600e6 rs2=80000078 latency=7 wait_cycles=6 result=00830073 stress=1
+PCPI_METRIC funct3=0 rs1=01090109 rs2=80000089 latency=7 wait_cycles=6 result=0dd18dd1 stress=1
+PCPI_METRIC funct3=1 rs1=01080128 rs2=8000009a latency=7 wait_cycles=6 result=ff7bff6c stress=1
+PCPI_METRIC funct3=2 rs1=010b014b rs2=800000ab latency=7 wait_cycles=6 result=008580a6 stress=1
+PCPI_METRIC funct3=3 rs1=010a016a rs2=800000bc latency=7 wait_cycles=6 result=008500b5 stress=1
+PCPI_METRIC funct3=0 rs1=010d018d rs2=800000cd latency=7 wait_cycles=6 result=576a3de9 stress=1
+PCPI_METRIC funct3=1 rs1=010c01ac rs2=800000de latency=7 wait_cycles=6 result=ff79ff2a stress=1
+PCPI_METRIC funct3=2 rs1=010f01cf rs2=800000ef latency=7 wait_cycles=6 result=008780e8 stress=1
+PCPI_METRIC funct3=3 rs1=010e01ee rs2=80000100 latency=7 wait_cycles=6 result=008700f8 stress=1
+PCPI_METRIC funct3=0 rs1=01110211 rs2=80000111 latency=7 wait_cycles=6 result=a3233421 stress=1
+PCPI_METRIC funct3=1 rs1=01100230 rs2=80000122 latency=7 wait_cycles=6 result=ff77fee9 stress=1
+PCPI_METRIC funct3=2 rs1=01130253 rs2=80000133 latency=7 wait_cycles=6 result=0089812a stress=1
+PCPI_METRIC funct3=3 rs1=01120272 rs2=80000144 latency=7 wait_cycles=6 result=0089013a stress=1
+
+[6] Random Tests (32 vectors x 4 variants)
+PCPI_METRIC funct3=0 rs1=12153524 rs2=c0895e81 latency=7 wait_cycles=6 result=5676ff24
+PCPI_METRIC funct3=1 rs1=12153524 rs2=c0895e81 latency=7 wait_cycles=6 result=fb8466bd
+PCPI_METRIC funct3=2 rs1=12153524 rs2=c0895e81 latency=7 wait_cycles=6 result=0d999be1
+PCPI_METRIC funct3=3 rs1=12153524 rs2=c0895e81 latency=7 wait_cycles=6 result=0d999be1
+PCPI_METRIC funct3=0 rs1=8484d609 rs2=b1f05663 latency=7 wait_cycles=6 result=c0b5cb7b
+PCPI_METRIC funct3=1 rs1=8484d609 rs2=b1f05663 latency=7 wait_cycles=6 result=25a714d0
+PCPI_METRIC funct3=2 rs1=8484d609 rs2=b1f05663 latency=7 wait_cycles=6 result=aa2bead9
+PCPI_METRIC funct3=3 rs1=8484d609 rs2=b1f05663 latency=7 wait_cycles=6 result=5c1c413c
+PCPI_METRIC funct3=0 rs1=06b97b0d rs2=46df998d latency=7 wait_cycles=6 result=4d068b29
+PCPI_METRIC funct3=1 rs1=06b97b0d rs2=46df998d latency=7 wait_cycles=6 result=01dc9740
+PCPI_METRIC funct3=2 rs1=06b97b0d rs2=46df998d latency=7 wait_cycles=6 result=01dc9740
+PCPI_METRIC funct3=3 rs1=06b97b0d rs2=46df998d latency=7 wait_cycles=6 result=01dc9740
+[6] Progress: 3/32 groups
+PCPI_METRIC funct3=0 rs1=b2c28465 rs2=89375212 latency=7 wait_cycles=6 result=5ec8a91a
+PCPI_METRIC funct3=1 rs1=b2c28465 rs2=89375212 latency=7 wait_cycles=6 result=23d6e37c
+PCPI_METRIC funct3=2 rs1=b2c28465 rs2=89375212 latency=7 wait_cycles=6 result=d69967e1
+PCPI_METRIC funct3=3 rs1=b2c28465 rs2=89375212 latency=7 wait_cycles=6 result=5fd0b9f3
+PCPI_METRIC funct3=0 rs1=00f3e301 rs2=06d7cd0d latency=7 wait_cycles=6 result=0501540d
+PCPI_METRIC funct3=1 rs1=00f3e301 rs2=06d7cd0d latency=7 wait_cycles=6 result=000684e9
+PCPI_METRIC funct3=2 rs1=00f3e301 rs2=06d7cd0d latency=7 wait_cycles=6 result=000684e9
+PCPI_METRIC funct3=3 rs1=00f3e301 rs2=06d7cd0d latency=7 wait_cycles=6 result=000684e9
+PCPI_METRIC funct3=0 rs1=3b23f176 rs2=1e8dcd3d latency=7 wait_cycles=6 result=b1ea071e
+PCPI_METRIC funct3=1 rs1=3b23f176 rs2=1e8dcd3d latency=7 wait_cycles=6 result=070ef881
+PCPI_METRIC funct3=2 rs1=3b23f176 rs2=1e8dcd3d latency=7 wait_cycles=6 result=070ef881
+PCPI_METRIC funct3=3 rs1=3b23f176 rs2=1e8dcd3d latency=7 wait_cycles=6 result=070ef881
+[6] Progress: 6/32 groups
+PCPI_METRIC funct3=0 rs1=76d457ed rs2=462df78c latency=7 wait_cycles=6 result=1f9ec09c
+PCPI_METRIC funct3=1 rs1=76d457ed rs2=462df78c latency=7 wait_cycles=6 result=20936646
+PCPI_METRIC funct3=2 rs1=76d457ed rs2=462df78c latency=7 wait_cycles=6 result=20936646
+PCPI_METRIC funct3=3 rs1=76d457ed rs2=462df78c latency=7 wait_cycles=6 result=20936646
+PCPI_METRIC funct3=0 rs1=7cfde9f9 rs2=e33724c6 latency=7 wait_cycles=6 result=70c8fa96
+PCPI_METRIC funct3=1 rs1=7cfde9f9 rs2=e33724c6 latency=7 wait_cycles=6 result=f1f22900
+PCPI_METRIC funct3=2 rs1=7cfde9f9 rs2=e33724c6 latency=7 wait_cycles=6 result=6ef012f9
+PCPI_METRIC funct3=3 rs1=7cfde9f9 rs2=e33724c6 latency=7 wait_cycles=6 result=6ef012f9
+PCPI_METRIC funct3=0 rs1=e2f784c5 rs2=d513d2aa latency=7 wait_cycles=6 result=86e6c4d2
+PCPI_METRIC funct3=1 rs1=e2f784c5 rs2=d513d2aa latency=7 wait_cycles=6 result=04de2d2d
+PCPI_METRIC funct3=2 rs1=e2f784c5 rs2=d513d2aa latency=7 wait_cycles=6 result=e7d5b1f2
+PCPI_METRIC funct3=3 rs1=e2f784c5 rs2=d513d2aa latency=7 wait_cycles=6 result=bce9849c
+[6] Progress: 9/32 groups
+PCPI_METRIC funct3=0 rs1=72aff7e5 rs2=bbd27277 latency=7 wait_cycles=6 result=4d0a3573
+PCPI_METRIC funct3=1 rs1=72aff7e5 rs2=bbd27277 latency=7 wait_cycles=6 result=e174d9d0
+PCPI_METRIC funct3=2 rs1=72aff7e5 rs2=bbd27277 latency=7 wait_cycles=6 result=5424d1b5
+PCPI_METRIC funct3=3 rs1=72aff7e5 rs2=bbd27277 latency=7 wait_cycles=6 result=5424d1b5
+PCPI_METRIC funct3=0 rs1=8932d612 rs2=47ecdb8f latency=7 wait_cycles=6 result=771efa0e
+PCPI_METRIC funct3=1 rs1=8932d612 rs2=47ecdb8f latency=7 wait_cycles=6 result=de9f2e58
+PCPI_METRIC funct3=2 rs1=8932d612 rs2=47ecdb8f latency=7 wait_cycles=6 result=de9f2e58
+PCPI_METRIC funct3=3 rs1=8932d612 rs2=47ecdb8f latency=7 wait_cycles=6 result=268c09e7
+PCPI_METRIC funct3=0 rs1=793069f2 rs2=e77696ce latency=7 wait_cycles=6 result=16950cbc
+PCPI_METRIC funct3=1 rs1=793069f2 rs2=e77696ce latency=7 wait_cycles=6 result=f462695c
+PCPI_METRIC funct3=2 rs1=793069f2 rs2=e77696ce latency=7 wait_cycles=6 result=6d92d34e
+PCPI_METRIC funct3=3 rs1=793069f2 rs2=e77696ce latency=7 wait_cycles=6 result=6d92d34e
+[6] Progress: 12/32 groups
+PCPI_METRIC funct3=0 rs1=f4007ae8 rs2=e2ca4ec5 latency=7 wait_cycles=6 result=b4e14488
+PCPI_METRIC funct3=1 rs1=f4007ae8 rs2=e2ca4ec5 latency=7 wait_cycles=6 result=015e7648
+PCPI_METRIC funct3=2 rs1=f4007ae8 rs2=e2ca4ec5 latency=7 wait_cycles=6 result=f55ef130
+PCPI_METRIC funct3=3 rs1=f4007ae8 rs2=e2ca4ec5 latency=7 wait_cycles=6 result=d8293ff5
+PCPI_METRIC funct3=0 rs1=2e58495c rs2=de8e28bd latency=7 wait_cycles=6 result=7bac88ec
+PCPI_METRIC funct3=1 rs1=2e58495c rs2=de8e28bd latency=7 wait_cycles=6 result=f9f2029a
+PCPI_METRIC funct3=2 rs1=2e58495c rs2=de8e28bd latency=7 wait_cycles=6 result=284a4bf6
+PCPI_METRIC funct3=3 rs1=2e58495c rs2=de8e28bd latency=7 wait_cycles=6 result=284a4bf6
+PCPI_METRIC funct3=0 rs1=96ab582d rs2=b2a72665 latency=7 wait_cycles=6 result=b00b77c1
+PCPI_METRIC funct3=1 rs1=96ab582d rs2=b2a72665 latency=7 wait_cycles=6 result=1fd3051c
+PCPI_METRIC funct3=2 rs1=96ab582d rs2=b2a72665 latency=7 wait_cycles=6 result=b67e5d49
+PCPI_METRIC funct3=3 rs1=96ab582d rs2=b2a72665 latency=7 wait_cycles=6 result=692583ae
+[6] Progress: 15/32 groups
+PCPI_METRIC funct3=0 rs1=b1ef6263 rs2=0573870a latency=7 wait_cycles=6 result=51b50cde
+PCPI_METRIC funct3=1 rs1=b1ef6263 rs2=0573870a latency=7 wait_cycles=6 result=fe567247
+PCPI_METRIC funct3=2 rs1=b1ef6263 rs2=0573870a latency=7 wait_cycles=6 result=fe567247
+PCPI_METRIC funct3=3 rs1=b1ef6263 rs2=0573870a latency=7 wait_cycles=6 result=03c9f951
+PCPI_METRIC funct3=0 rs1=c03b2280 rs2=10642120 latency=7 wait_cycles=6 result=20d6d000
+PCPI_METRIC funct3=1 rs1=c03b2280 rs2=10642120 latency=7 wait_cycles=6 result=fbeac101
+PCPI_METRIC funct3=2 rs1=c03b2280 rs2=10642120 latency=7 wait_cycles=6 result=fbeac101
+PCPI_METRIC funct3=3 rs1=c03b2280 rs2=10642120 latency=7 wait_cycles=6 result=0c4ee221
+PCPI_METRIC funct3=0 rs1=557845aa rs2=cecccc9d latency=7 wait_cycles=6 result=91be3142
+PCPI_METRIC funct3=1 rs1=557845aa rs2=cecccc9d latency=7 wait_cycles=6 result=ef92e28c
+PCPI_METRIC funct3=2 rs1=557845aa rs2=cecccc9d latency=7 wait_cycles=6 result=450b2836
+PCPI_METRIC funct3=3 rs1=557845aa rs2=cecccc9d latency=7 wait_cycles=6 result=450b2836
+[6] Progress: 18/32 groups
+PCPI_METRIC funct3=0 rs1=cb203e96 rs2=8983b813 latency=7 wait_cycles=6 result=8d227522
+PCPI_METRIC funct3=1 rs1=cb203e96 rs2=8983b813 latency=7 wait_cycles=6 result=1878ce63
+PCPI_METRIC funct3=2 rs1=cb203e96 rs2=8983b813 latency=7 wait_cycles=6 result=e3990cf9
+PCPI_METRIC funct3=3 rs1=cb203e96 rs2=8983b813 latency=7 wait_cycles=6 result=6d1cc50c
+PCPI_METRIC funct3=0 rs1=86bc380d rs2=a9a7d653 latency=7 wait_cycles=6 result=2b5c0a37
+PCPI_METRIC funct3=1 rs1=86bc380d rs2=a9a7d653 latency=7 wait_cycles=6 result=28e68836
+PCPI_METRIC funct3=2 rs1=86bc380d rs2=a9a7d653 latency=7 wait_cycles=6 result=afa2c043
+PCPI_METRIC funct3=3 rs1=86bc380d rs2=a9a7d653 latency=7 wait_cycles=6 result=594a9696
+PCPI_METRIC funct3=0 rs1=359fdd6b rs2=eaa62ad5 latency=7 wait_cycles=6 result=39b8c807
+PCPI_METRIC funct3=1 rs1=359fdd6b rs2=eaa62ad5 latency=7 wait_cycles=6 result=fb87119b
+PCPI_METRIC funct3=2 rs1=359fdd6b rs2=eaa62ad5 latency=7 wait_cycles=6 result=3126ef06
+PCPI_METRIC funct3=3 rs1=359fdd6b rs2=eaa62ad5 latency=7 wait_cycles=6 result=3126ef06
+[6] Progress: 21/32 groups
+PCPI_METRIC funct3=0 rs1=81174a02 rs2=d7563eae latency=7 wait_cycles=6 result=ec6cc95c
+PCPI_METRIC funct3=1 rs1=81174a02 rs2=d7563eae latency=7 wait_cycles=6 result=142883e5
+PCPI_METRIC funct3=2 rs1=81174a02 rs2=d7563eae latency=7 wait_cycles=6 result=953fcde7
+PCPI_METRIC funct3=3 rs1=81174a02 rs2=d7563eae latency=7 wait_cycles=6 result=6c960c95
+PCPI_METRIC funct3=0 rs1=0effe91d rs2=e7c572cf latency=7 wait_cycles=6 result=a50d6873
+PCPI_METRIC funct3=1 rs1=0effe91d rs2=e7c572cf latency=7 wait_cycles=6 result=fe9493e4
+PCPI_METRIC funct3=2 rs1=0effe91d rs2=e7c572cf latency=7 wait_cycles=6 result=0d947d01
+PCPI_METRIC funct3=3 rs1=0effe91d rs2=e7c572cf latency=7 wait_cycles=6 result=0d947d01
+PCPI_METRIC funct3=0 rs1=11844923 rs2=0509650a latency=7 wait_cycles=6 result=2140aa5e
+PCPI_METRIC funct3=1 rs1=11844923 rs2=0509650a latency=7 wait_cycles=6 result=005839fe
+PCPI_METRIC funct3=2 rs1=11844923 rs2=0509650a latency=7 wait_cycles=6 result=005839fe
+PCPI_METRIC funct3=3 rs1=11844923 rs2=0509650a latency=7 wait_cycles=6 result=005839fe
+[6] Progress: 24/32 groups
+PCPI_METRIC funct3=0 rs1=e5730aca rs2=9e314c3c latency=7 wait_cycles=6 result=aad47f58
+PCPI_METRIC funct3=1 rs1=e5730aca rs2=9e314c3c latency=7 wait_cycles=6 result=0a24d8fb
+PCPI_METRIC funct3=2 rs1=e5730aca rs2=9e314c3c latency=7 wait_cycles=6 result=ef97e3c5
+PCPI_METRIC funct3=3 rs1=e5730aca rs2=9e314c3c latency=7 wait_cycles=6 result=8dc93001
+PCPI_METRIC funct3=0 rs1=7968bdf2 rs2=452e618a latency=7 wait_cycles=6 result=7deb1674
+PCPI_METRIC funct3=1 rs1=7968bdf2 rs2=452e618a latency=7 wait_cycles=6 result=20cf3a46
+PCPI_METRIC funct3=2 rs1=7968bdf2 rs2=452e618a latency=7 wait_cycles=6 result=20cf3a46
+PCPI_METRIC funct3=3 rs1=7968bdf2 rs2=452e618a latency=7 wait_cycles=6 result=20cf3a46
+PCPI_METRIC funct3=0 rs1=20c4b341 rs2=ec4b34d8 latency=7 wait_cycles=6 result=0a6b72d8
+PCPI_METRIC funct3=1 rs1=20c4b341 rs2=ec4b34d8 latency=7 wait_cycles=6 result=fd7a4263
+PCPI_METRIC funct3=2 rs1=20c4b341 rs2=ec4b34d8 latency=7 wait_cycles=6 result=1e3ef5a4
+PCPI_METRIC funct3=3 rs1=20c4b341 rs2=ec4b34d8 latency=7 wait_cycles=6 result=1e3ef5a4
+[6] Progress: 27/32 groups
+PCPI_METRIC funct3=0 rs1=3c20f378 rs2=c48a1289 latency=7 wait_cycles=6 result=9d70bb38
+PCPI_METRIC funct3=1 rs1=3c20f378 rs2=c48a1289 latency=7 wait_cycles=6 result=f208b50d
+PCPI_METRIC funct3=2 rs1=3c20f378 rs2=c48a1289 latency=7 wait_cycles=6 result=2e29a885
+PCPI_METRIC funct3=3 rs1=3c20f378 rs2=c48a1289 latency=7 wait_cycles=6 result=2e29a885
+PCPI_METRIC funct3=0 rs1=75c50deb rs2=5b0265b6 latency=7 wait_cycles=6 result=1d6b9c12
+PCPI_METRIC funct3=1 rs1=75c50deb rs2=5b0265b6 latency=7 wait_cycles=6 result=29de2647
+PCPI_METRIC funct3=2 rs1=75c50deb rs2=5b0265b6 latency=7 wait_cycles=6 result=29de2647
+PCPI_METRIC funct3=3 rs1=75c50deb rs2=5b0265b6 latency=7 wait_cycles=6 result=29de2647
+PCPI_METRIC funct3=0 rs1=634bf9c6 rs2=571513ae latency=7 wait_cycles=6 result=e86b7694
+PCPI_METRIC funct3=1 rs1=634bf9c6 rs2=571513ae latency=7 wait_cycles=6 result=21c6febf
+PCPI_METRIC funct3=2 rs1=634bf9c6 rs2=571513ae latency=7 wait_cycles=6 result=21c6febf
+PCPI_METRIC funct3=3 rs1=634bf9c6 rs2=571513ae latency=7 wait_cycles=6 result=21c6febf
+[6] Progress: 30/32 groups
+PCPI_METRIC funct3=0 rs1=de7502bc rs2=150fdd2a latency=7 wait_cycles=6 result=1792bed8
+PCPI_METRIC funct3=1 rs1=de7502bc rs2=150fdd2a latency=7 wait_cycles=6 result=fd3d851a
+PCPI_METRIC funct3=2 rs1=de7502bc rs2=150fdd2a latency=7 wait_cycles=6 result=fd3d851a
+PCPI_METRIC funct3=3 rs1=de7502bc rs2=150fdd2a latency=7 wait_cycles=6 result=124d6244
+PCPI_METRIC funct3=0 rs1=85d79a0b rs2=b897be71 latency=7 wait_cycles=6 result=dcfc28db
+PCPI_METRIC funct3=1 rs1=85d79a0b rs2=b897be71 latency=7 wait_cycles=6 result=2212f3f8
+PCPI_METRIC funct3=2 rs1=85d79a0b rs2=b897be71 latency=7 wait_cycles=6 result=a7ea8e03
+PCPI_METRIC funct3=3 rs1=85d79a0b rs2=b897be71 latency=7 wait_cycles=6 result=60824c74
+[6] Progress: 32/32 groups
+
+[7] Valid Drop Mid-Pipeline
+PCPI_METRIC funct3=0 rs1=12345678 rs2=9abcdef0 latency=7 wait_cycles=6 result=242d2080 valid_drop=1
+
+[8] Reset Mid-Operation Test
+PCPI_METRIC funct3=0 rs1=11111111 rs2=00000009 latency=7 wait_cycles=6 result=99999999
+
+=========================================
+RESULTS: 176 PASSED, 0 FAILED
+Average latency: 7 cycles
+METRIC avg_pcpi_latency 7
+METRIC min_pcpi_latency 7
+METRIC max_pcpi_latency 7
+METRIC total_mul_ops 175
+METRIC total_pcpi_wait_cycles 1050
+METRIC avg_pcpi_wait_cycles 6
+METRIC fail_count 0
+METRIC test_status 1
+STATUS: ALL PASS
+=========================================

@@ -1,0 +1,29 @@
+VCD: disabled (pass +dump_vcd to enable)
+=========================================
+Vedic 32x32 Multiplier Testbench Starting
+=========================================
+
+[1] Zero and Identity Tests
+
+[2] Single-Bit Tests (1024 vectors)
+
+[3] Power of Two and Boundary Tests
+
+[4] Known-Answer Tests
+
+[5] Random Tests (4000 vectors)
+[5] Progress: 400/4000
+[5] Progress: 800/4000
+[5] Progress: 1200/4000
+[5] Progress: 1600/4000
+[5] Progress: 2000/4000
+[5] Progress: 2400/4000
+[5] Progress: 2800/4000
+[5] Progress: 3200/4000
+[5] Progress: 3600/4000
+[5] Progress: 4000/4000
+
+=========================================
+RESULTS: 5045 PASSED, 0 FAILED (of 5045 total)
+STATUS: ALL PASS
+=========================================

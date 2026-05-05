@@ -1,0 +1,9 @@
+BASELINE_CONFIG=1 (fast_mul)
+RESULTS: 32 PASSED, 0 FAILED
+Average latency: 3 cycles
+METRIC op_count 32
+METRIC latency_sum 96
+METRIC wait_cycle_sum 0
+METRIC avg_latency 3.000000
+METRIC avg_wait_cycles 0.000000
+STATUS: ALL PASS

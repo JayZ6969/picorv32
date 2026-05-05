@@ -1,0 +1,15 @@
+
+================================================================
+POWER PROXY - SWITCHING ACTIVITY COMPARISON (W1-W4)
+================================================================
+
+  Config            W1: Total Trans     Cycles  W2: Trans/Cycle
+  ------------------------------------------------------------
+  Baseline A                  17839        547            32.61
+  Baseline B                   6748        181            37.28
+  Optimized                   20301        195           104.11
+
+  W1 delta Optimized vs Baseline A: +13.8% (more transitions = more dynamic power)
+
+  W1 delta Optimized vs Baseline B: +200.8% (more transitions = more dynamic power)
+================================================================

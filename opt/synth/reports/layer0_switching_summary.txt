@@ -1,0 +1,25 @@
+Switching logs:
+Total signal transitions: 17839
+Timestamps: 1104
+Total cycles: 547
+Transitions per cycle: 32.612431
+METRIC switching_transitions 17839
+METRIC timestamps 1104
+METRIC total_cycles 547
+METRIC switching_per_cycle 32.612431
+Total signal transitions: 6748
+Timestamps: 372
+Total cycles: 181
+Transitions per cycle: 37.281768
+METRIC switching_transitions 6748
+METRIC timestamps 372
+METRIC total_cycles 181
+METRIC switching_per_cycle 37.281768
+Total signal transitions: 20301
+Timestamps: 400
+Total cycles: 195
+Transitions per cycle: 104.107692
+METRIC switching_transitions 20301
+METRIC timestamps 400
+METRIC total_cycles 195
+METRIC switching_per_cycle 104.107692

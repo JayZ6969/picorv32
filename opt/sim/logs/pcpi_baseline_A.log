@@ -1,0 +1,9 @@
+BASELINE_CONFIG=0 (iterative mul)
+RESULTS: 32 PASSED, 0 FAILED
+Average latency: 61 cycles
+METRIC op_count 32
+METRIC latency_sum 1952
+METRIC wait_cycle_sum 1919
+METRIC avg_latency 61.000000
+METRIC avg_wait_cycles 59.968750
+STATUS: ALL PASS

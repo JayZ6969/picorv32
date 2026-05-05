@@ -1,0 +1,9 @@
+WARNING: tb/integration/tb_picorv32_baseline_top.v:72: $readmemh(firmware/mul_test/mul_test.hex): Not enough words in the file for the requested range [0:8191].
+Firmware completed at cycle 547
+ENABLE_FAST_MUL = 0
+Firmware: firmware/mul_test/mul_test.hex
+METRIC total_cycles 547
+METRIC stall_cycles 387
+METRIC insn_retired 36
+METRIC stall_pct 70.749543
+METRIC effective_ipc 0.065814
