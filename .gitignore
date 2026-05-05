@@ -55,6 +55,11 @@
 /opt/formal/_bitwuzla/
 /opt/formal/_bitwuzla.zip
 /opt/formal/_work_*/
+# Vendor RVFI suite is a separate git clone; do not embed as a nested repo
+/opt/riscv-formal/
+**/__pycache__/
+*.pyc
+/opt/scripts/hw/logs/
 /opt/firmware/mul_test/*.elf
 /opt/firmware/mul_test/*.hex
 /opt/firmware/mul_test/*.bin
