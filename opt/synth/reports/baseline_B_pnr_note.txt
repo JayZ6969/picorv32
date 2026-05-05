@@ -1,0 +1,5 @@
+NOTE: Baseline B (ENABLE_FAST_MUL=1) on iCE40UP5K routing diagnostics.
+PnR status: FAIL
+LUT utilisation: 95.4%
+Expected interpretation: if routing fails near saturation, this is an expected device-limit result,
+not a project defect in optimized RTL.

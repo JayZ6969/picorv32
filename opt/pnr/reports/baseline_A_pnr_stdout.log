@@ -1,0 +1,472 @@
+Info: constrained 'clk' to bel 'X12/Y31/io1'
+Info: constrained 'resetn' to bel 'X8/Y0/io0'
+Info: constrained 'trap' to bel 'X6/Y31/io0'
+Warning: unmatched constraint 'uart_tx' (on line 7)
+Warning: unmatched constraint 'uart_rx' (on line 8)
+Warning: IO 'mem_wstrb[3]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wstrb[2]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wstrb[1]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wstrb[0]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[7]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[6]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[5]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[4]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[3]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[2]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[1]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[0]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_valid' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_instr' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[7]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[6]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[5]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[4]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[3]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[2]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[1]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[0]' is unconstrained in PCF and will be automatically placed
+
+Info: Packing constants..
+Info: Packing IOs..
+Info: Packing LUT-FFs..
+Info:     1427 LCs used as LUT4 only
+Info:      659 LCs used as LUT4 and DFF
+Info: Packing non-LUT FFs..
+Info:      235 LCs used as DFF only
+Info: Packing carries..
+Info:       58 LCs used as CARRY only
+Info: Packing RAMs..
+Info: Placing PLLs..
+Info: Packing special functions..
+Info: Packing PLLs..
+Info: Promoting globals..
+Info: promoting clk$SB_IO_IN (fanout 902)
+Info: promoting $abc$24680$auto$rtlil.cc:1969:NotGate$24148 [reset] (fanout 228)
+Info: promoting u_core.pcpi_mul.mul_waiting [reset] (fanout 85)
+Info: promoting mem_valid$SB_IO_OUT [reset] (fanout 68)
+Info: promoting $abc$24680$auto$rtlil.cc:1969:NotGate$24162 [reset] (fanout 31)
+Info: promoting resetn$SB_IO_IN [cen] (fanout 262)
+Info: promoting $abc$24680$auto$dff2dffe.cc:158:make_patterns_logic$18594 [cen] (fanout 67)
+Info: promoting $abc$24680$auto$dff2dffe.cc:158:make_patterns_logic$19608 [cen] (fanout 64)
+Info: Constraining chains...
+Info:        8 LCs used to legalise carry chains.
+Info: Checksum: 0xa8e3b825
+
+Info: Annotating ports with timing budgets for target frequency 12.00 MHz
+Info: Checksum: 0xb4a87b6e
+
+Info: Device utilisation:
+Info: 	         ICESTORM_LC:  2389/ 5280    45%
+Info: 	        ICESTORM_RAM:     4/   30    13%
+Info: 	               SB_IO:    25/   96    26%
+Info: 	               SB_GB:     8/    8   100%
+Info: 	        ICESTORM_PLL:     0/    1     0%
+Info: 	         SB_WARMBOOT:     0/    1     0%
+Info: 	        ICESTORM_DSP:     0/    8     0%
+Info: 	      ICESTORM_HFOSC:     0/    1     0%
+Info: 	      ICESTORM_LFOSC:     0/    1     0%
+Info: 	              SB_I2C:     0/    2     0%
+Info: 	              SB_SPI:     0/    2     0%
+Info: 	              IO_I3C:     0/    2     0%
+Info: 	         SB_LEDDA_IP:     0/    1     0%
+Info: 	         SB_RGBA_DRV:     0/    1     0%
+Info: 	      ICESTORM_SPRAM:     0/    4     0%
+
+Info: Placed 3 cells based on constraints.
+Info: Creating initial analytic placement for 1971 cells, random placement wirelen = 57674.
+Info:     at initial placer iter 0, wirelen = 1373
+Info:     at initial placer iter 1, wirelen = 1316
+Info:     at initial placer iter 2, wirelen = 1325
+Info:     at initial placer iter 3, wirelen = 1286
+Info: Running main analytical placer.
+Info:     at iteration #1, type ALL: wirelen solved = 1286, spread = 15983, legal = 18035; time = 0.05s
+Info:     at iteration #2, type ALL: wirelen solved = 1604, spread = 14550, legal = 16283; time = 0.05s
+Info:     at iteration #3, type ALL: wirelen solved = 1946, spread = 13695, legal = 15415; time = 0.10s
+Info:     at iteration #4, type ALL: wirelen solved = 2703, spread = 12780, legal = 14897; time = 0.05s
+Info:     at iteration #5, type ALL: wirelen solved = 3272, spread = 12412, legal = 13800; time = 0.04s
+Info:     at iteration #6, type ALL: wirelen solved = 3819, spread = 12138, legal = 13662; time = 0.04s
+Info:     at iteration #7, type ALL: wirelen solved = 3945, spread = 11984, legal = 13266; time = 0.04s
+Info:     at iteration #8, type ALL: wirelen solved = 4501, spread = 12034, legal = 13537; time = 0.03s
+Info:     at iteration #9, type ALL: wirelen solved = 4682, spread = 11640, legal = 13384; time = 0.04s
+Info:     at iteration #10, type ALL: wirelen solved = 4834, spread = 12261, legal = 13588; time = 0.03s
+Info:     at iteration #11, type ALL: wirelen solved = 5146, spread = 11822, legal = 13090; time = 0.03s
+Info:     at iteration #12, type ALL: wirelen solved = 5306, spread = 12255, legal = 13541; time = 0.03s
+Info:     at iteration #13, type ALL: wirelen solved = 5624, spread = 11412, legal = 12962; time = 0.03s
+Info:     at iteration #14, type ALL: wirelen solved = 5837, spread = 10906, legal = 12708; time = 0.03s
+Info:     at iteration #15, type ALL: wirelen solved = 6167, spread = 11645, legal = 13263; time = 0.03s
+Info:     at iteration #16, type ALL: wirelen solved = 6414, spread = 11677, legal = 12970; time = 0.03s
+Info:     at iteration #17, type ALL: wirelen solved = 6737, spread = 11145, legal = 12480; time = 0.03s
+Info:     at iteration #18, type ALL: wirelen solved = 6645, spread = 11825, legal = 12994; time = 0.03s
+Info:     at iteration #19, type ALL: wirelen solved = 7002, spread = 10991, legal = 12840; time = 0.03s
+Info:     at iteration #20, type ALL: wirelen solved = 7171, spread = 11083, legal = 12494; time = 0.03s
+Info:     at iteration #21, type ALL: wirelen solved = 7227, spread = 11311, legal = 12617; time = 0.03s
+Info:     at iteration #22, type ALL: wirelen solved = 7646, spread = 11332, legal = 12682; time = 0.03s
+Info: HeAP Placer Time: 1.43s
+Info:   of which solving equations: 0.63s
+Info:   of which spreading cells: 0.09s
+Info:   of which strict legalisation: 0.22s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 316, wirelen = 12480
+Info:   at iteration #5: temp = 0.000000, timing cost = 347, wirelen = 11000
+Info:   at iteration #10: temp = 0.000000, timing cost = 311, wirelen = 10652
+Info:   at iteration #15: temp = 0.000000, timing cost = 332, wirelen = 10304
+Info:   at iteration #20: temp = 0.000000, timing cost = 326, wirelen = 10179
+Info:   at iteration #25: temp = 0.000000, timing cost = 326, wirelen = 10139
+Info:   at iteration #29: temp = 0.000000, timing cost = 325, wirelen = 10127 
+Info: SA placement time 2.97s
+
+Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 27.36 MHz (PASS at 12.00 MHz)
+
+Info: Max delay <async>                       -> posedge clk$SB_IO_IN_$glb_clk: 22.05 ns
+Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 7.95 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 8 endpoint(s)
+Info:          + represents [1,8) endpoint(s)
+Info: [ 46782,  48453) |+
+Info: [ 48453,  50124) |+
+Info: [ 50124,  51795) |+
+Info: [ 51795,  53466) | 
+Info: [ 53466,  55137) |+
+Info: [ 55137,  56808) |*+
+Info: [ 56808,  58479) |****+
+Info: [ 58479,  60150) |***********+
+Info: [ 60150,  61821) |**************+
+Info: [ 61821,  63492) |***************+
+Info: [ 63492,  65163) |******************** 
+Info: [ 65163,  66834) |*********+
+Info: [ 66834,  68505) |*******************************+
+Info: [ 68505,  70176) |**************************************************+
+Info: [ 70176,  71847) |********************************************************+
+Info: [ 71847,  73518) |************************************************************ 
+Info: [ 73518,  75189) |***************************************************+
+Info: [ 75189,  76860) |********************************+
+Info: [ 76860,  78531) |****************************************************+
+Info: [ 78531,  80202) |*********************************************+
+Info: Checksum: 0x41e6f242
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 8212 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:       1000 |       27        610 |   27   610 |      7241|       0.72       0.72|
+Info:       2000 |       63       1574 |   36   964 |      6293|       0.15       0.87|
+Info:       3000 |      155       2482 |   92   908 |      5405|       0.20       1.07|
+Info:       4000 |      271       3366 |  116   884 |      4590|       0.21       1.28|
+Info:       5000 |      462       4175 |  191   809 |      3876|       0.18       1.46|
+Info:       6000 |      907       4730 |  445   555 |      3619|       0.27       1.72|
+Info:       7000 |     1226       5411 |  319   681 |      3123|       0.31       2.04|
+Info:       8000 |     1514       6123 |  288   712 |      2622|       0.19       2.22|
+Info:       9000 |     1892       6745 |  378   622 |      2165|       0.19       2.42|
+Info:      10000 |     2375       7262 |  483   517 |      1930|       0.26       2.67|
+Info:      11000 |     2847       7790 |  472   528 |      1625|       0.31       2.99|
+Info:      12000 |     3367       8270 |  520   480 |      1466|       0.26       3.25|
+Info:      13000 |     3811       8826 |  444   556 |      1248|       0.48       3.72|
+Info:      14000 |     4290       9347 |  479   521 |      1102|       0.35       4.07|
+Info:      15000 |     4782       9855 |  492   508 |       963|       0.33       4.41|
+Info:      16000 |     5164      10473 |  382   618 |       621|       0.24       4.64|
+Info:      17000 |     5499      11138 |  335   665 |       122|       0.32       4.97|
+Info:      17195 |     5540      11293 |   41   155 |         0|       0.07       5.04|
+Info: Routing complete.
+Info: Router1 time 5.04s
+Info: Checksum: 0x7609f1d3
+
+Info: Critical path report for clock 'clk$SB_IO_IN_$glb_clk' (posedge -> posedge):
+Info: curr total
+Info:  1.4  1.4  Source $abc$24680$auto$blifparse.cc:492:parse_blif$25320_LC.O
+Info:  3.0  4.3    Net u_core.ksa_add_b_buf[4] budget 0.000000 ns (7,5) -> (4,9)
+Info:                Sink $abc$24680$auto$blifparse.cc:492:parse_blif$26277_LC.I0
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:177
+Info:  1.3  5.6  Source $abc$24680$auto$blifparse.cc:492:parse_blif$26277_LC.O
+Info:  1.8  7.4    Net u_core.ksa_sub_b_buf[4] budget 0.000000 ns (4,9) -> (3,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[4].adder_LC.I2
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1235
+Info:  0.6  8.0  Source $auto$alumacc.cc:474:replace_alu$4811.slice[4].adder_LC.COUT
+Info:  0.0  8.0    Net $auto$alumacc.cc:474:replace_alu$4811.C[5] budget 0.000000 ns (3,10) -> (3,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[5].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3  8.3  Source $auto$alumacc.cc:474:replace_alu$4811.slice[5].adder_LC.COUT
+Info:  0.0  8.3    Net $auto$alumacc.cc:474:replace_alu$4811.C[6] budget 0.000000 ns (3,10) -> (3,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[6].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3  8.6  Source $auto$alumacc.cc:474:replace_alu$4811.slice[6].adder_LC.COUT
+Info:  0.0  8.6    Net $auto$alumacc.cc:474:replace_alu$4811.C[7] budget 0.000000 ns (3,10) -> (3,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[7].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3  8.8  Source $auto$alumacc.cc:474:replace_alu$4811.slice[7].adder_LC.COUT
+Info:  0.6  9.4    Net $auto$alumacc.cc:474:replace_alu$4811.C[8] budget 0.560000 ns (3,10) -> (3,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[8].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3  9.7  Source $auto$alumacc.cc:474:replace_alu$4811.slice[8].adder_LC.COUT
+Info:  0.0  9.7    Net $auto$alumacc.cc:474:replace_alu$4811.C[9] budget 0.000000 ns (3,11) -> (3,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[9].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3  9.9  Source $auto$alumacc.cc:474:replace_alu$4811.slice[9].adder_LC.COUT
+Info:  0.0  9.9    Net $auto$alumacc.cc:474:replace_alu$4811.C[10] budget 0.000000 ns (3,11) -> (3,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[10].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 10.2  Source $auto$alumacc.cc:474:replace_alu$4811.slice[10].adder_LC.COUT
+Info:  0.0 10.2    Net $auto$alumacc.cc:474:replace_alu$4811.C[11] budget 0.000000 ns (3,11) -> (3,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[11].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 10.5  Source $auto$alumacc.cc:474:replace_alu$4811.slice[11].adder_LC.COUT
+Info:  0.0 10.5    Net $auto$alumacc.cc:474:replace_alu$4811.C[12] budget 0.000000 ns (3,11) -> (3,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[12].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 10.8  Source $auto$alumacc.cc:474:replace_alu$4811.slice[12].adder_LC.COUT
+Info:  0.0 10.8    Net $auto$alumacc.cc:474:replace_alu$4811.C[13] budget 0.000000 ns (3,11) -> (3,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[13].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 11.1  Source $auto$alumacc.cc:474:replace_alu$4811.slice[13].adder_LC.COUT
+Info:  0.0 11.1    Net $auto$alumacc.cc:474:replace_alu$4811.C[14] budget 0.000000 ns (3,11) -> (3,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[14].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 11.3  Source $auto$alumacc.cc:474:replace_alu$4811.slice[14].adder_LC.COUT
+Info:  0.0 11.3    Net $auto$alumacc.cc:474:replace_alu$4811.C[15] budget 0.000000 ns (3,11) -> (3,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[15].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 11.6  Source $auto$alumacc.cc:474:replace_alu$4811.slice[15].adder_LC.COUT
+Info:  0.6 12.2    Net $auto$alumacc.cc:474:replace_alu$4811.C[16] budget 0.560000 ns (3,11) -> (3,12)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[16].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 12.4  Source $auto$alumacc.cc:474:replace_alu$4811.slice[16].adder_LC.COUT
+Info:  0.0 12.4    Net $auto$alumacc.cc:474:replace_alu$4811.C[17] budget 0.000000 ns (3,12) -> (3,12)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[17].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 12.7  Source $auto$alumacc.cc:474:replace_alu$4811.slice[17].adder_LC.COUT
+Info:  0.0 12.7    Net $auto$alumacc.cc:474:replace_alu$4811.C[18] budget 0.000000 ns (3,12) -> (3,12)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[18].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 13.0  Source $auto$alumacc.cc:474:replace_alu$4811.slice[18].adder_LC.COUT
+Info:  0.0 13.0    Net $auto$alumacc.cc:474:replace_alu$4811.C[19] budget 0.000000 ns (3,12) -> (3,12)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[19].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 13.3  Source $auto$alumacc.cc:474:replace_alu$4811.slice[19].adder_LC.COUT
+Info:  0.0 13.3    Net $auto$alumacc.cc:474:replace_alu$4811.C[20] budget 0.000000 ns (3,12) -> (3,12)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[20].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 13.6  Source $auto$alumacc.cc:474:replace_alu$4811.slice[20].adder_LC.COUT
+Info:  0.0 13.6    Net $auto$alumacc.cc:474:replace_alu$4811.C[21] budget 0.000000 ns (3,12) -> (3,12)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[21].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 13.8  Source $auto$alumacc.cc:474:replace_alu$4811.slice[21].adder_LC.COUT
+Info:  0.0 13.8    Net $auto$alumacc.cc:474:replace_alu$4811.C[22] budget 0.000000 ns (3,12) -> (3,12)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[22].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 14.1  Source $auto$alumacc.cc:474:replace_alu$4811.slice[22].adder_LC.COUT
+Info:  0.0 14.1    Net $auto$alumacc.cc:474:replace_alu$4811.C[23] budget 0.000000 ns (3,12) -> (3,12)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[23].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 14.4  Source $auto$alumacc.cc:474:replace_alu$4811.slice[23].adder_LC.COUT
+Info:  0.6 14.9    Net $auto$alumacc.cc:474:replace_alu$4811.C[24] budget 0.560000 ns (3,12) -> (3,13)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[24].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 15.2  Source $auto$alumacc.cc:474:replace_alu$4811.slice[24].adder_LC.COUT
+Info:  0.0 15.2    Net $auto$alumacc.cc:474:replace_alu$4811.C[25] budget 0.000000 ns (3,13) -> (3,13)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[25].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 15.5  Source $auto$alumacc.cc:474:replace_alu$4811.slice[25].adder_LC.COUT
+Info:  0.0 15.5    Net $auto$alumacc.cc:474:replace_alu$4811.C[26] budget 0.000000 ns (3,13) -> (3,13)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[26].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 15.8  Source $auto$alumacc.cc:474:replace_alu$4811.slice[26].adder_LC.COUT
+Info:  0.0 15.8    Net $auto$alumacc.cc:474:replace_alu$4811.C[27] budget 0.000000 ns (3,13) -> (3,13)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[27].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 16.1  Source $auto$alumacc.cc:474:replace_alu$4811.slice[27].adder_LC.COUT
+Info:  0.0 16.1    Net $auto$alumacc.cc:474:replace_alu$4811.C[28] budget 0.000000 ns (3,13) -> (3,13)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[28].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 16.3  Source $auto$alumacc.cc:474:replace_alu$4811.slice[28].adder_LC.COUT
+Info:  0.0 16.3    Net $auto$alumacc.cc:474:replace_alu$4811.C[29] budget 0.000000 ns (3,13) -> (3,13)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[29].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 16.6  Source $auto$alumacc.cc:474:replace_alu$4811.slice[29].adder_LC.COUT
+Info:  0.0 16.6    Net $auto$alumacc.cc:474:replace_alu$4811.C[30] budget 0.000000 ns (3,13) -> (3,13)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[30].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 16.9  Source $auto$alumacc.cc:474:replace_alu$4811.slice[30].adder_LC.COUT
+Info:  0.0 16.9    Net $auto$alumacc.cc:474:replace_alu$4811.C[31] budget 0.000000 ns (3,13) -> (3,13)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$4811.slice[31].adder_LC.CIN
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1258
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 17.2  Source $auto$alumacc.cc:474:replace_alu$4811.slice[31].adder_LC.COUT
+Info:  1.2 18.4    Net $nextpnr_ICESTORM_LC_5$I3 budget 1.220000 ns (3,13) -> (3,14)
+Info:                Sink $nextpnr_ICESTORM_LC_5.I3
+Info:  0.9 19.3  Source $nextpnr_ICESTORM_LC_5.O
+Info:  2.8 22.1    Net $abc$24680$auto$alumacc.cc:491:replace_alu$4813[31] budget 16.228001 ns (3,14) -> (7,14)
+Info:                Sink $abc$24680$auto$blifparse.cc:492:parse_blif$24751_LC.I2
+Info:  1.2 23.3  Source $abc$24680$auto$blifparse.cc:492:parse_blif$24751_LC.O
+Info:  1.8 25.1    Net $abc$24680$new_n1982_ budget 16.228001 ns (7,14) -> (8,13)
+Info:                Sink $abc$24680$auto$blifparse.cc:492:parse_blif$24749_LC.I3
+Info:  0.9 25.9  Source $abc$24680$auto$blifparse.cc:492:parse_blif$24749_LC.O
+Info:  1.8 27.7    Net $abc$24680$auto$simplemap.cc:127:simplemap_reduce$14925_new_inv_ budget 8.114000 ns (8,13) -> (9,12)
+Info:                Sink $abc$24680$auto$blifparse.cc:492:parse_blif$24726_LC.I3
+Info:  0.9 28.6  Source $abc$24680$auto$blifparse.cc:492:parse_blif$24726_LC.O
+Info:  3.5 32.1    Net $abc$24680$u_core.alu_out_0_new_inv_ budget 8.114000 ns (9,12) -> (14,10)
+Info:                Sink $abc$24680$auto$blifparse.cc:492:parse_blif$24992_LC.I0
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1223
+Info:  1.3 33.4  Source $abc$24680$auto$blifparse.cc:492:parse_blif$24992_LC.O
+Info:  1.8 35.1    Net $abc$24680$new_n2223_ budget 8.158000 ns (14,10) -> (15,9)
+Info:                Sink $abc$24680$auto$blifparse.cc:492:parse_blif$24991_LC.I3
+Info:  0.9 36.0  Source $abc$24680$auto$blifparse.cc:492:parse_blif$24991_LC.O
+Info:  3.0 39.0    Net $abc$24680$auto$simplemap.cc:250:simplemap_eqne$19668[2] budget 8.158000 ns (15,9) -> (14,9)
+Info:                Sink $abc$24680$auto$blifparse.cc:492:parse_blif$26109_LC.SR
+Info:  0.1 39.1  Setup $abc$24680$auto$blifparse.cc:492:parse_blif$26109_LC.SR
+Info: 16.9 ns logic, 22.2 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge clk$SB_IO_IN_$glb_clk':
+Info: curr total
+Info:  0.0  0.0  Source resetn$sb_io.D_IN_0
+Info:  3.5  3.5    Net resetn$SB_IO_IN budget 15.651000 ns (8,0) -> (13,4)
+Info:                Sink $abc$24680$auto$blifparse.cc:492:parse_blif$24983_LC.I0
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:91
+Info:  1.3  4.8  Source $abc$24680$auto$blifparse.cc:492:parse_blif$24983_LC.O
+Info:  1.8  6.5    Net $abc$24680$auto$dff2dffe.cc:175:make_patterns_logic$19617 budget 15.384000 ns (13,4) -> (13,4)
+Info:                Sink $abc$24680$auto$blifparse.cc:492:parse_blif$25127_LC.I2
+Info:  1.2  7.7  Source $abc$24680$auto$blifparse.cc:492:parse_blif$25127_LC.O
+Info:  1.8  9.5    Net $abc$24680$techmap\u_core.$logic_and$../picorv32.v:1372$1377_Y_new_ budget 15.384000 ns (13,4) -> (12,4)
+Info:                Sink $abc$24680$auto$blifparse.cc:492:parse_blif$25126_LC.I2
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:1372
+Info:  1.2 10.7  Source $abc$24680$auto$blifparse.cc:492:parse_blif$25126_LC.O
+Info:  4.8 15.5    Net $abc$24680$auto$memory_bram.cc:837:replace_cell$5033[15] budget 15.383000 ns (12,4) -> (7,16)
+Info:                Sink $abc$24680$auto$blifparse.cc:492:parse_blif$26304_LC.I0
+Info:  1.3 16.8  Source $abc$24680$auto$blifparse.cc:492:parse_blif$26304_LC.O
+Info:  4.4 21.1    Net $abc$24680$auto$opt_expr.cc:189:group_cell_inputs$5214 budget 15.383000 ns (7,16) -> (6,3)
+Info:                Sink u_core.cpuregs.0.0.0_RAM.MASK_0
+Info:  0.1 21.2  Setup u_core.cpuregs.0.0.0_RAM.MASK_0
+Info: 5.1 ns logic, 16.2 ns routing
+
+Info: Critical path report for cross-domain path 'posedge clk$SB_IO_IN_$glb_clk' -> '<async>':
+Info: curr total
+Info:  1.4  1.4  Source $auto$simplemap.cc:420:simplemap_dff$6648_DFFLC.O
+Info:  7.6  9.0    Net trap$SB_IO_OUT budget 81.943001 ns (15,8) -> (6,31)
+Info:                Sink trap$sb_io.D_OUT_0
+Info:                Defined in:
+Info:                  synth/picorv32_baseline_a_wrapper.v:24
+Info:                  ../picorv32.v:92
+Info: 1.4 ns logic, 7.6 ns routing
+
+Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 25.60 MHz (PASS at 12.00 MHz)
+
+Info: Max delay <async>                       -> posedge clk$SB_IO_IN_$glb_clk: 21.24 ns
+Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 8.99 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 14 endpoint(s)
+Info:          + represents [1,14) endpoint(s)
+Info: [ 44270,  46066) |+
+Info: [ 46066,  47862) |+
+Info: [ 47862,  49658) |+
+Info: [ 49658,  51454) | 
+Info: [ 51454,  53250) | 
+Info: [ 53250,  55046) |+
+Info: [ 55046,  56842) |*+
+Info: [ 56842,  58638) |***+
+Info: [ 58638,  60434) |*******+
+Info: [ 60434,  62230) |*******+
+Info: [ 62230,  64026) |***********+
+Info: [ 64026,  65822) |**********+
+Info: [ 65822,  67618) |******+
+Info: [ 67618,  69414) |*********+
+Info: [ 69414,  71210) |******************+
+Info: [ 71210,  73006) |***********************+
+Info: [ 73006,  74802) |************************************************************ 
+Info: [ 74802,  76598) |****************************+
+Info: [ 76598,  78394) |***********************************************+
+Info: [ 78394,  80190) |***************************+
+24 warnings, 0 errors
+
+Info: Program finished normally.

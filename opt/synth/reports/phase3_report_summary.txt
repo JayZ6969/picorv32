@@ -1,0 +1,36 @@
+================================================================================
+PHASE 3 SUMMARY
+Generated: 2026-05-03 14:31:19
+================================================================================
+
+Artifacts
+  OK  synth/reports/phase3_area_final.csv
+  OK  synth/reports/phase3_timing.csv
+  OK  synth/reports/phase3_composites.csv
+  OK  synth/reports/master_metrics.csv
+
+Key Results
+  Baseline A  (Iterative MUL)    LUT4=2086  CARRY=424   BRAM=4  Fmax= 27.36 MHz  PnR=OK (rc=0)
+  Baseline B  (Fast MUL/DSP)     LUT4=5036  CARRY=461   BRAM=4  Fmax=   N/A MHz  PnR=FAIL (rc=1)
+  Baseline C  (Core only)        LUT4=1661  CARRY=370   BRAM=4  Fmax= 27.05 MHz  PnR=OK (rc=0)
+  Optimized   (Vedic + KSA)      LUT4=4653  CARRY=155   BRAM=2  Fmax= 21.20 MHz  PnR=OK (rc=0)
+
+Composite Metrics (optimized)
+  cycles_per_MUL:   7
+  throughput_MOPS:  3.029
+  E1_ADP:           214503.3
+  E2_ACP:           32571
+  E3_speedup_A:     2.532
+  E4_speedup_B:     0.838
+  E5_MOPS_LUT:      0.00065089
+
+Master Checks
+  Synthesis LUT4 <= 5280: PASS
+  Optimized PnR succeeded: PASS
+  Fmax >= 12 MHz (routed): PASS
+  Fmax >= 18 MHz (target): PASS
+  MUL latency <= 4 cycles: FAIL
+  BRAM budget <= 2: PASS
+  KSA reduced SB_CARRY vs Baseline B: PASS
+  Baseline B routing failure: INFO (expected at high LUT utilisation on UP5K)
+  Baseline B note: Routing failed - device over-utilized at 95.4% LUT (expected for fast_mul baseline on UP5K)

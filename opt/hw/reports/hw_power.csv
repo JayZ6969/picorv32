@@ -1,0 +1,4 @@
+config,label,fmax_mhz,p_static_mW,p_dynamic_mW,p_total_mW,i_est_mA,activity_factor,measurement_mode
+baseline_A,Baseline A (Iterative MUL),24.39,1.2,0.079,1.279,0.388,0.25,cell_model
+baseline_C,Baseline C (Core only),23.96,1.2,0.0607,1.2607,0.382,0.25,cell_model
+optimized,Optimized (Vedic + KSA),21.69,1.2,0.1398,1.3398,0.406,0.25,cell_model

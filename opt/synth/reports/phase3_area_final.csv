@@ -1,0 +1,6 @@
+config,label,SB_LUT4,SB_DFF,SB_CARRY,SB_MAC16,SB_RAM40_4K
+baseline_A,Baseline A  (Iterative MUL),2086,119,424,0,4
+baseline_B,Baseline B  (Fast MUL/DSP),5036,181,461,0,4
+baseline_C,Baseline C  (Core only),1661,116,370,0,4
+baseline_C_ksa,Baseline C' (Core + KSA),1807,116,339,0,4
+optimized,Optimized   (Vedic + KSA),4653,650,155,0,2

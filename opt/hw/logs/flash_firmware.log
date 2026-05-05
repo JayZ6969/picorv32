@@ -1,0 +1,4 @@
+flash offset: 0x00100000
+write flash (1180 (0x49c) Bytes)
+write 0x00100000
+done

@@ -1,0 +1,656 @@
+Info: constrained 'clk' to bel 'X12/Y31/io1'
+Info: constrained 'ser_rx' to bel 'X9/Y0/io0'
+Info: constrained 'ser_tx' to bel 'X13/Y0/io1'
+Info: constrained 'flash_clk' to bel 'X24/Y0/io0'
+Info: constrained 'flash_csb' to bel 'X24/Y0/io1'
+Info: constrained 'flash_io0' to bel 'X23/Y0/io0'
+Info: constrained 'flash_io1' to bel 'X23/Y0/io1'
+Info: constrained 'flash_io2' to bel 'X18/Y0/io0'
+Info: constrained 'flash_io3' to bel 'X19/Y0/io0'
+Info: constrained 'led1' to bel 'X18/Y31/io1'
+Info: constrained 'led2' to bel 'X19/Y31/io1'
+Info: constrained 'led3' to bel 'X18/Y0/io1'
+Info: constrained 'led4' to bel 'X19/Y31/io0'
+Info: constrained 'led5' to bel 'X18/Y31/io0'
+Info: constrained 'ledr_n' to bel 'X6/Y31/io0'
+Info: constrained 'ledg_n' to bel 'X5/Y31/io0'
+Info: constrained 'dbg[0]' to bel 'X5/Y0/io0'
+Info: constrained 'dbg[1]' to bel 'X6/Y0/io1'
+Info: constrained 'dbg[2]' to bel 'X8/Y31/io0'
+Info: constrained 'dbg[3]' to bel 'X13/Y31/io0'
+Info: constrained 'dbg[4]' to bel 'X9/Y31/io1'
+Info: constrained 'dbg[5]' to bel 'X8/Y31/io1'
+
+Info: Packing constants..
+Info: Packing IOs..
+Info: flash_io3 feeds SB_IO flash_io_buf[3], removing $nextpnr_iobuf flash_io3.
+Info: flash_io2 feeds SB_IO flash_io_buf[2], removing $nextpnr_iobuf flash_io2.
+Info: flash_io1 feeds SB_IO flash_io_buf[1], removing $nextpnr_iobuf flash_io1.
+Info: flash_io0 feeds SB_IO flash_io_buf[0], removing $nextpnr_iobuf flash_io0.
+Info: Packing LUT-FFs..
+Info:     2972 LCs used as LUT4 only
+Info:      984 LCs used as LUT4 and DFF
+Info: Packing non-LUT FFs..
+Info:      459 LCs used as DFF only
+Info: Packing carries..
+Info:      238 LCs used as CARRY only
+Info: Packing RAMs..
+Info: Placing PLLs..
+Info: Packing special functions..
+Info: Packing PLLs..
+Info: Promoting globals..
+Info: promoting clk$SB_IO_IN (fanout 1455)
+Info: promoting $abc$52016$auto$alumacc.cc:474:replace_alu$6148.AA[0] [reset] (fanout 548)
+Info: promoting soc.cpu.pcpi_mul.mul_waiting [reset] (fanout 85)
+Info: promoting $abc$52016$auto$rtlil.cc:1969:NotGate$50830 [reset] (fanout 31)
+Info: promoting $abc$52016$auto$rtlil.cc:1969:NotGate$51894 [reset] (fanout 19)
+Info: promoting resetn [cen] (fanout 263)
+Info: promoting $abc$52016$auto$dff2dffe.cc:158:make_patterns_logic$33324 [cen] (fanout 69)
+Info: promoting $abc$52016$auto$dff2dffe.cc:158:make_patterns_logic$34302 [cen] (fanout 64)
+Info: Constraining chains...
+Info:       21 LCs used to legalise carry chains.
+Info: Checksum: 0xb33b860d
+
+Info: Annotating ports with timing budgets for target frequency 12.00 MHz
+Info: Checksum: 0x4a99cfc3
+
+Info: Device utilisation:
+Info: 	         ICESTORM_LC:  4676/ 5280    88%
+Info: 	        ICESTORM_RAM:     4/   30    13%
+Info: 	               SB_IO:    22/   96    22%
+Info: 	               SB_GB:     8/    8   100%
+Info: 	        ICESTORM_PLL:     0/    1     0%
+Info: 	         SB_WARMBOOT:     0/    1     0%
+Info: 	        ICESTORM_DSP:     0/    8     0%
+Info: 	      ICESTORM_HFOSC:     0/    1     0%
+Info: 	      ICESTORM_LFOSC:     0/    1     0%
+Info: 	              SB_I2C:     0/    2     0%
+Info: 	              SB_SPI:     0/    2     0%
+Info: 	              IO_I3C:     0/    2     0%
+Info: 	         SB_LEDDA_IP:     0/    1     0%
+Info: 	         SB_RGBA_DRV:     0/    1     0%
+Info: 	      ICESTORM_SPRAM:     4/    4   100%
+
+Info: Placed 22 cells based on constraints.
+Info: Creating initial analytic placement for 3923 cells, random placement wirelen = 112415.
+Info:     at initial placer iter 0, wirelen = 2251
+Info:     at initial placer iter 1, wirelen = 2172
+Info:     at initial placer iter 2, wirelen = 2155
+Info:     at initial placer iter 3, wirelen = 2170
+Info: Running main analytical placer.
+Info:     at iteration #1, type ALL: wirelen solved = 2165, spread = 44706, legal = 49419; time = 0.16s
+Info:     at iteration #2, type ALL: wirelen solved = 2702, spread = 38342, legal = 44258; time = 0.15s
+Info:     at iteration #3, type ALL: wirelen solved = 3931, spread = 35252, legal = 41093; time = 0.28s
+Info:     at iteration #4, type ALL: wirelen solved = 5458, spread = 31797, legal = 36503; time = 0.09s
+Info:     at iteration #5, type ALL: wirelen solved = 7114, spread = 29489, legal = 34698; time = 0.10s
+Info:     at iteration #6, type ALL: wirelen solved = 8397, spread = 27335, legal = 31190; time = 0.09s
+Info:     at iteration #7, type ALL: wirelen solved = 9175, spread = 26692, legal = 30981; time = 0.09s
+Info:     at iteration #8, type ALL: wirelen solved = 10142, spread = 25927, legal = 31331; time = 0.11s
+Info:     at iteration #9, type ALL: wirelen solved = 10951, spread = 25362, legal = 29747; time = 0.10s
+Info:     at iteration #10, type ALL: wirelen solved = 12101, spread = 24505, legal = 29304; time = 0.09s
+Info:     at iteration #11, type ALL: wirelen solved = 12606, spread = 24046, legal = 29816; time = 0.11s
+Info:     at iteration #12, type ALL: wirelen solved = 13259, spread = 23538, legal = 28545; time = 0.10s
+Info:     at iteration #13, type ALL: wirelen solved = 13820, spread = 23602, legal = 28283; time = 0.10s
+Info:     at iteration #14, type ALL: wirelen solved = 14492, spread = 23277, legal = 27765; time = 0.08s
+Info:     at iteration #15, type ALL: wirelen solved = 14838, spread = 23168, legal = 27028; time = 0.08s
+Info:     at iteration #16, type ALL: wirelen solved = 15097, spread = 22851, legal = 26909; time = 0.08s
+Info:     at iteration #17, type ALL: wirelen solved = 15427, spread = 22928, legal = 27029; time = 0.08s
+Info:     at iteration #18, type ALL: wirelen solved = 15735, spread = 22599, legal = 26351; time = 0.08s
+Info:     at iteration #19, type ALL: wirelen solved = 15969, spread = 22662, legal = 26986; time = 0.09s
+Info:     at iteration #20, type ALL: wirelen solved = 16191, spread = 22588, legal = 26987; time = 0.08s
+Info:     at iteration #21, type ALL: wirelen solved = 16448, spread = 22850, legal = 27299; time = 0.08s
+Info:     at iteration #22, type ALL: wirelen solved = 16544, spread = 22773, legal = 27012; time = 0.08s
+Info:     at iteration #23, type ALL: wirelen solved = 16770, spread = 23021, legal = 27258; time = 0.08s
+Info: HeAP Placer Time: 3.38s
+Info:   of which solving equations: 1.63s
+Info:   of which spreading cells: 0.23s
+Info:   of which strict legalisation: 0.69s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 2496, wirelen = 26351
+Info:   at iteration #5: temp = 0.000000, timing cost = 2594, wirelen = 23294
+Info:   at iteration #10: temp = 0.000000, timing cost = 2395, wirelen = 22461
+Info:   at iteration #15: temp = 0.000000, timing cost = 2499, wirelen = 22057
+Info:   at iteration #20: temp = 0.000000, timing cost = 2490, wirelen = 21949
+Info:   at iteration #24: temp = 0.000000, timing cost = 2487, wirelen = 21910 
+Info: SA placement time 6.93s
+
+Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 15.99 MHz (PASS at 12.00 MHz)
+
+Info: Max delay <async>                       -> posedge clk$SB_IO_IN_$glb_clk: 48.79 ns
+Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 16.24 ns
+Info: Max delay negedge clk$SB_IO_IN_$glb_clk -> <async>                      : 10.13 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 18 endpoint(s)
+Info:          + represents [1,18) endpoint(s)
+Info: [ 20812,  23740) |***+
+Info: [ 23740,  26668) |***+
+Info: [ 26668,  29596) |**+
+Info: [ 29596,  32524) |**+
+Info: [ 32524,  35452) |****+
+Info: [ 35452,  38380) |*******+
+Info: [ 38380,  41308) |**********+
+Info: [ 41308,  44236) |********+
+Info: [ 44236,  47164) |*******+
+Info: [ 47164,  50092) |*********+
+Info: [ 50092,  53020) |*****+
+Info: [ 53020,  55948) |****+
+Info: [ 55948,  58876) |**************+
+Info: [ 58876,  61804) |*******************+
+Info: [ 61804,  64732) |*****************************************+
+Info: [ 64732,  67660) |********************************+
+Info: [ 67660,  70588) |************+
+Info: [ 70588,  73516) |*********************+
+Info: [ 73516,  76444) |******************************+
+Info: [ 76444,  79372) |************************************************************ 
+Info: Checksum: 0xaa27e637
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 15684 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:       1000 |       43        306 |   43   306 |     14734|       0.07       0.07|
+Info:       2000 |       46       1301 |    3   995 |     13737|       0.10       0.16|
+Info:       3000 |      145       2202 |   99   901 |     12862|       0.12       0.28|
+Info:       4000 |      264       3083 |  119   881 |     12006|       0.13       0.41|
+Info:       5000 |      444       3903 |  180   820 |     11224|       0.13       0.54|
+Info:       6000 |      609       4738 |  165   835 |     10430|       0.23       0.77|
+Info:       7000 |      701       5646 |   92   908 |      9554|       0.19       0.96|
+Info:       8000 |      785       6562 |   84   916 |      8671|       0.26       1.21|
+Info:       9000 |      982       7365 |  197   803 |      7913|       0.31       1.53|
+Info:      10000 |     1174       8173 |  192   808 |      7192|       0.32       1.85|
+Info:      11000 |     1425       8922 |  251   749 |      6550|       0.23       2.08|
+Info:      12000 |     1807       9540 |  382   618 |      6215|       0.44       2.51|
+Info:      13000 |     2236      10111 |  429   571 |      5956|       0.50       3.01|
+Info:      14000 |     2635      10712 |  399   601 |      5589|       0.41       3.42|
+Info:      15000 |     3006      11341 |  371   629 |      5244|       0.34       3.76|
+Info:      16000 |     3485      11862 |  479   521 |      5049|       0.45       4.21|
+Info:      17000 |     3843      12504 |  358   642 |      4718|       0.45       4.66|
+Info:      18000 |     4206      13141 |  363   637 |      4361|       0.49       5.15|
+Info:      19000 |     4518      13829 |  312   688 |      3891|       0.36       5.50|
+Info:      20000 |     4836      14511 |  318   682 |      3342|       0.26       5.76|
+Info:      21000 |     5343      15004 |  507   493 |      3173|       0.53       6.29|
+Info:      22000 |     5909      15438 |  566   434 |      3087|       0.58       6.88|
+Info:      23000 |     6402      15945 |  493   507 |      2974|       0.58       7.46|
+Info:      24000 |     6968      16379 |  566   434 |      2826|       0.54       8.00|
+Info:      25000 |     7493      16854 |  525   475 |      2708|       0.51       8.51|
+Info:      26000 |     8033      17314 |  540   460 |      2564|       0.55       9.06|
+Info:      27000 |     8538      17809 |  505   495 |      2451|       0.64       9.69|
+Info:      28000 |     9117      18230 |  579   421 |      2319|       0.61      10.31|
+Info:      29000 |     9659      18688 |  542   458 |      2124|       0.51      10.82|
+Info:      30000 |    10213      19134 |  554   446 |      1974|       0.93      11.75|
+Info:      31000 |    10775      19572 |  562   438 |      1917|       0.65      12.40|
+Info:      32000 |    11303      20044 |  528   472 |      1843|       0.75      13.15|
+Info:      33000 |    11843      20504 |  540   460 |      1791|       0.68      13.83|
+Info:      34000 |    12444      20903 |  601   399 |      1757|       0.81      14.64|
+Info:      35000 |    13075      21272 |  631   369 |      1692|       1.04      15.68|
+Info:      36000 |    13665      21682 |  590   410 |      1587|       0.78      16.46|
+Info:      37000 |    14179      22168 |  514   486 |      1424|       0.47      16.93|
+Info:      38000 |    14695      22652 |  516   484 |      1331|       0.48      17.41|
+Info:      39000 |    15125      23222 |  430   570 |      1277|       0.61      18.02|
+Info:      40000 |    15531      23816 |  406   594 |       920|       0.31      18.33|
+Info:      41000 |    15727      24620 |  196   804 |       237|       0.50      18.83|
+Info:      41559 |    15910      24997 |  183   377 |         0|       0.35      19.18|
+Info: Routing complete.
+Info: Router1 time 19.18s
+Info: Checksum: 0xcc16d397
+
+Info: Critical path report for clock 'clk$SB_IO_IN_$glb_clk' (posedge -> posedge):
+Info: curr total
+Info:  1.4  1.4  Source $auto$simplemap.cc:420:simplemap_dff$11168_DFFLC.O
+Info:  1.8  3.2    Net iomem_addr[0] budget 5.633000 ns (14,8) -> (14,8)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$54997_LC.I0
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:182
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picosoc/spimemio.v:25
+Info:  1.3  4.4  Source $abc$52016$auto$blifparse.cc:492:parse_blif$54997_LC.O
+Info:  1.8  6.2    Net $auto$alumacc.cc:474:replace_alu$6119.C[1] budget 5.632000 ns (14,8) -> (15,8)
+Info:                Sink $nextpnr_ICESTORM_LC_4.I1
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.7  6.9  Source $nextpnr_ICESTORM_LC_4.COUT
+Info:  0.0  6.9    Net $nextpnr_ICESTORM_LC_4$O budget 0.000000 ns (15,8) -> (15,8)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[1].carry$CARRY.CIN
+Info:  0.3  7.1  Source $auto$alumacc.cc:474:replace_alu$6135.slice[1].carry$CARRY.COUT
+Info:  0.0  7.1    Net $auto$alumacc.cc:474:replace_alu$6135.C[2] budget 0.000000 ns (15,8) -> (15,8)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[2].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3  7.4  Source $auto$alumacc.cc:474:replace_alu$6135.slice[2].carry$CARRY.COUT
+Info:  0.0  7.4    Net $auto$alumacc.cc:474:replace_alu$6135.C[3] budget 0.000000 ns (15,8) -> (15,8)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[3].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3  7.7  Source $auto$alumacc.cc:474:replace_alu$6135.slice[3].carry$CARRY.COUT
+Info:  0.0  7.7    Net $auto$alumacc.cc:474:replace_alu$6135.C[4] budget 0.000000 ns (15,8) -> (15,8)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[4].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3  8.0  Source $auto$alumacc.cc:474:replace_alu$6135.slice[4].carry$CARRY.COUT
+Info:  0.0  8.0    Net $auto$alumacc.cc:474:replace_alu$6135.C[5] budget 0.000000 ns (15,8) -> (15,8)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[5].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3  8.3  Source $auto$alumacc.cc:474:replace_alu$6135.slice[5].carry$CARRY.COUT
+Info:  0.0  8.3    Net $auto$alumacc.cc:474:replace_alu$6135.C[6] budget 0.000000 ns (15,8) -> (15,8)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[6].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3  8.5  Source $auto$alumacc.cc:474:replace_alu$6135.slice[6].carry$CARRY.COUT
+Info:  0.0  8.5    Net $auto$alumacc.cc:474:replace_alu$6135.C[7] budget 0.000000 ns (15,8) -> (15,8)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[7].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3  8.8  Source $auto$alumacc.cc:474:replace_alu$6135.slice[7].carry$CARRY.COUT
+Info:  0.6  9.4    Net $auto$alumacc.cc:474:replace_alu$6135.C[8] budget 0.560000 ns (15,8) -> (15,9)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[8].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3  9.7  Source $auto$alumacc.cc:474:replace_alu$6135.slice[8].carry$CARRY.COUT
+Info:  0.0  9.7    Net $auto$alumacc.cc:474:replace_alu$6135.C[9] budget 0.000000 ns (15,9) -> (15,9)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[9].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3  9.9  Source $auto$alumacc.cc:474:replace_alu$6135.slice[9].carry$CARRY.COUT
+Info:  0.0  9.9    Net $auto$alumacc.cc:474:replace_alu$6135.C[10] budget 0.000000 ns (15,9) -> (15,9)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[10].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 10.2  Source $auto$alumacc.cc:474:replace_alu$6135.slice[10].carry$CARRY.COUT
+Info:  0.0 10.2    Net $auto$alumacc.cc:474:replace_alu$6135.C[11] budget 0.000000 ns (15,9) -> (15,9)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[11].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 10.5  Source $auto$alumacc.cc:474:replace_alu$6135.slice[11].carry$CARRY.COUT
+Info:  0.0 10.5    Net $auto$alumacc.cc:474:replace_alu$6135.C[12] budget 0.000000 ns (15,9) -> (15,9)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[12].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 10.8  Source $auto$alumacc.cc:474:replace_alu$6135.slice[12].carry$CARRY.COUT
+Info:  0.0 10.8    Net $auto$alumacc.cc:474:replace_alu$6135.C[13] budget 0.000000 ns (15,9) -> (15,9)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[13].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 11.0  Source $auto$alumacc.cc:474:replace_alu$6135.slice[13].carry$CARRY.COUT
+Info:  0.0 11.0    Net $auto$alumacc.cc:474:replace_alu$6135.C[14] budget 0.000000 ns (15,9) -> (15,9)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[14].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 11.3  Source $auto$alumacc.cc:474:replace_alu$6135.slice[14].carry$CARRY.COUT
+Info:  0.0 11.3    Net $auto$alumacc.cc:474:replace_alu$6135.C[15] budget 0.000000 ns (15,9) -> (15,9)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[15].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 11.6  Source $auto$alumacc.cc:474:replace_alu$6135.slice[15].carry$CARRY.COUT
+Info:  0.6 12.2    Net $auto$alumacc.cc:474:replace_alu$6135.C[16] budget 0.560000 ns (15,9) -> (15,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[16].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 12.4  Source $auto$alumacc.cc:474:replace_alu$6135.slice[16].carry$CARRY.COUT
+Info:  0.0 12.4    Net $auto$alumacc.cc:474:replace_alu$6135.C[17] budget 0.000000 ns (15,10) -> (15,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[17].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 12.7  Source $auto$alumacc.cc:474:replace_alu$6135.slice[17].carry$CARRY.COUT
+Info:  0.0 12.7    Net $auto$alumacc.cc:474:replace_alu$6135.C[18] budget 0.000000 ns (15,10) -> (15,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[18].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 13.0  Source $auto$alumacc.cc:474:replace_alu$6135.slice[18].carry$CARRY.COUT
+Info:  0.0 13.0    Net $auto$alumacc.cc:474:replace_alu$6135.C[19] budget 0.000000 ns (15,10) -> (15,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[19].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 13.3  Source $auto$alumacc.cc:474:replace_alu$6135.slice[19].carry$CARRY.COUT
+Info:  0.0 13.3    Net $auto$alumacc.cc:474:replace_alu$6135.C[20] budget 0.000000 ns (15,10) -> (15,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[20].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 13.5  Source $auto$alumacc.cc:474:replace_alu$6135.slice[20].carry$CARRY.COUT
+Info:  0.0 13.5    Net $auto$alumacc.cc:474:replace_alu$6135.C[21] budget 0.000000 ns (15,10) -> (15,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[21].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 13.8  Source $auto$alumacc.cc:474:replace_alu$6135.slice[21].carry$CARRY.COUT
+Info:  0.0 13.8    Net $auto$alumacc.cc:474:replace_alu$6135.C[22] budget 0.000000 ns (15,10) -> (15,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[22].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 14.1  Source $auto$alumacc.cc:474:replace_alu$6135.slice[22].carry$CARRY.COUT
+Info:  0.0 14.1    Net $auto$alumacc.cc:474:replace_alu$6135.C[23] budget 0.000000 ns (15,10) -> (15,10)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[23].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 14.4  Source $auto$alumacc.cc:474:replace_alu$6135.slice[23].carry$CARRY.COUT
+Info:  0.6 14.9    Net $auto$alumacc.cc:474:replace_alu$6135.C[24] budget 0.560000 ns (15,10) -> (15,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[24].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 15.2  Source $auto$alumacc.cc:474:replace_alu$6135.slice[24].carry$CARRY.COUT
+Info:  0.0 15.2    Net $auto$alumacc.cc:474:replace_alu$6135.C[25] budget 0.000000 ns (15,11) -> (15,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[25].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 15.5  Source $auto$alumacc.cc:474:replace_alu$6135.slice[25].carry$CARRY.COUT
+Info:  0.0 15.5    Net $auto$alumacc.cc:474:replace_alu$6135.C[26] budget 0.000000 ns (15,11) -> (15,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[26].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 15.8  Source $auto$alumacc.cc:474:replace_alu$6135.slice[26].carry$CARRY.COUT
+Info:  0.0 15.8    Net $auto$alumacc.cc:474:replace_alu$6135.C[27] budget 0.000000 ns (15,11) -> (15,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[27].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 16.0  Source $auto$alumacc.cc:474:replace_alu$6135.slice[27].carry$CARRY.COUT
+Info:  0.0 16.0    Net $auto$alumacc.cc:474:replace_alu$6135.C[28] budget 0.000000 ns (15,11) -> (15,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[28].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 16.3  Source $auto$alumacc.cc:474:replace_alu$6135.slice[28].carry$CARRY.COUT
+Info:  0.0 16.3    Net $auto$alumacc.cc:474:replace_alu$6135.C[29] budget 0.000000 ns (15,11) -> (15,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[29].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 16.6  Source $auto$alumacc.cc:474:replace_alu$6135.slice[29].carry$CARRY.COUT
+Info:  0.0 16.6    Net $auto$alumacc.cc:474:replace_alu$6135.C[30] budget 0.000000 ns (15,11) -> (15,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[30].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 16.9  Source $auto$alumacc.cc:474:replace_alu$6135.slice[30].carry$CARRY.COUT
+Info:  0.0 16.9    Net $auto$alumacc.cc:474:replace_alu$6135.C[31] budget 0.000000 ns (15,11) -> (15,11)
+Info:                Sink $auto$alumacc.cc:474:replace_alu$6135.slice[31].carry$CARRY.CIN
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:185
+Info:                  /usr/bin/../share/yosys/ice40/arith_map.v:43
+Info:  0.3 17.2  Source $auto$alumacc.cc:474:replace_alu$6135.slice[31].carry$CARRY.COUT
+Info:  1.2 18.4    Net $abc$52016$auto$alumacc.cc:491:replace_alu$6137[31] budget 1.220000 ns (15,11) -> (15,12)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52022_LC.I3
+Info:  0.9 19.2  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52022_LC.O
+Info:  3.0 22.2    Net $abc$52016$auto$rtlil.cc:1832:Not$6147_new_ budget 3.755000 ns (15,12) -> (17,14)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52068_LC.I0
+Info:  1.3 23.5  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52068_LC.O
+Info:  3.6 27.1    Net $abc$52016$techmap\soc.spimemio.$logic_not$/mnt/toshiba4tb/workspace/projects/picorv32/picosoc/spimemio.v:282$939_Y_new_inv_ budget 3.755000 ns (17,14) -> (22,20)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52144_LC.I1
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:182
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picosoc/spimemio.v:282
+Info:  1.2 28.3  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52144_LC.O
+Info:  1.8 30.1    Net $abc$52016$new_n3391_ budget 3.755000 ns (22,20) -> (22,20)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52139_LC.I0
+Info:  1.3 31.4  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52139_LC.O
+Info:  3.0 34.3    Net soc.mem_rdata[16] budget 3.755000 ns (22,20) -> (22,24)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52138_LC.I1
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:83
+Info:  1.2 35.5  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52138_LC.O
+Info:  1.8 37.3    Net $abc$52016$new_n3385_ budget 3.755000 ns (22,24) -> (21,25)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52128_LC.I0
+Info:  1.3 38.6  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52128_LC.O
+Info:  1.8 40.3    Net $abc$52016$auto$simplemap.cc:309:simplemap_lut$10635[1] budget 3.755000 ns (21,25) -> (22,25)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52127_LC.I0
+Info:  1.3 41.6  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52127_LC.O
+Info:  4.6 46.2    Net $abc$52016$techmap\soc.cpu.$logic_or$/mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:378$1150_Y_new_inv_ budget 4.047000 ns (22,25) -> (9,26)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52470_LC.I0
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:146
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:378
+Info:  1.3 47.5  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52470_LC.O
+Info:  3.7 51.2    Net $abc$52016$soc.cpu.mem_done_new_ budget 4.047000 ns (9,26) -> (8,17)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52607_LC.I1
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:146
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:377
+Info:  1.2 52.4  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52607_LC.O
+Info:  5.6 58.0    Net $abc$52016$techmap\soc.cpu.$3\set_mem_do_rdata[0:0]_new_ budget 4.056000 ns (8,17) -> (10,4)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52680_LC.I2
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:146
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:1436
+Info:  1.2 59.3  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52680_LC.O
+Info:  1.8 61.0    Net $abc$52016$techmap$techmap\soc.cpu.$procmux$3340.$and$/usr/bin/../share/yosys/techmap.v:434$13101_Y[14]_new_ budget 4.056000 ns (10,4) -> (10,4)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$55196_LC.I2
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:146
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:1520
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:1914
+Info:                  /usr/bin/../share/yosys/techmap.v:434
+Info:  1.2 62.2  Source $abc$52016$auto$blifparse.cc:492:parse_blif$55196_LC.O
+Info:  1.8 64.0    Net $abc$52016$new_n6800_ budget 4.056000 ns (10,4) -> (10,3)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$55197_LC.I1
+Info:  1.2 65.2  Setup $abc$52016$auto$blifparse.cc:492:parse_blif$55197_LC.I1
+Info: 26.5 ns logic, 38.6 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge clk$SB_IO_IN_$glb_clk':
+Info: curr total
+Info:  0.0  0.0  Source flash_io_buf[0].D_IN_0
+Info:  4.8  4.8    Net flash_io0_di budget 5.297000 ns (23,0) -> (16,11)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52133_LC.I3
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:102
+Info:  0.9  5.7  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52133_LC.O
+Info:  1.8  7.4    Net $abc$52016$new_n3380_ budget 3.755000 ns (16,11) -> (17,11)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52132_LC.I3
+Info:  0.9  8.3  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52132_LC.O
+Info:  2.4 10.7    Net $abc$52016$techmap\soc.$ternary$/mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:123$1820_Y[0]_new_inv_ budget 3.755000 ns (17,11) -> (17,13)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52131_LC.I1
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:123
+Info:  1.2 11.9  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52131_LC.O
+Info:  1.8 13.7    Net $abc$52016$new_n3378_ budget 3.755000 ns (17,13) -> (17,14)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52130_LC.I1
+Info:  1.2 14.9  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52130_LC.O
+Info:  4.2 19.2    Net $abc$52016$soc.cpu.mem_rdata[0]_new_inv_ budget 3.755000 ns (17,14) -> (21,24)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52129_LC.I1
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:146
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:101
+Info:  1.2 20.4  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52129_LC.O
+Info:  1.8 22.2    Net $abc$52016$new_n3376_ budget 3.755000 ns (21,24) -> (21,25)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52128_LC.I1
+Info:  1.2 23.4  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52128_LC.O
+Info:  1.8 25.2    Net $abc$52016$auto$simplemap.cc:309:simplemap_lut$10635[1] budget 3.755000 ns (21,25) -> (22,25)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52127_LC.I0
+Info:  1.3 26.4  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52127_LC.O
+Info:  4.6 31.0    Net $abc$52016$techmap\soc.cpu.$logic_or$/mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:378$1150_Y_new_inv_ budget 4.047000 ns (22,25) -> (9,26)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52470_LC.I0
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:146
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:378
+Info:  1.3 32.3  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52470_LC.O
+Info:  3.7 36.0    Net $abc$52016$soc.cpu.mem_done_new_ budget 4.047000 ns (9,26) -> (8,17)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52607_LC.I1
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:146
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:377
+Info:  1.2 37.2  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52607_LC.O
+Info:  5.6 42.9    Net $abc$52016$techmap\soc.cpu.$3\set_mem_do_rdata[0:0]_new_ budget 4.056000 ns (8,17) -> (10,4)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52680_LC.I2
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:146
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:1436
+Info:  1.2 44.1  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52680_LC.O
+Info:  1.8 45.8    Net $abc$52016$techmap$techmap\soc.cpu.$procmux$3340.$and$/usr/bin/../share/yosys/techmap.v:434$13101_Y[14]_new_ budget 4.056000 ns (10,4) -> (10,4)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$55196_LC.I2
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:146
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:1520
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picorv32.v:1914
+Info:                  /usr/bin/../share/yosys/techmap.v:434
+Info:  1.2 47.0  Source $abc$52016$auto$blifparse.cc:492:parse_blif$55196_LC.O
+Info:  1.8 48.8    Net $abc$52016$new_n6800_ budget 4.056000 ns (10,4) -> (10,3)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$55197_LC.I1
+Info:  1.2 50.0  Setup $abc$52016$auto$blifparse.cc:492:parse_blif$55197_LC.I1
+Info: 14.1 ns logic, 35.9 ns routing
+
+Info: Critical path report for cross-domain path 'posedge clk$SB_IO_IN_$glb_clk' -> '<async>':
+Info: curr total
+Info:  1.4  1.4  Source $abc$52016$auto$blifparse.cc:492:parse_blif$53234_LC.O
+Info:  1.8  3.2    Net soc.spimemio.xfer.xfer_dspi budget 4.694000 ns (22,4) -> (22,3)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$52311_LC.I0
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:182
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picosoc/spimemio.v:174
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picosoc/spimemio.v:420
+Info:  1.3  4.4  Source $abc$52016$auto$blifparse.cc:492:parse_blif$52311_LC.O
+Info:  1.8  6.2    Net $abc$52016$auto$simplemap.cc:168:logic_reduce$20904_new_inv_ budget 12.158000 ns (22,3) -> (21,2)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$53878_LC.I0
+Info:  1.3  7.5  Source $abc$52016$auto$blifparse.cc:492:parse_blif$53878_LC.O
+Info:  1.8  9.2    Net $abc$52016$techmap$techmap\soc.spimemio.xfer.$procmux$5094.$ternary$/usr/bin/../share/yosys/techmap.v:445$12259_Y budget 15.383000 ns (21,2) -> (21,1)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$53877_LC.I1
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:182
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picosoc/spimemio.v:174
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picosoc/spimemio.v:464
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picosoc/spimemio.v:498
+Info:                  /usr/bin/../share/yosys/techmap.v:445
+Info:  1.2 10.5  Source $abc$52016$auto$blifparse.cc:492:parse_blif$53877_LC.O
+Info:  1.8 12.2    Net $abc$52016$techmap\soc.spimemio.$ternary$/mnt/toshiba4tb/workspace/projects/picorv32/picosoc/spimemio.v:166$914_Y_new_inv_ budget 12.613000 ns (21,1) -> (21,1)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$53876_LC.I1
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:182
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picosoc/spimemio.v:166
+Info:  1.2 13.5  Source $abc$52016$auto$blifparse.cc:492:parse_blif$53876_LC.O
+Info:  3.0 16.4    Net flash_io0_do budget 12.613000 ns (21,1) -> (23,0)
+Info:                Sink flash_io_buf[0].D_OUT_0
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:182
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picosoc/spimemio.v:36
+Info: 6.4 ns logic, 10.0 ns routing
+
+Info: Critical path report for cross-domain path 'negedge clk$SB_IO_IN_$glb_clk' -> '<async>':
+Info: curr total
+Info:  1.4  1.4  Source $auto$simplemap.cc:420:simplemap_dff$18257_DFFLC.O
+Info:  1.8  3.2    Net soc.spimemio.xfer_io0_90 budget 12.614000 ns (20,1) -> (21,1)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$53877_LC.I2
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:182
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picosoc/spimemio.v:146
+Info:  1.2  4.4  Source $abc$52016$auto$blifparse.cc:492:parse_blif$53877_LC.O
+Info:  1.8  6.1    Net $abc$52016$techmap\soc.spimemio.$ternary$/mnt/toshiba4tb/workspace/projects/picorv32/picosoc/spimemio.v:166$914_Y_new_inv_ budget 12.613000 ns (21,1) -> (21,1)
+Info:                Sink $abc$52016$auto$blifparse.cc:492:parse_blif$53876_LC.I1
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:182
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picosoc/spimemio.v:166
+Info:  1.2  7.3  Source $abc$52016$auto$blifparse.cc:492:parse_blif$53876_LC.O
+Info:  3.0 10.3    Net flash_io0_do budget 12.613000 ns (21,1) -> (23,0)
+Info:                Sink flash_io_buf[0].D_OUT_0
+Info:                Defined in:
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/icebreaker_dbg.v:115
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/opt/rtl/picosoc_dbg.v:182
+Info:                  /mnt/toshiba4tb/workspace/projects/picorv32/picosoc/spimemio.v:36
+Info: 3.8 ns logic, 6.5 ns routing
+
+Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 15.35 MHz (PASS at 12.00 MHz)
+
+Info: Max delay <async>                       -> posedge clk$SB_IO_IN_$glb_clk: 49.97 ns
+Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 16.42 ns
+Info: Max delay negedge clk$SB_IO_IN_$glb_clk -> <async>                      : 10.30 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 21 endpoint(s)
+Info:          + represents [1,21) endpoint(s)
+Info: [ 18172,  21232) |***+
+Info: [ 21232,  24292) |**+
+Info: [ 24292,  27352) |***+
+Info: [ 27352,  30412) |*+
+Info: [ 30412,  33472) |****+
+Info: [ 33472,  36532) |******+
+Info: [ 36532,  39592) |*******+
+Info: [ 39592,  42652) |*********+
+Info: [ 42652,  45712) |********+
+Info: [ 45712,  48772) |*******+
+Info: [ 48772,  51832) |*****+
+Info: [ 51832,  54892) |*****+
+Info: [ 54892,  57952) |**********+
+Info: [ 57952,  61012) |**********+
+Info: [ 61012,  64072) |************+
+Info: [ 64072,  67132) |******************+
+Info: [ 67132,  70192) |***********************************************+
+Info: [ 70192,  73252) |********************+
+Info: [ 73252,  76312) |**************************+
+Info: [ 76312,  79372) |************************************************************ 
+
+Info: Program finished normally.

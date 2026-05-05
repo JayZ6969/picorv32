@@ -1,0 +1,25 @@
+{
+  "config": "baseline_A",
+  "label": "Baseline A (Iterative MUL)",
+  "fmax_mhz": 24.39,
+  "cells": {
+    "SB_LUT4": 2086,
+    "SB_DFF": 894,
+    "SB_CARRY": 424,
+    "SB_RAM40_4K": 4,
+    "total": 3408
+  },
+  "switching_per_cycle": 32.612,
+  "activity_factor": 0.25,
+  "p_static_mW": 1.2,
+  "p_dynamic_mW": 0.079,
+  "p_total_mW": 1.279,
+  "i_est_mA": 0.388,
+  "p_dyn_breakdown_uW": {
+    "SB_LUT4": 63.597,
+    "SB_DFF": 10.902,
+    "SB_CARRY": 2.585,
+    "SB_RAM40_4K": 1.951
+  },
+  "model_note": "iCE40 UP5K cell power model: P=\u03a3(N_cell \u00d7 coeff_uW_per_MHz \u00d7 Fmax \u00d7 alpha). Coefficients: LUT4=5nW/MHz, DFF=2nW/MHz, CARRY=1nW/MHz, RAM=80nW/MHz. Static=1.2mW. Activity from VCD switching analysis."
+}

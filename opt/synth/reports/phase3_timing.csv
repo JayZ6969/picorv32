@@ -1,0 +1,6 @@
+config,label,T1_fmax_mhz,T1_fmax_source,T2_crit_path_ns,T3_crit_path_module,T4_crit_path_nets,T5_setup_slack_ns,T6_hold_ok,T7_logic_levels,T5_timing_met,routing_failed,timing_provisional,pnr_exit_code,T1_fmax_constrained
+baseline_A,Baseline A  (Iterative MUL),27.36,nextpnr_log,41.0,,14,46.784,True,37,True,False,False,0,12.0
+baseline_B,Baseline B  (Fast MUL/DSP),,none,,,,,True,,,True,False,1,
+baseline_C,Baseline C  (Core only),27.05,nextpnr_log,41.74,,40,46.365,True,40,True,False,False,0,12.0
+baseline_C_ksa,Baseline C' (Core + KSA),21.73,nextpnr_log,44.79,ksa_adder,13,37.314,True,13,True,False,False,0,12.0
+optimized,Optimized   (Vedic + KSA),21.2,nextpnr_log,46.1,ksa_adder,13,36.164,True,13,True,False,False,0,12.0

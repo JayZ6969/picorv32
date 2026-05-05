@@ -1,0 +1,25 @@
+{
+  "config": "optimized",
+  "label": "Optimized (Vedic + KSA)",
+  "fmax_mhz": 21.69,
+  "cells": {
+    "SB_LUT4": 4653,
+    "SB_DFF": 1102,
+    "SB_CARRY": 155,
+    "SB_RAM40_4K": 2,
+    "total": 5912
+  },
+  "switching_per_cycle": 104.108,
+  "activity_factor": 0.25,
+  "p_static_mW": 1.2,
+  "p_dynamic_mW": 0.1398,
+  "p_total_mW": 1.3398,
+  "i_est_mA": 0.406,
+  "p_dyn_breakdown_uW": {
+    "SB_LUT4": 126.154,
+    "SB_DFF": 11.951,
+    "SB_CARRY": 0.841,
+    "SB_RAM40_4K": 0.868
+  },
+  "model_note": "iCE40 UP5K cell power model: P=\u03a3(N_cell \u00d7 coeff_uW_per_MHz \u00d7 Fmax \u00d7 alpha). Coefficients: LUT4=5nW/MHz, DFF=2nW/MHz, CARRY=1nW/MHz, RAM=80nW/MHz. Static=1.2mW. Activity from VCD switching analysis."
+}

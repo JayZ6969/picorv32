@@ -1,0 +1,5 @@
+config,label,SB_LUT4,SB_DFF,SB_CARRY,SB_MAC16,SB_RAM40_4K,LUT_util_pct,Fmax_MHz,fmax_source,timing_provisional,routing_failed,timing_note,pnr_exit_code,crit_path_ns,crit_module,setup_slack_ns,timing_met,logic_levels,total_cycles,stall_cycles,stall_pct,eff_ipc,pcpi_latency,throughput_MOPS,switching_trans,E1_ADP,E2_ACP,E3_speedup_A,E4_speedup_B,E5_MOPS_LUT
+baseline_A,Baseline A  (Iterative MUL),2086,119,424,0,4,39.5,27.36,nextpnr_log,False,False,,0,41.0,,46.784,True,37,547.0,387.0,70.749543,0.065814,61.0,0.449,17839,85526.0,127246.0,1.0,0.331,0.00021502
+baseline_B,Baseline B  (Fast MUL/DSP),5036,181,461,0,4,95.4,,none,False,True,Routing failed - device over-utilized at 95.4% LUT (expected for fast_mul baseline on UP5K),1,,,,False,0,181.0,0.0,0.0,0.198895,3.0,,6748,,15108.0,3.022,1.0,
+baseline_C,Baseline C  (Core only),1661,116,370,0,4,31.5,27.05,nextpnr_log,False,False,,0,41.74,,46.365,True,40,,,,,,,,69330.14,,,,
+optimized,Optimized   (Vedic + KSA),4653,650,155,0,2,88.1,21.2,nextpnr_log,False,False,,0,46.1,ksa_adder,36.164,True,13,216.0,84.0,38.888889,0.166667,7.0,3.029,20301,214503.3,32571.0,2.532,0.838,0.00065089

@@ -1,0 +1,95 @@
+
+icetime topological timing analysis report
+==========================================
+
+Info: max_span_hack is enabled: estimate is conservative.
+
+Report for critical path:
+-------------------------
+
+        lc40_5_1_7 (LogicCell40) [clk] -> lcout: 1.491 ns
+     1.491 ns net_18898 (u_core.ksa_add_b_buf[1])
+        odrv_5_1_18898_15208 (Odrv4) I -> O: 0.649 ns
+        t5163 (Span4Mux_v4) I -> O: 0.649 ns
+        t5162 (Span4Mux_v4) I -> O: 0.649 ns
+        t5161 (LocalMux) I -> O: 1.099 ns
+        inmux_7_8_30700_30755 (InMux) I -> O: 0.662 ns
+        t613 (CascadeMux) I -> O: 0.000 ns
+        lc40_7_8_4 (LogicCell40) in2 -> lcout: 1.205 ns
+     6.404 ns net_27281 ($abc$26362$u_core.u_alu_add_ksa.carry[2]_new_)
+        odrv_7_8_27281_30800 (Odrv4) I -> O: 0.649 ns
+        t6417 (Span4Mux_v4) I -> O: 0.649 ns
+        t6416 (LocalMux) I -> O: 1.099 ns
+        inmux_11_9_46172_46200 (InMux) I -> O: 0.662 ns
+        lc40_11_9_4 (LogicCell40) in0 -> lcout: 1.285 ns
+    10.749 ns net_42275 ($abc$26362$u_core.u_alu_add_ksa.carry[4]_new_)
+        t8430 (LocalMux) I -> O: 1.099 ns
+        inmux_12_9_49986_50044 (InMux) I -> O: 0.662 ns
+        lc40_12_9_6 (LogicCell40) in1 -> lcout: 1.232 ns
+    13.742 ns net_46108 ($abc$26362$new_n2282_)
+        t8737 (LocalMux) I -> O: 1.099 ns
+        inmux_13_9_53819_53851 (InMux) I -> O: 0.662 ns
+        lc40_13_9_2 (LogicCell40) in1 -> lcout: 1.232 ns
+    16.735 ns net_49935 ($abc$26362$u_core.u_alu_add_ksa.carry[9]_new_)
+        odrv_13_9_49935_53905 (Odrv4) I -> O: 0.649 ns
+        t9021 (Span4Mux_v4) I -> O: 0.649 ns
+        t9020 (LocalMux) I -> O: 1.099 ns
+        inmux_13_13_54301_54351 (InMux) I -> O: 0.662 ns
+        lc40_13_13_3 (LogicCell40) in3 -> lcout: 0.874 ns
+    20.669 ns net_50428 ($abc$26362$new_n2394_)
+        t9065 (LocalMux) I -> O: 1.099 ns
+        inmux_13_14_54423_54483 (InMux) I -> O: 0.662 ns
+        lc40_13_14_5 (LogicCell40) in0 -> lcout: 1.285 ns
+    23.715 ns net_50553 ($abc$26362$u_core.u_alu_add_ksa.carry[15]_new_inv_)
+        odrv_13_14_50553_54533 (Odrv4) I -> O: 0.649 ns
+        t9083 (LocalMux) I -> O: 1.099 ns
+        inmux_13_17_54803_54866 (InMux) I -> O: 0.662 ns
+        t1379 (CascadeMux) I -> O: 0.000 ns
+        lc40_13_17_7 (LogicCell40) in2 -> lcout: 1.205 ns
+    27.331 ns net_50924 ($abc$26362$new_n2502_)
+        t9117 (LocalMux) I -> O: 1.099 ns
+        inmux_13_18_54919_54963 (InMux) I -> O: 0.662 ns
+        lc40_13_18_3 (LogicCell40) in0 -> lcout: 1.285 ns
+    30.377 ns net_51043 ($abc$26362$u_core.u_alu_add_ksa.carry[21]_new_inv_)
+        t9121 (LocalMux) I -> O: 1.099 ns
+        inmux_13_19_55038_55081 (InMux) I -> O: 0.662 ns
+        lc40_13_19_2 (LogicCell40) in1 -> lcout: 1.232 ns
+    33.370 ns net_51165 ($abc$26362$new_n2608_)
+        t9132 (LocalMux) I -> O: 1.099 ns
+        inmux_13_20_55160_55193 (InMux) I -> O: 0.662 ns
+        t1394 (CascadeMux) I -> O: 0.000 ns
+        lc40_13_20_0 (LogicCell40) in2 -> lcout: 1.205 ns
+    36.337 ns net_51286 ($abc$26362$u_core.u_alu_add_ksa.carry[27]_new_inv_)
+        t9138 (LocalMux) I -> O: 1.099 ns
+        inmux_12_19_51228_51250 (InMux) I -> O: 0.662 ns
+        lc40_12_19_2 (LogicCell40) in1 -> lcout: 1.232 ns
+    39.330 ns net_47334 ($abc$26362$u_core.u_alu_add_ksa.carry[29]_new_inv_)
+        t8871 (LocalMux) I -> O: 1.099 ns
+        inmux_11_18_47268_47316 (InMux) I -> O: 0.662 ns
+        lc40_11_18_5 (LogicCell40) in3 -> lcout: 0.874 ns
+    41.966 ns net_43383 ($abc$26362$new_n2859_)
+        t8615 (LocalMux) I -> O: 1.099 ns
+        inmux_11_17_47140_47196 (InMux) I -> O: 0.662 ns
+    43.728 ns net_47196 ($abc$26362$new_n2859_)
+        lc40_11_17_6 (LogicCell40) in0 [setup]: 1.060 ns
+    44.787 ns net_43261 (u_core.alu_out_q[31])
+
+Resolvable net names on path:
+     1.491 ns ..  5.199 ns u_core.ksa_add_b_buf[1]
+     6.404 ns ..  9.464 ns $abc$26362$u_core.u_alu_add_ksa.carry[2]_new_
+    10.749 ns .. 12.510 ns $abc$26362$u_core.u_alu_add_ksa.carry[4]_new_
+    13.742 ns .. 15.503 ns $abc$26362$new_n2282_
+    16.735 ns .. 19.795 ns $abc$26362$u_core.u_alu_add_ksa.carry[9]_new_
+    20.669 ns .. 22.430 ns $abc$26362$new_n2394_
+    23.715 ns .. 26.126 ns $abc$26362$u_core.u_alu_add_ksa.carry[15]_new_inv_
+    27.331 ns .. 29.092 ns $abc$26362$new_n2502_
+    30.377 ns .. 32.139 ns $abc$26362$u_core.u_alu_add_ksa.carry[21]_new_inv_
+    33.370 ns .. 35.132 ns $abc$26362$new_n2608_
+    36.337 ns .. 38.099 ns $abc$26362$u_core.u_alu_add_ksa.carry[27]_new_inv_
+    39.330 ns .. 41.092 ns $abc$26362$u_core.u_alu_add_ksa.carry[29]_new_inv_
+    41.966 ns .. 43.728 ns $abc$26362$new_n2859_
+                  lcout -> u_core.alu_out_q[31]
+
+Total number of logic levels: 13
+Total path delay: 44.79 ns (22.33 MHz)
+

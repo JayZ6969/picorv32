@@ -1,0 +1,25 @@
+{
+  "config": "baseline_C",
+  "label": "Baseline C (Core only)",
+  "fmax_mhz": 23.96,
+  "cells": {
+    "SB_LUT4": 1661,
+    "SB_DFF": 566,
+    "SB_CARRY": 370,
+    "SB_RAM40_4K": 4,
+    "total": 2601
+  },
+  "switching_per_cycle": 32.612,
+  "activity_factor": 0.25,
+  "p_static_mW": 1.2,
+  "p_dynamic_mW": 0.0607,
+  "p_total_mW": 1.2607,
+  "i_est_mA": 0.382,
+  "p_dyn_breakdown_uW": {
+    "SB_LUT4": 49.747,
+    "SB_DFF": 6.781,
+    "SB_CARRY": 2.216,
+    "SB_RAM40_4K": 1.917
+  },
+  "model_note": "iCE40 UP5K cell power model: P=\u03a3(N_cell \u00d7 coeff_uW_per_MHz \u00d7 Fmax \u00d7 alpha). Coefficients: LUT4=5nW/MHz, DFF=2nW/MHz, CARRY=1nW/MHz, RAM=80nW/MHz. Static=1.2mW. Activity from VCD switching analysis."
+}

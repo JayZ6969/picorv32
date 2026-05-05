@@ -1,0 +1,26 @@
+
+8. Printing statistics.
+
+=== icebreaker_dbg ===
+
+   Number of wires:               3959
+   Number of wire bits:           8228
+   Number of public wires:         396
+   Number of public wire bits:    3717
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               6164
+     SB_CARRY                      753
+     SB_DFF                        130
+     SB_DFFE                       593
+     SB_DFFESR                     448
+     SB_DFFESS                      55
+     SB_DFFNSR                       4
+     SB_DFFSR                      207
+     SB_DFFSS                        6
+     SB_IO                           4
+     SB_LUT4                      3956
+     SB_RAM40_4K                     4
+     SB_SPRAM256KA                   4
+

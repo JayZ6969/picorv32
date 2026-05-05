@@ -1,0 +1,4 @@
+flash offset: 0x00100000
+read flash (1180 (0x49c) Bytes)
+read 0x00100000
+done

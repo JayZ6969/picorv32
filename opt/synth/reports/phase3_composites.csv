@@ -1,0 +1,5 @@
+config,label,LUT4,Fmax_MHz,cycles_per_MUL,throughput_MOPS,E1_ADP,E2_ACP,E3_speedup_A,E4_speedup_B,E5_MOPS_LUT
+baseline_A,Baseline A  (Iterative MUL),2086,27.4,61,0.449,85526.0,127246,1.0,0.331,0.00021502
+baseline_B,Baseline B  (Fast MUL/DSP),5036,,3,,,15108,3.022,1.0,
+baseline_C,Baseline C  (Core only),1661,27.1,,,69330.14,,,,
+optimized,Optimized   (Vedic + KSA),4653,21.2,7,3.029,214503.3,32571,2.532,0.838,0.00065089

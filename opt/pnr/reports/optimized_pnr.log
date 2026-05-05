@@ -1,0 +1,301 @@
+Info: constrained 'clk' to bel 'X12/Y31/io1'
+Info: constrained 'resetn' to bel 'X8/Y0/io0'
+Info: constrained 'trap' to bel 'X6/Y31/io0'
+Warning: unmatched constraint 'uart_tx' (on line 7)
+Warning: unmatched constraint 'uart_rx' (on line 8)
+Warning: IO 'mem_wstrb[3]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wstrb[2]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wstrb[1]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wstrb[0]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[7]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[6]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[5]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[4]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[3]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[2]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[1]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[0]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_valid' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_instr' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[7]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[6]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[5]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[4]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[3]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[2]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[1]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[0]' is unconstrained in PCF and will be automatically placed
+
+Info: Packing constants..
+Info: Packing IOs..
+Info: Packing LUT-FFs..
+Info:     3926 LCs used as LUT4 only
+Info:      727 LCs used as LUT4 and DFF
+Info: Packing non-LUT FFs..
+Info:      375 LCs used as DFF only
+Info: Packing carries..
+Info:       67 LCs used as CARRY only
+Info: Packing RAMs..
+Info: Placing PLLs..
+Info: Packing special functions..
+Info: Packing PLLs..
+Info: Promoting globals..
+Info: promoting clk$SB_IO_IN (fanout 1106)
+Info: promoting $abc$56944$auto$rtlil.cc:1969:NotGate$56650 [reset] (fanout 246)
+Info: promoting $abc$56944$auto$rtlil.cc:1969:NotGate$56670 [reset] (fanout 32)
+Info: promoting $abc$56944$auto$rtlil.cc:1969:NotGate$56800 [reset] (fanout 31)
+Info: promoting $abc$56944$auto$dff2dffe.cc:175:make_patterns_logic$53496 [cen] (fanout 66)
+Info: promoting $abc$56944$auto$dff2dffe.cc:175:make_patterns_logic$49635 [cen] (fanout 64)
+Info: promoting $abc$56944$auto$dff2dffe.cc:158:make_patterns_logic$49044 [cen] (fanout 64)
+Info: promoting $abc$56944$auto$dff2dffe.cc:175:make_patterns_logic$52280 [cen] (fanout 64)
+Info: Constraining chains...
+Info:        4 LCs used to legalise carry chains.
+Info: Checksum: 0x0d2bd88b
+
+Info: Annotating ports with timing budgets for target frequency 12.00 MHz
+Info: Checksum: 0xa8cc36e2
+
+Info: Device utilisation:
+Info: 	         ICESTORM_LC:  5101/ 5280    96%
+Info: 	        ICESTORM_RAM:     2/   30     6%
+Info: 	               SB_IO:    25/   96    26%
+Info: 	               SB_GB:     8/    8   100%
+Info: 	        ICESTORM_PLL:     0/    1     0%
+Info: 	         SB_WARMBOOT:     0/    1     0%
+Info: 	        ICESTORM_DSP:     0/    8     0%
+Info: 	      ICESTORM_HFOSC:     0/    1     0%
+Info: 	      ICESTORM_LFOSC:     0/    1     0%
+Info: 	              SB_I2C:     0/    2     0%
+Info: 	              SB_SPI:     0/    2     0%
+Info: 	              IO_I3C:     0/    2     0%
+Info: 	         SB_LEDDA_IP:     0/    1     0%
+Info: 	         SB_RGBA_DRV:     0/    1     0%
+Info: 	      ICESTORM_SPRAM:     0/    4     0%
+
+Info: Placed 3 cells based on constraints.
+Info: Creating initial analytic placement for 4953 cells, random placement wirelen = 137154.
+Info:     at initial placer iter 0, wirelen = 854
+Info:     at initial placer iter 1, wirelen = 909
+Info:     at initial placer iter 2, wirelen = 855
+Info:     at initial placer iter 3, wirelen = 841
+Info: Running main analytical placer.
+Info:     at iteration #1, type ALL: wirelen solved = 865, spread = 28936, legal = 30547; time = 1.03s
+Info:     at iteration #2, type ALL: wirelen solved = 1721, spread = 24396, legal = 26152; time = 0.10s
+Info:     at iteration #3, type ALL: wirelen solved = 3567, spread = 19441, legal = 20577; time = 0.09s
+Info:     at iteration #4, type ALL: wirelen solved = 4977, spread = 17401, legal = 19933; time = 0.11s
+Info:     at iteration #5, type ALL: wirelen solved = 5986, spread = 16415, legal = 19065; time = 0.10s
+Info:     at iteration #6, type ALL: wirelen solved = 6634, spread = 15886, legal = 18296; time = 0.10s
+Info:     at iteration #7, type ALL: wirelen solved = 7303, spread = 15309, legal = 16742; time = 0.08s
+Info:     at iteration #8, type ALL: wirelen solved = 7600, spread = 14940, legal = 16560; time = 0.08s
+Info:     at iteration #9, type ALL: wirelen solved = 8066, spread = 14486, legal = 15968; time = 0.08s
+Info:     at iteration #10, type ALL: wirelen solved = 8476, spread = 14059, legal = 15919; time = 0.08s
+Info:     at iteration #11, type ALL: wirelen solved = 8550, spread = 14035, legal = 15958; time = 0.08s
+Info:     at iteration #12, type ALL: wirelen solved = 8861, spread = 13944, legal = 16072; time = 0.08s
+Info:     at iteration #13, type ALL: wirelen solved = 9046, spread = 13902, legal = 15714; time = 0.08s
+Info:     at iteration #14, type ALL: wirelen solved = 9222, spread = 13811, legal = 15576; time = 0.08s
+Info:     at iteration #15, type ALL: wirelen solved = 9430, spread = 13668, legal = 15216; time = 0.07s
+Info:     at iteration #16, type ALL: wirelen solved = 9475, spread = 13721, legal = 15451; time = 0.07s
+Info:     at iteration #17, type ALL: wirelen solved = 9758, spread = 13501, legal = 15227; time = 0.07s
+Info:     at iteration #18, type ALL: wirelen solved = 9916, spread = 13526, legal = 15010; time = 0.08s
+Info:     at iteration #19, type ALL: wirelen solved = 9829, spread = 13408, legal = 15083; time = 0.08s
+Info:     at iteration #20, type ALL: wirelen solved = 10022, spread = 13334, legal = 15409; time = 0.07s
+Info:     at iteration #21, type ALL: wirelen solved = 10080, spread = 13318, legal = 15032; time = 0.07s
+Info:     at iteration #22, type ALL: wirelen solved = 10206, spread = 13367, legal = 14957; time = 0.09s
+Info:     at iteration #23, type ALL: wirelen solved = 10253, spread = 13271, legal = 15052; time = 0.07s
+Info:     at iteration #24, type ALL: wirelen solved = 10379, spread = 13291, legal = 14892; time = 0.07s
+Info:     at iteration #25, type ALL: wirelen solved = 10382, spread = 13235, legal = 14881; time = 0.07s
+Info:     at iteration #26, type ALL: wirelen solved = 10328, spread = 13210, legal = 14547; time = 0.07s
+Info:     at iteration #27, type ALL: wirelen solved = 10436, spread = 13127, legal = 14506; time = 0.07s
+Info:     at iteration #28, type ALL: wirelen solved = 10501, spread = 13020, legal = 14944; time = 0.07s
+Info:     at iteration #29, type ALL: wirelen solved = 10597, spread = 13194, legal = 14837; time = 0.07s
+Info:     at iteration #30, type ALL: wirelen solved = 10712, spread = 13196, legal = 14959; time = 0.07s
+Info:     at iteration #31, type ALL: wirelen solved = 10745, spread = 13154, legal = 14974; time = 0.09s
+Info:     at iteration #32, type ALL: wirelen solved = 10837, spread = 13168, legal = 14909; time = 0.07s
+Info: HeAP Placer Time: 4.71s
+Info:   of which solving equations: 2.09s
+Info:   of which spreading cells: 0.35s
+Info:   of which strict legalisation: 1.25s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 5047, wirelen = 14506
+Info:   at iteration #5: temp = 0.000000, timing cost = 7438, wirelen = 12947
+Info:   at iteration #10: temp = 0.000000, timing cost = 6497, wirelen = 12520
+Info:   at iteration #15: temp = 0.000000, timing cost = 6411, wirelen = 12233
+Info:   at iteration #20: temp = 0.000000, timing cost = 6336, wirelen = 12159
+Info:   at iteration #24: temp = 0.000000, timing cost = 6189, wirelen = 12138 
+Info: SA placement time 6.58s
+
+Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 21.20 MHz (PASS at 12.00 MHz)
+
+Info: Max delay <async>                       -> posedge clk$SB_IO_IN_$glb_clk: 20.32 ns
+Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 8.61 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 11 endpoint(s)
+Info:          + represents [1,11) endpoint(s)
+Info: [ 36166,  38367) |*+
+Info: [ 38367,  40568) |*****+
+Info: [ 40568,  42769) |****+
+Info: [ 42769,  44970) |******+
+Info: [ 44970,  47171) |****+
+Info: [ 47171,  49372) |********+
+Info: [ 49372,  51573) |*********+
+Info: [ 51573,  53774) |********+
+Info: [ 53774,  55975) |******+
+Info: [ 55975,  58176) |*****+
+Info: [ 58176,  60377) |*****+
+Info: [ 60377,  62578) |*******+
+Info: [ 62578,  64779) |************************+
+Info: [ 64779,  66980) |*********************+
+Info: [ 66980,  69181) |******************************+
+Info: [ 69181,  71382) |*********************+
+Info: [ 71382,  73583) |************+
+Info: [ 73583,  75784) |******************+
+Info: [ 75784,  77985) |************************************************************ 
+Info: [ 77985,  80186) |****************************************************+
+Info: Checksum: 0x37ceed63
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 16104 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:       1000 |       23        841 |   23   841 |     15144|       0.26       0.26|
+Info:       2000 |       48       1816 |   25   975 |     14195|       0.16       0.42|
+Info:       3000 |       82       2782 |   34   966 |     13237|       0.04       0.46|
+Info:       4000 |      135       3729 |   53   947 |     12312|       0.07       0.54|
+Info:       5000 |      172       4692 |   37   963 |     11377|       0.11       0.64|
+Info:       6000 |      223       5641 |   51   949 |     10447|       0.10       0.74|
+Info:       7000 |      290       6574 |   67   933 |      9541|       0.12       0.86|
+Info:       8000 |      363       7501 |   73   927 |      8678|       0.13       0.99|
+Info:       9000 |      442       8422 |   79   921 |      7807|       0.13       1.12|
+Info:      10000 |      528       9336 |   86   914 |      6950|       0.11       1.23|
+Info:      11000 |      625      10239 |   97   903 |      6122|       0.16       1.40|
+Info:      12000 |      723      11141 |   98   902 |      5308|       0.18       1.57|
+Info:      13000 |      886      11978 |  163   837 |      4546|       0.14       1.71|
+Info:      14000 |      986      12878 |  100   900 |      3713|       0.18       1.89|
+Info:      15000 |     1131      13733 |  145   855 |      2932|       0.13       2.03|
+Info:      16000 |     1321      14543 |  190   810 |      2195|       0.15       2.17|
+Info:      17000 |     1597      15267 |  276   724 |      1708|       0.29       2.46|
+Info:      18000 |     1856      16008 |  259   741 |      1292|       0.30       2.77|
+Info:      19000 |     2181      16683 |  325   675 |       896|       0.23       3.00|
+Info:      20000 |     2296      17568 |  115   885 |        60|       0.19       3.19|
+Info:      20082 |     2307      17640 |   11    72 |         0|       0.03       3.22|
+Info: Routing complete.
+Info: Router1 time 3.22s
+Info: Checksum: 0x38cbcc91
+
+Info: Critical path report for clock 'clk$SB_IO_IN_$glb_clk' (posedge -> posedge):
+Info: curr total
+Info:  1.4  1.4  Source $abc$56944$auto$blifparse.cc:492:parse_blif$57290_LC.O
+Info:  1.8  3.2    Net u_core.ksa_add_a_buf[1] budget 5.028000 ns (15,2) -> (14,2)
+Info:                Sink $abc$56944$auto$blifparse.cc:492:parse_blif$57573_LC.I0
+Info:                Defined in:
+Info:                  synth/picorv32_optimized_wrapper.v:24
+Info:                  ../picorv32.v:1249
+Info:                  rtl/ksa/ksa_adder.v:6
+Info:  1.3  4.4  Source $abc$56944$auto$blifparse.cc:492:parse_blif$57573_LC.O
+Info:  1.8  6.2    Net $abc$56944$u_core.u_alu_add_ksa.carry[2]_new_ budget 5.028000 ns (14,2) -> (14,2)
+Info:                Sink $abc$56944$auto$blifparse.cc:492:parse_blif$57589_LC.I0
+Info:  1.3  7.5  Source $abc$56944$auto$blifparse.cc:492:parse_blif$57589_LC.O
+Info:  3.0 10.4    Net $abc$56944$new_n2597_ budget 5.028000 ns (14,2) -> (13,5)
+Info:                Sink $abc$56944$auto$blifparse.cc:492:parse_blif$57598_LC.I0
+Info:  1.3 11.7  Source $abc$56944$auto$blifparse.cc:492:parse_blif$57598_LC.O
+Info:  2.4 14.1    Net $abc$56944$u_core.u_alu_add_ksa.carry[6]_new_ budget 5.027000 ns (13,5) -> (14,7)
+Info:                Sink $abc$56944$auto$blifparse.cc:492:parse_blif$57637_LC.I0
+Info:  1.3 15.4  Source $abc$56944$auto$blifparse.cc:492:parse_blif$57637_LC.O
+Info:  3.1 18.5    Net $abc$56944$new_n2646_ budget 5.027000 ns (14,7) -> (15,11)
+Info:                Sink $abc$56944$auto$blifparse.cc:492:parse_blif$57655_LC.I0
+Info:  1.3 19.8  Source $abc$56944$auto$blifparse.cc:492:parse_blif$57655_LC.O
+Info:  2.3 22.1    Net $abc$56944$u_core.u_alu_add_ksa.carry[12]_new_inv_ budget 5.027000 ns (15,11) -> (18,11)
+Info:                Sink $abc$56944$auto$blifparse.cc:492:parse_blif$57693_LC.I0
+Info:  1.3 23.3  Source $abc$56944$auto$blifparse.cc:492:parse_blif$57693_LC.O
+Info:  1.8 25.1    Net $abc$56944$new_n2706_ budget 5.027000 ns (18,11) -> (18,12)
+Info:                Sink $abc$56944$auto$blifparse.cc:492:parse_blif$57711_LC.I0
+Info:  1.3 26.4  Source $abc$56944$auto$blifparse.cc:492:parse_blif$57711_LC.O
+Info:  3.5 29.9    Net $abc$56944$u_core.u_alu_add_ksa.carry[18]_new_inv_ budget 5.027000 ns (18,12) -> (23,11)
+Info:                Sink $abc$56944$auto$blifparse.cc:492:parse_blif$57750_LC.I0
+Info:  1.3 31.2  Source $abc$56944$auto$blifparse.cc:492:parse_blif$57750_LC.O
+Info:  1.8 32.9    Net $abc$56944$new_n2763_ budget 5.027000 ns (23,11) -> (23,12)
+Info:                Sink $abc$56944$auto$blifparse.cc:492:parse_blif$57769_LC.I0
+Info:  1.3 34.2  Source $abc$56944$auto$blifparse.cc:492:parse_blif$57769_LC.O
+Info:  1.8 36.0    Net $abc$56944$u_core.u_alu_add_ksa.carry[24]_new_inv_ budget 5.027000 ns (23,12) -> (23,13)
+Info:                Sink $abc$56944$auto$blifparse.cc:492:parse_blif$57787_LC.I0
+Info:  1.3 37.3  Source $abc$56944$auto$blifparse.cc:492:parse_blif$57787_LC.O
+Info:  1.8 39.0    Net $abc$56944$u_core.u_alu_add_ksa.carry[26]_new_inv_ budget 5.027000 ns (23,13) -> (23,14)
+Info:                Sink $abc$56944$auto$blifparse.cc:492:parse_blif$61475_LC.I0
+Info:  1.3 40.3  Source $abc$56944$auto$blifparse.cc:492:parse_blif$61475_LC.O
+Info:  1.8 42.1    Net $abc$56944$new_n6610_ budget 5.027000 ns (23,14) -> (22,14)
+Info:                Sink $abc$56944$auto$blifparse.cc:492:parse_blif$61476_LC.I0
+Info:  1.3 43.3  Source $abc$56944$auto$blifparse.cc:492:parse_blif$61476_LC.O
+Info:  1.8 45.1    Net $abc$56944$new_n6611_ budget 5.027000 ns (22,14) -> (22,15)
+Info:                Sink $abc$56944$auto$blifparse.cc:492:parse_blif$61477_LC.I1
+Info:  1.2 46.3  Setup $abc$56944$auto$blifparse.cc:492:parse_blif$61477_LC.I1
+Info: 18.0 ns logic, 28.3 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge clk$SB_IO_IN_$glb_clk':
+Info: curr total
+Info:  0.0  0.0  Source resetn$sb_io.D_IN_0
+Info:  4.6  4.6    Net resetn$SB_IO_IN budget 15.641000 ns (8,0) -> (21,2)
+Info:                Sink $abc$56944$auto$blifparse.cc:492:parse_blif$56949_LC.I1
+Info:                Defined in:
+Info:                  synth/picorv32_optimized_wrapper.v:24
+Info:                  ../picorv32.v:91
+Info:  1.2  5.8  Source $abc$56944$auto$blifparse.cc:492:parse_blif$56949_LC.O
+Info:  2.3  8.1    Net $abc$56944$auto$simplemap.cc:250:simplemap_eqne$51656[1] budget 10.606000 ns (21,2) -> (18,2)
+Info:                Sink $abc$56944$auto$blifparse.cc:492:parse_blif$56953_LC.I0
+Info:  1.3  9.4  Source $abc$56944$auto$blifparse.cc:492:parse_blif$56953_LC.O
+Info:  2.8 12.2    Net $abc$56944$techmap20984\u_core.cpuregs.1.0.0.A1ADDR_11[3] budget 10.606000 ns (18,2) -> (21,2)
+Info:                Sink $abc$56944$auto$blifparse.cc:492:parse_blif$56952_LC.I0
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/brams_map.v:188
+Info:  1.3 13.5  Source $abc$56944$auto$blifparse.cc:492:parse_blif$56952_LC.O
+Info:  1.8 15.3    Net $abc$56944$auto$simplemap.cc:250:simplemap_eqne$31165[3]_new_inv_ budget 10.606000 ns (21,2) -> (21,2)
+Info:                Sink $abc$56944$auto$blifparse.cc:492:parse_blif$61441_LC.I2
+Info:  1.2 16.5  Source $abc$56944$auto$blifparse.cc:492:parse_blif$61441_LC.O
+Info:  2.9 19.4    Net $abc$56944$auto$simplemap.cc:256:simplemap_eqne$31172 budget 10.606000 ns (21,2) -> (21,2)
+Info:                Sink $auto$simplemap.cc:420:simplemap_dff$31160_DFFLC.SR
+Info:  0.1 19.5  Setup $auto$simplemap.cc:420:simplemap_dff$31160_DFFLC.SR
+Info: 5.1 ns logic, 14.4 ns routing
+
+Info: Critical path report for cross-domain path 'posedge clk$SB_IO_IN_$glb_clk' -> '<async>':
+Info: curr total
+Info:  1.4  1.4  Source $auto$simplemap.cc:420:simplemap_dff$30515_DFFLC.O
+Info:  7.8  9.2    Net trap$SB_IO_OUT budget 81.943001 ns (22,10) -> (6,31)
+Info:                Sink trap$sb_io.D_OUT_0
+Info:                Defined in:
+Info:                  synth/picorv32_optimized_wrapper.v:24
+Info:                  ../picorv32.v:92
+Info: 1.4 ns logic, 7.8 ns routing
+
+Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 21.61 MHz (PASS at 12.00 MHz)
+
+Info: Max delay <async>                       -> posedge clk$SB_IO_IN_$glb_clk: 19.52 ns
+Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 9.21 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 11 endpoint(s)
+Info:          + represents [1,11) endpoint(s)
+Info: [ 37049,  39206) |****+
+Info: [ 39206,  41363) |****+
+Info: [ 41363,  43520) |****+
+Info: [ 43520,  45677) |******+
+Info: [ 45677,  47834) |*****+
+Info: [ 47834,  49991) |********+
+Info: [ 49991,  52148) |*******+
+Info: [ 52148,  54305) |*****+
+Info: [ 54305,  56462) |************+
+Info: [ 56462,  58619) |*******+
+Info: [ 58619,  60776) |******+
+Info: [ 60776,  62933) |*****+
+Info: [ 62933,  65090) |*********+
+Info: [ 65090,  67247) |*********+
+Info: [ 67247,  69404) |**************+
+Info: [ 69404,  71561) |*********************************************+
+Info: [ 71561,  73718) |****************************************+
+Info: [ 73718,  75875) |******************+
+Info: [ 75875,  78032) |************************************************************ 
+Info: [ 78032,  80189) |*********************************************************+
+24 warnings, 0 errors
+
+Info: Program finished normally.

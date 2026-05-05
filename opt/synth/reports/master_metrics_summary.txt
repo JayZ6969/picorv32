@@ -1,0 +1,2 @@
+Master metrics report: synth/reports/master_metrics.csv
+Run this after synthesis/performance reports are generated.

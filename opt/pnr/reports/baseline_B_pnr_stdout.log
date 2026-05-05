@@ -1,0 +1,83 @@
+Info: constrained 'clk' to bel 'X12/Y31/io1'
+Info: constrained 'resetn' to bel 'X8/Y0/io0'
+Info: constrained 'trap' to bel 'X6/Y31/io0'
+Warning: unmatched constraint 'uart_tx' (on line 7)
+Warning: unmatched constraint 'uart_rx' (on line 8)
+Warning: IO 'mem_wstrb[3]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wstrb[2]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wstrb[1]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wstrb[0]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[7]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[6]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[5]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[4]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[3]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[2]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[1]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_wdata_lo[0]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_valid' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_instr' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[7]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[6]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[5]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[4]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[3]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[2]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[1]' is unconstrained in PCF and will be automatically placed
+Warning: IO 'mem_addr_lo[0]' is unconstrained in PCF and will be automatically placed
+
+Info: Packing constants..
+Info: Packing IOs..
+Info: Packing LUT-FFs..
+Info:     4563 LCs used as LUT4 only
+Info:      473 LCs used as LUT4 and DFF
+Info: Packing non-LUT FFs..
+Info:      250 LCs used as DFF only
+Info: Packing carries..
+Info:       75 LCs used as CARRY only
+Info: Packing RAMs..
+Info: Placing PLLs..
+Info: Packing special functions..
+Info: Packing PLLs..
+Info: Promoting globals..
+Info: promoting clk$SB_IO_IN (fanout 731)
+Info: promoting $abc$34357$auto$rtlil.cc:1969:NotGate$33825 [reset] (fanout 228)
+Info: promoting mem_valid$SB_IO_OUT [reset] (fanout 68)
+Info: promoting $abc$34357$auto$rtlil.cc:1969:NotGate$33839 [reset] (fanout 31)
+Info: promoting $abc$34357$auto$dff2dffe.cc:158:make_patterns_logic$28450 [cen] (fanout 67)
+Info: promoting $abc$34357$auto$dff2dffe.cc:158:make_patterns_logic$27611 [cen] (fanout 66)
+Info: promoting $abc$34357$auto$dff2dffe.cc:158:make_patterns_logic$29464 [cen] (fanout 64)
+Info: promoting $abc$34357$auto$dff2dffe.cc:175:make_patterns_logic$31462 [cen] (fanout 63)
+Info: Constraining chains...
+Info:        6 LCs used to legalise carry chains.
+Info: Checksum: 0x8abbf177
+
+Info: Annotating ports with timing budgets for target frequency 12.00 MHz
+Info: Checksum: 0x3584fb8d
+
+Info: Device utilisation:
+Info: 	         ICESTORM_LC:  5369/ 5280   101%
+Info: 	        ICESTORM_RAM:     4/   30    13%
+Info: 	               SB_IO:    25/   96    26%
+Info: 	               SB_GB:     8/    8   100%
+Info: 	        ICESTORM_PLL:     0/    1     0%
+Info: 	         SB_WARMBOOT:     0/    1     0%
+Info: 	        ICESTORM_DSP:     0/    8     0%
+Info: 	      ICESTORM_HFOSC:     0/    1     0%
+Info: 	      ICESTORM_LFOSC:     0/    1     0%
+Info: 	              SB_I2C:     0/    2     0%
+Info: 	              SB_SPI:     0/    2     0%
+Info: 	              IO_I3C:     0/    2     0%
+Info: 	         SB_LEDDA_IP:     0/    1     0%
+Info: 	         SB_RGBA_DRV:     0/    1     0%
+Info: 	      ICESTORM_SPRAM:     0/    4     0%
+
+Info: Placed 3 cells based on constraints.
+Info: Creating initial analytic placement for 4915 cells, random placement wirelen = 138719.
+Info:     at initial placer iter 0, wirelen = 1990
+Info:     at initial placer iter 1, wirelen = 1974
+Info:     at initial placer iter 2, wirelen = 1998
+Info:     at initial placer iter 3, wirelen = 1939
+Info: Running main analytical placer.
+ERROR: Failed to expand region (0, 0) |_> (25, 31) of 5369 ICESTORM_LCs
+24 warnings, 1 error
