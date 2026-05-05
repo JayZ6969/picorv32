@@ -72,3 +72,9 @@
 /opt/firmware/hw/*.bin
 /opt/firmware/hw/*.elf
 /opt/firmware/hw/*.hex
+
+# Root-level IceSugar UART smoke (run_uart_test.sh); vendor icestorm clone; Yosys/nextpnr outputs
+/icestorm/
+/uart_test.asc
+/uart_test.bin
+/uart_test.json

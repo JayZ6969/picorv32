@@ -1,0 +1,8 @@
+set_io clk 35
+set_io ser_tx 6
+set_io ser_rx 9
+set_io led1 10
+set_io led2 11
+set_io led3 37
+set_io led4 38
+set_io led5 39
