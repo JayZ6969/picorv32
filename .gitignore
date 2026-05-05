@@ -35,3 +35,26 @@
 /synth.log
 /synth.v
 .*.swp
+
+# Optimization flow generated artifacts
+# opt/sim: keep logs/; skip VCDs and large Verilator/VVP bundles
+/opt/sim/vcd/
+/opt/sim/pcpi_sim
+/opt/sim/vedic_sim
+/opt/sim/vedic_smoke
+/opt/sim/*_vcd_sim
+/opt/sim/integration_*_sim
+/opt/sim/integration_*_bench_sim
+/opt/sim/pcpi_*_sim
+/opt/formal/ksa/ksa_formal/
+/opt/formal/ksa/ksa_formal_prove/
+/opt/formal/vedic/vedic_formal/
+/opt/formal/vedic/vedic_8x8/
+/opt/formal/pcpi/pcpi_formal/
+/opt/formal/equiv/arithmetic_formal/
+/opt/formal/_bitwuzla/
+/opt/formal/_bitwuzla.zip
+/opt/formal/_work_*/
+/opt/firmware/mul_test/*.elf
+/opt/firmware/mul_test/*.hex
+/opt/firmware/mul_test/*.bin

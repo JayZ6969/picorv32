@@ -1,0 +1,18 @@
+# Phase 5 — same RTL as synth_optimized.ys; second ABC pass for density/timing.
+# Note: synth_ice40 -retime is NOT used here: on Yosys 0.9 it over-optimizes the
+# closed-memory test wrapper (mem_rdata=0) and collapses most of the core; use -abc2 instead.
+read_verilog -I.. ../picorv32.v
+read_verilog rtl/ksa/ksa_adder.v
+read_verilog rtl/ksa/ksa_32bit.v
+read_verilog rtl/ksa/ksa_64bit_pipelined.v
+read_verilog rtl/csa/csa_cell.v
+read_verilog rtl/vedic/vedic_mul_2x2.v
+read_verilog rtl/vedic/vedic_mul_4x4.v
+read_verilog rtl/vedic/vedic_mul_8x8.v
+read_verilog rtl/vedic/vedic_mul_16x16.v
+read_verilog rtl/vedic/vedic_mul_32x32.v
+read_verilog rtl/pcpi/pcpi_vedic_mul.v
+read_verilog synth/picorv32_optimized_wrapper.v
+hierarchy -check -top picorv32_optimized_wrapper
+synth_ice40 -top picorv32_optimized_wrapper -json synth/optimized_abc2/design.json -blif synth/optimized_abc2/design.blif -dsp -abc2
+tee -q -o synth/reports/optimized_abc2_synth_stat.log stat

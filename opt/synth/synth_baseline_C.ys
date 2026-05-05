@@ -1,0 +1,6 @@
+# Baseline C - core only (no mul).
+read_verilog -I.. ../picorv32.v
+read_verilog synth/picorv32_baseline_c_wrapper.v
+hierarchy -check -top picorv32_baseline_c_wrapper
+synth_ice40 -top picorv32_baseline_c_wrapper -json synth/baseline_C/design.json -blif synth/baseline_C/design.blif -dsp
+tee -q -o synth/reports/baseline_C_synth_stat.log stat

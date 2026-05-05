@@ -75,6 +75,7 @@ module picorv32 #(
 	parameter [ 0:0] ENABLE_PCPI = 0,
 	parameter [ 0:0] ENABLE_MUL = 0,
 	parameter [ 0:0] ENABLE_FAST_MUL = 0,
+	parameter [ 0:0] ENABLE_FAST_ADD = 0,
 	parameter [ 0:0] ENABLE_DIV = 0,
 	parameter [ 0:0] ENABLE_IRQ = 0,
 	parameter [ 0:0] ENABLE_IRQ_QREGS = 1,
@@ -270,7 +271,7 @@ module picorv32 #(
 	reg        pcpi_int_ready;
 
 	generate if (ENABLE_FAST_MUL) begin
-		picorv32_pcpi_fast_mul pcpi_mul (
+		pcpi_vedic_mul pcpi_mul (
 			.clk       (clk            ),
 			.resetn    (resetn         ),
 			.pcpi_valid(pcpi_valid     ),
@@ -1226,9 +1227,42 @@ module picorv32 #(
 	reg [31:0] alu_shl, alu_shr;
 	reg alu_eq, alu_ltu, alu_lts;
 
+	wire [31:0] alu_add_sum_fast;
+	wire [31:0] alu_sub_sum_fast;
+	wire [31:0] alu_add_sub_sel;
+	(* keep *) wire [31:0] ksa_add_a_buf;
+	(* keep *) wire [31:0] ksa_add_b_buf;
+	(* keep *) wire [31:0] ksa_sub_b_buf;
+
+	assign ksa_add_a_buf = reg_op1;
+	assign ksa_add_b_buf = reg_op2;
+	assign ksa_sub_b_buf = ~reg_op2;
+
+	generate if (ENABLE_FAST_ADD) begin
+		ksa_adder #(.WIDTH(32)) u_alu_add_ksa (
+			.A(ksa_add_a_buf),
+			.B(ksa_add_b_buf),
+			.Cin(1'b0),
+			.Sum(alu_add_sum_fast),
+			.Cout()
+		);
+		ksa_adder #(.WIDTH(32)) u_alu_sub_ksa (
+			.A(ksa_add_a_buf),
+			.B(ksa_sub_b_buf),
+			.Cin(1'b1),
+			.Sum(alu_sub_sum_fast),
+			.Cout()
+		);
+	end else begin
+		assign alu_add_sum_fast = reg_op1 + reg_op2;
+		assign alu_sub_sum_fast = reg_op1 - reg_op2;
+	end endgenerate
+
+	assign alu_add_sub_sel = instr_sub ? alu_sub_sum_fast : alu_add_sum_fast;
+
 	generate if (TWO_CYCLE_ALU) begin
 		always @(posedge clk) begin
-			alu_add_sub <= instr_sub ? reg_op1 - reg_op2 : reg_op1 + reg_op2;
+			alu_add_sub <= alu_add_sub_sel;
 			alu_eq <= reg_op1 == reg_op2;
 			alu_lts <= $signed(reg_op1) < $signed(reg_op2);
 			alu_ltu <= reg_op1 < reg_op2;
@@ -1237,7 +1271,7 @@ module picorv32 #(
 		end
 	end else begin
 		always @* begin
-			alu_add_sub = instr_sub ? reg_op1 - reg_op2 : reg_op1 + reg_op2;
+			alu_add_sub = alu_add_sub_sel;
 			alu_eq = reg_op1 == reg_op2;
 			alu_lts = $signed(reg_op1) < $signed(reg_op2);
 			alu_ltu = reg_op1 < reg_op2;

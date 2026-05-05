@@ -1,0 +1,6 @@
+# Baseline A - iterative multiplier path.
+read_verilog -I.. ../picorv32.v
+read_verilog synth/picorv32_baseline_a_wrapper.v
+hierarchy -check -top picorv32_baseline_a_wrapper
+synth_ice40 -top picorv32_baseline_a_wrapper -json synth/baseline_A/design.json -blif synth/baseline_A/design.blif -dsp
+tee -q -o synth/reports/baseline_A_synth_stat.log stat

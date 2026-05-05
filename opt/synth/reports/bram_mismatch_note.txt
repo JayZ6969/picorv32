@@ -1,0 +1,6 @@
+NOTE: BRAM count mismatch diagnostics.
+Reported SB_RAM40_4K baseline_A: 4
+Reported SB_RAM40_4K optimized: 2
+Token count in synth/baseline_A/design.json: 8
+Token count in synth/optimized/design.json: 6
+Interpretation: count differences reflect synthesis/memory-mapping choices and should be reviewed before netlist freeze.

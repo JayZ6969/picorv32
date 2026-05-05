@@ -1,0 +1,8 @@
+# Baseline C+KSA isolation build.
+read_verilog -I.. ../picorv32.v
+read_verilog rtl/ksa/ksa_adder.v
+read_verilog rtl/ksa/ksa_32bit.v
+read_verilog synth/picorv32_baseline_c_ksa_wrapper.v
+hierarchy -check -top picorv32_baseline_c_ksa_wrapper
+synth_ice40 -top picorv32_baseline_c_ksa_wrapper -json synth/baseline_C_ksa/design.json -blif synth/baseline_C_ksa/design.blif -dsp
+tee -q -o synth/reports/baseline_C_ksa_synth_stat.log stat

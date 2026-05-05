@@ -1,0 +1,7 @@
+# Baseline B - native fast mul via shim.
+read_verilog -I.. ../picorv32.v
+read_verilog rtl/pcpi/pcpi_vedic_mul_fastshim.v
+read_verilog synth/picorv32_baseline_b_wrapper.v
+hierarchy -check -top picorv32_baseline_b_wrapper
+synth_ice40 -top picorv32_baseline_b_wrapper -json synth/baseline_B/design.json -blif synth/baseline_B/design.blif -dsp
+tee -q -o synth/reports/baseline_B_synth_stat.log stat

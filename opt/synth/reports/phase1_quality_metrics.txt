@@ -1,0 +1,5 @@
+Q1 Lint warnings:          0   (target: 0)
+Q2 Lint errors:            0   (target: 0)
+Q3 Core fast-add markers:  5   (target: >=3)
+Q4 Core module coverage:   2   (target: >=2)
+Q5 Dead code proxy count:  0   (target: 0)

@@ -1,0 +1,23 @@
+
+5. Printing statistics.
+
+=== picorv32_baseline_a_wrapper ===
+
+   Number of wires:               2028
+   Number of wire bits:           4804
+   Number of public wires:         189
+   Number of public wire bits:    2331
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               3408
+     SB_CARRY                      424
+     SB_DFF                        119
+     SB_DFFE                       345
+     SB_DFFESR                     314
+     SB_DFFESS                       9
+     SB_DFFSR                      106
+     SB_DFFSS                        1
+     SB_LUT4                      2086
+     SB_RAM40_4K                     4
+

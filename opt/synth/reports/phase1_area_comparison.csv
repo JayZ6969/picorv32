@@ -1,0 +1,5 @@
+config,TOTAL_CELLS,SB_LUT4,SB_DFF,SB_CARRY,SB_MAC16,SB_RAM40_4K
+Baseline A (iterative),3568,2166,155,432,0,4
+Baseline B (fast_mul),6370,5132,217,439,0,4
+Baseline C (core only),2732,1727,152,378,0,4
+Optimized (Vedic+KSA),7349,5589,699,380,0,4

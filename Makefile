@@ -182,3 +182,58 @@ clean:
 		testbench_verilator testbench_verilator_dir
 
 .PHONY: test test_vcd test_sp test_axi test_wb test_wb_vcd test_ez test_ez_vcd test_synth download-tools build-tools toc clean
+
+PH1_RTL_KSA   = opt/rtl/ksa/ksa_adder.v opt/rtl/ksa/ksa_32bit.v
+PH1_RTL_CSA   = opt/rtl/csa/csa_cell.v
+PH1_RTL_VED   = opt/rtl/ksa/ksa_adder.v $(PH1_RTL_CSA) opt/rtl/vedic/vedic_mul_2x2.v opt/rtl/vedic/vedic_mul_4x4.v \
+	opt/rtl/vedic/vedic_mul_8x8.v opt/rtl/vedic/vedic_mul_16x16.v opt/rtl/vedic/vedic_mul_32x32.v
+PH1_RTL_PCPI  = opt/rtl/pcpi/pcpi_vedic_mul.v
+
+PH1_TB_KSA    = opt/tb/unit/tb_ksa_32bit.v
+PH1_TB_VED    = opt/tb/unit/tb_vedic_mul_32x32.v
+
+lint:
+	$(VERILATOR) --lint-only -Wall $(PH1_RTL_KSA)
+	$(VERILATOR) --lint-only -Wall $(PH1_RTL_VED)
+	$(VERILATOR) --lint-only -Wall $(PH1_RTL_PCPI)
+	@echo "All lint checks passed"
+
+sim_ksa:
+	$(IVERILOG) -o opt/sim/ksa_sim $(PH1_RTL_KSA) $(PH1_TB_KSA)
+	$(VVP) opt/sim/ksa_sim | tee opt/sim/logs/ksa.log
+
+sim_vedic:
+	$(IVERILOG) -o opt/sim/vedic_sim $(PH1_RTL_VED) $(PH1_TB_VED)
+	$(VVP) opt/sim/vedic_sim | tee opt/sim/logs/vedic.log
+
+all: lint sim_ksa sim_vedic
+	@echo "Phase 1 complete"
+
+.PHONY: lint sim_ksa sim_vedic all
+
+# Phase 3 wrapper targets delegated to opt/
+.PHONY: p3_check p3_synth p3_area p3_pnr p3_timing p3_composites p3_report phase3
+
+p3_check:
+	$(MAKE) -C opt p3_check
+
+p3_synth:
+	$(MAKE) -C opt p3_synth
+
+p3_area:
+	$(MAKE) -C opt p3_area
+
+p3_pnr:
+	$(MAKE) -C opt p3_pnr
+
+p3_timing:
+	$(MAKE) -C opt p3_timing
+
+p3_composites:
+	$(MAKE) -C opt p3_composites
+
+p3_report:
+	$(MAKE) -C opt p3_report
+
+phase3:
+	$(MAKE) -C opt phase3

@@ -1,0 +1,28 @@
+
+====================================================================================
+PHASE 1 AREA METRICS -- ALL CONFIGURATIONS
+====================================================================================
+Config                        TOTAL_CELLS    SB_LUT4     SB_DFF   SB_CARRY   SB_MAC16SB_RAM40_4K
+------------------------------------------------------------------------------------
+Baseline A (iterative)               3568       2166        155        432          0          4
+Baseline B (fast_mul)                6370       5132        217        439          0          4
+Baseline C (core only)               2732       1727        152        378          0          4
+Optimized (Vedic+KSA)                7349       5589        699        380          0          4
+
+--- DELTA: Optimized vs Baseline B ---
+  TOTAL_CELLS   :    +979  ( +15.4%)
+  SB_LUT4       :    +457  (  +8.9%)
+  SB_DFF        :    +482  (+222.1%)
+  SB_CARRY      :     -59  ( -13.4%)
+  SB_MAC16      :      +0  (  +0.0%)
+  SB_RAM40_4K   :      +0  (  +0.0%)
+
+--- DELTA: Optimized vs Baseline C ---
+  TOTAL_CELLS   :   +4617
+  SB_LUT4       :   +3862
+  SB_DFF        :    +547
+  SB_CARRY      :      +2
+  SB_MAC16      :      +0
+  SB_RAM40_4K   :      +0
+
+CSV written: synth/reports/phase1_area_comparison.csv

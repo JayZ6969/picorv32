@@ -1,0 +1,6 @@
+NOTE: Baseline B DSP mapping diagnosis.
+Yosys version (from log): Yosys 0.9 (git sha1 1979e0b)
+ice40_dsp pass mentioned in log: YES
+SB_MAC16 mentions in baseline_B_yosys_full.log: 1
+SB_MAC16 count in reports (phase3/master): 0
+Interpretation: SB_MAC16=0 means fast_mul is currently mapped into LUT/carry resources on this flow.
