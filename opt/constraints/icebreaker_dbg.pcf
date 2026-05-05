@@ -1,0 +1,41 @@
+# icesugar_dbg.pcf — Pin constraints for iCESugar v1.5 (MuseLab iCELink/DAPLink)
+#
+# Source: https://github.com/wuxx/icesugar (official iCESugar PicoSoC PCF)
+#
+# UART: ser_tx=6, ser_rx=4
+# Onboard LEDs: ledr_n=41 (active-low), ledg_n=40 (active-low)
+# LED1-5: On PMOD 3 connector (pins 27,25,21,23,26)
+
+# ── Clock ─────────────────────────────────────────────────────────────────────
+set_io clk        35
+
+# ── UART ──────────────────────────────────────────────────────────────────────
+set_io ser_rx      4
+set_io ser_tx      6
+
+# ── SPI Flash ─────────────────────────────────────────────────────────────────
+set_io flash_clk  15
+set_io flash_csb  16
+set_io flash_io0  14
+set_io flash_io1  17
+set_io flash_io2  12
+set_io flash_io3  13
+
+# ── LEDs (PMOD 3) ────────────────────────────────────────────────────────────
+set_io led1       27
+set_io led2       25
+set_io led3       21
+set_io led4       23
+set_io led5       26
+
+# ── Onboard LEDs (active-low) ────────────────────────────────────────────────
+set_io ledr_n     41
+set_io ledg_n     40
+
+# ── Debug PCPI outputs (PMOD 2 connector) ────────────────────────────────────
+set_io dbg[0]     46    # pcpi_valid  — trigger
+set_io dbg[1]     44    # pcpi_ready
+set_io dbg[2]     42    # pcpi_wait
+set_io dbg[3]     37    # pcpi_wr
+set_io dbg[4]     36    # funct3[1]
+set_io dbg[5]     38    # funct3[0]

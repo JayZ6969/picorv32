@@ -1,0 +1,8 @@
+# iCE40UP5K-SG48 default constraint template.
+# Adjust pins for your actual board before hardware deployment.
+
+set_io clk 35
+set_io resetn 2
+set_io trap 41
+set_io uart_tx 6
+set_io uart_rx 9

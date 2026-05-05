@@ -1,0 +1,103 @@
+======== Phase 5 complete bundle 2026-05-05T14:13:21Z ========
+
+--- phase5_measure.json ---
+{
+  "optimized": {
+    "pnr_exit": 0,
+    "fmax_mhz": "21.20",
+    "lut4": "4653"
+  },
+  "optimized_abc2": {
+    "pnr_exit": 0,
+    "fmax_mhz": "15.94",
+    "lut4": "4642"
+  },
+  "nextpnr_freq_request_mhz": 20,
+  "note": "Compared baseline -dsp vs -dsp -abc2 (Yosys 0.9). -retime omitted: collapses closed-memory wrapper."
+}
+--- phase5_gate.txt (tail) ---
+Phase 5 gate — 2026-05-05T14:07:08Z
+repo: /mnt/toshiba4tb/workspace/projects/picorv32
+
+== lint_pcpi (Verilator) ==
+
+== sim_vedic_quick ==
+[5] Progress: 400/4000
+[5] Progress: 800/4000
+[5] Progress: 1200/4000
+[5] Progress: 1600/4000
+[5] Progress: 2000/4000
+[5] Progress: 2400/4000
+[5] Progress: 2800/4000
+[5] Progress: 3200/4000
+[5] Progress: 3600/4000
+[5] Progress: 4000/4000
+
+=========================================
+RESULTS: 5045 PASSED, 0 FAILED (of 5045 total)
+STATUS: ALL PASS
+=========================================
+
+== sim_pcpi (PCPI_DEFAULT_PLUSARGS: rand_groups=32; first +rand wins in Verilog) ==
+PCPI_METRIC funct3=0 rs1=85d79a0b rs2=b897be71 latency=7 wait_cycles=6 result=dcfc28db
+PCPI_METRIC funct3=1 rs1=85d79a0b rs2=b897be71 latency=7 wait_cycles=6 result=2212f3f8
+PCPI_METRIC funct3=2 rs1=85d79a0b rs2=b897be71 latency=7 wait_cycles=6 result=a7ea8e03
+PCPI_METRIC funct3=3 rs1=85d79a0b rs2=b897be71 latency=7 wait_cycles=6 result=60824c74
+[6] Progress: 32/32 groups
+
+[7] Valid Drop Mid-Pipeline
+PCPI_METRIC funct3=0 rs1=12345678 rs2=9abcdef0 latency=7 wait_cycles=6 result=242d2080 valid_drop=1
+
+[8] Reset Mid-Operation Test
+PCPI_METRIC funct3=0 rs1=11111111 rs2=00000009 latency=7 wait_cycles=6 result=99999999
+
+=========================================
+RESULTS: 176 PASSED, 0 FAILED
+Average latency: 7 cycles
+METRIC avg_pcpi_latency 7
+METRIC min_pcpi_latency 7
+METRIC max_pcpi_latency 7
+METRIC total_mul_ops 175
+METRIC total_pcpi_wait_cycles 1050
+METRIC avg_pcpi_wait_cycles 6
+METRIC fail_count 0
+METRIC test_status 1
+STATUS: ALL PASS
+=========================================
+
+== Phase 4 fast formal (F1+F2 small; F3/F4/F5 skipped) ==
+=== Report ===
+=================================================================
+  PHASE 4 — FORMAL VERIFICATION REPORT
+  (mode: slow checks waived — F2 16×16, F2 32×32, F4)
+  (F5 RVFI omitted from this report — PHASE4_SKIP_F5=1 or --skip-f5)
+  (F3 PCPI omitted — PHASE4_SKIP_F3=1 or --skip-f3)
+=================================================================
+  F1_ksa_formal                  ✅ PASS
+  F2_vedic_2x2                   ✅ PASS
+  F2_vedic_4x4                   ✅ PASS
+  F2_vedic_8x8                   ✅ PASS
+  F2_vedic_16x16                 ⏭️  WAIVED (slow formal skipped)
+  F2_vedic_32x32                 ⏭️  WAIVED (slow formal skipped)
+  F3_pcpi_protocol               ⏭️  WAIVED (F3 PCPI not run — PHASE4_SKIP_F3=1)
+  F4_arithmetic_equiv            ⏭️  WAIVED (slow formal skipped)
+=================================================================
+  Overall: ALL PASS (F1–F2 small; F3/F4/F5 skipped this run) ✅
+=================================================================
+
+  Saved → opt/formal/phase4_report.txt
+PHASE 4 FORMAL VERIFICATION RESULTS
+(slow checks waived: F2 16x16, F2 32x32, F4)
+(F5 RVFI omitted — not run / not in report)
+(F3 PCPI omitted — PHASE4_SKIP_F3=1)
+==================================================
+F1_ksa_formal: ✅ PASS
+F2_vedic_2x2: ✅ PASS
+F2_vedic_4x4: ✅ PASS
+F2_vedic_8x8: ✅ PASS
+F2_vedic_16x16: ⏭️  WAIVED (slow formal skipped)
+F2_vedic_32x32: ⏭️  WAIVED (slow formal skipped)
+F3_pcpi_protocol: ⏭️  WAIVED (F3 PCPI not run — PHASE4_SKIP_F3=1)
+F4_arithmetic_equiv: ⏭️  WAIVED (slow formal skipped)
+==================================================
+Overall: ALL PASS (F1–F2 small; F3/F4/F5 skipped this run) ✅

@@ -1,0 +1,14 @@
+{
+  "optimized": {
+    "pnr_exit": 0,
+    "fmax_mhz": "21.20",
+    "lut4": "4653"
+  },
+  "optimized_abc2": {
+    "pnr_exit": 0,
+    "fmax_mhz": "15.94",
+    "lut4": "4642"
+  },
+  "nextpnr_freq_request_mhz": 20,
+  "note": "Compared baseline -dsp vs -dsp -abc2 (Yosys 0.9). -retime omitted: collapses closed-memory wrapper."
+}
