@@ -50,6 +50,9 @@
 /opt/formal/ksa/ksa_formal_prove/
 /opt/formal/vedic/vedic_formal/
 /opt/formal/vedic/vedic_8x8/
+/opt/formal/vedic/vedic_2x2/
+/opt/formal/vedic/vedic_4x4/
+/opt/formal/vedic/vedic_16x16/
 /opt/formal/pcpi/pcpi_formal/
 /opt/formal/equiv/arithmetic_formal/
 /opt/formal/_bitwuzla/
@@ -63,3 +66,9 @@
 /opt/firmware/mul_test/*.elf
 /opt/firmware/mul_test/*.hex
 /opt/firmware/mul_test/*.bin
+/opt/firmware/bench/*.bin
+/opt/firmware/bench/*.elf
+/opt/firmware/bench/*.hex
+/opt/firmware/hw/*.bin
+/opt/firmware/hw/*.elf
+/opt/firmware/hw/*.hex
