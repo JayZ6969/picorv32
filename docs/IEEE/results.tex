@@ -78,4 +78,7 @@ The replacement of KSA also improves adder logic depth. This should help in achi
 \input{figures/fig07_summary_gains.tex}
 \FloatBarrier
 
+\subsection{Scalability and Extensibility}
+The hierarchical Urdhva-Tiryakbhyam construction used for the multiplier scales naturally beyond 32 bits: a $64\times64$ datapath can be obtained by composing four $32\times32$ instances with a final reduction stage, and the same PCPI handshake remains valid, only the operand and result widths change. The Kogge-Stone adder likewise grows in depth as $\lceil \log_2 N\rceil + 1$, so wider operands keep the same logarithmic advantage over a ripple-carry baseline. For multi-core scenarios, each core can either embed a private PCPI accelerator -- preserving the deterministic 3-cycle latency reported here -- or share a single arbiter-fronted Vedic unit across cores when area is the dominant constraint. These extensions reuse the verified arithmetic blocks unchanged and therefore do not invalidate the formal-verification results presented above.
+
 From an SoC application perspective, this arithmetic acceleration opportunity directly maps to edge AI software kernels with integer MAC-dominated execution profiles. Reducing multiply latency and improving adder depth can result in lower inference times at a given clock rate or equivalent throughput at lower clock and/or power operating points. Thus, this optimized PicoRV32 core can be a good candidate for a digital compute platform for SoCs that aim to integrate edge AI capabilities.

@@ -14,12 +14,13 @@
 \usepackage{placeins}
 
 \graphicspath{{figures/assets/}}
+\DeclareGraphicsExtensions{.pdf,.png}
 \newcommand{\IEEEPaperFigure}[3]{%
   \IfFileExists{figures/assets/#1.pdf}{%
-    \includegraphics[width=\linewidth]{#1}%
+    \includegraphics[width=\linewidth,keepaspectratio]{#1}%
   }{%
     \IfFileExists{figures/assets/#1.png}{%
-      \includegraphics[width=\linewidth]{#1}%
+      \includegraphics[width=\linewidth,keepaspectratio]{#1}%
     }{%
       \fbox{\parbox[c][1.35in][c]{0.92\linewidth}{\centering\footnotesize Missing \texttt{#1}}}%
     }%

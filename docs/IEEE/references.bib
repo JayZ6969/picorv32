@@ -16,18 +16,18 @@
 
 @misc{picorv32_clifford,
   author       = {C. Wolf},
-  title        = {{PicoRV32} - A Size-Optimized {RISC-V} {CPU} Core},
+  title        = {{PicoRV32} -- A Size-Optimized {RISC-V} {CPU} Core},
   howpublished = {\url{https://github.com/cliffordwolf/picorv32}},
   year         = {2015},
   note         = {Accessed: Mar. 2026}
 }
 
-@manual{waterman2017,
-  author       = {A. Waterman and K. Asanovi\'{c}},
-  title        = {The {RISC-V} Instruction Set Manual, Volume I: User-Level {ISA}, Version 2.2},
-  year         = {2017},
-  month        = may,
-  note         = {May 2017}
+@techreport{waterman2017,
+  author      = {A. Waterman and K. Asanovi\'{c}},
+  title       = {The {RISC-V} Instruction Set Manual, Volume I: User-Level {ISA}, Version 2.2},
+  institution = {EECS Department, University of California, Berkeley},
+  year        = {2017},
+  month       = may
 }
 
 @article{mehta2014,
@@ -45,7 +45,7 @@
   title     = {An Efficient Digital Vedic Multiplier with an Enhanced Adder},
   booktitle = {Proc. IEEE Int. Conf. on Intelligent Computing and Control Systems (ICICCS)},
   year      = {2024},
-  note      = {[Online]. Available: \url{https://ieeexplore.ieee.org/document/10959443}}
+  url       = {https://ieeexplore.ieee.org/document/10959443}
 }
 
 @article{kakde2014,
@@ -56,7 +56,7 @@
   number  = {6},
   month   = aug,
   year    = {2014},
-  note    = {[Online]. Available: \url{https://www.ijiset.com/v1s6/IJISET_V1_I6_19.pdf}}
+  url     = {https://www.ijiset.com/v1s6/IJISET_V1_I6_19.pdf}
 }
 
 @article{anitha2013,
@@ -67,7 +67,7 @@
   number  = {11},
   month   = nov,
   year    = {2013},
-  note    = {[Online]. Available: \url{https://www.ijert.org/high-performance-vedic-multiplier-using-han-carlson-adder}}
+  url     = {https://www.ijert.org/high-performance-vedic-multiplier-using-han-carlson-adder}
 }
 
 @inproceedings{priya2015,
@@ -75,7 +75,7 @@
   title     = {Optimized Vedic Multiplier Using Adder Approximations and Modified {CLA}},
   booktitle = {Proc. Int. Conf. on Computing and Communications Technologies (ICCCT)},
   year      = {2015},
-  note      = {[Online]. Available: \url{https://ir.psgitech.ac.in/id/eprint/930/}}
+  url       = {https://ir.psgitech.ac.in/id/eprint/930/}
 }
 
 @article{kogge1973,
@@ -88,45 +88,59 @@
   year    = {1973}
 }
 
-@article{kogge1973dup,
-  author  = {P. M. Kogge and H. S. Stone},
-  title   = {A Parallel Algorithm for the Efficient Solution of a General Class of Recurrence Equations},
-  journal = {IEEE Transactions on Computers},
-  volume  = {C-22},
-  number  = {8},
-  pages   = {786--793},
-  year    = {1973}
-}
-
 @article{sundar2019,
   author  = {S. Sundar and M. Chidambaram},
-  title   = {Design of High-Speed and Energy-Efficient Parallel Prefix Kogge Stone Adder},
+  title   = {Design of High-Speed and Energy-Efficient Parallel Prefix {Kogge-Stone} Adder},
   journal = {Juni Khyat},
   volume  = {9},
   number  = {12},
   pages   = {87--93},
   month   = dec,
   year    = {2019},
-  note    = {[Online]. Available: \url{http://junikhyatjournal.in/dec19/87.pdf}}
+  url     = {http://junikhyatjournal.in/dec19/87.pdf}
 }
 
 @article{parhami2015,
   author  = {B. Parhami},
-  title   = {Kogge-Stone Adder: A Scalable Design Solution to High-Speed Addition},
+  title   = {{Kogge-Stone} Adder: A Scalable Design Solution to High-Speed Addition},
   journal = {ICTACT Journal on Microelectronics},
   volume  = {11},
   number  = {3},
   pages   = {2151--2156},
   month   = oct,
   year    = {2015},
-  note    = {[Online]. Available: \url{https://ictactjournals.in/paper/IJME_Vol_11_Iss_3_Paper_2_2151_2156.pdf}}
+  url     = {https://ictactjournals.in/paper/IJME_Vol_11_Iss_3_Paper_2_2151_2156.pdf}
 }
 
 @inproceedings{ciesielski2012,
   author    = {M. Ciesielski and others},
-  title     = {Formal Verification of Galois Field Multipliers Using Computer Algebra Techniques},
+  title     = {Formal Verification of {Galois} Field Multipliers Using Computer Algebra Techniques},
   booktitle = {Proc. 25th Int. Conf. on VLSI Design (VLSID)},
-  year      = {2012},
   pages     = {136--141},
-  note      = {[Online]. Available: \url{https://ieeexplore.ieee.org/document/6167783}}
+  year      = {2012},
+  url       = {https://ieeexplore.ieee.org/document/6167783}
+}
+
+@techreport{asanovic2016rocket,
+  author      = {K. Asanovi\'{c} and R. Avizienis and J. Bachrach and S. Beamer and D. Biancolin and C. Celio and others},
+  title       = {The Rocket Chip Generator},
+  institution = {EECS Department, University of California, Berkeley},
+  number      = {UCB/EECS-2016-17},
+  year        = {2016},
+  month       = apr
+}
+
+@inproceedings{celio2017boom,
+  author    = {C. Celio and P.-F. Chiu and B. Nikoli\'{c} and D. A. Patterson and K. Asanovi\'{c}},
+  title     = {{BOOM} v2: An Open-Source Out-of-Order {RISC-V} Core},
+  booktitle = {First Workshop on Computer Architecture Research with RISC-V (CARRV)},
+  year      = {2017}
+}
+
+@inproceedings{gala2016shakti,
+  author    = {N. Gala and A. Menon and R. Bodduna and G. S. Madhusudan and V. Kamakoti},
+  title     = {{SHAKTI} Processors: An Open-Source Hardware Initiative},
+  booktitle = {Proc. 29th Int. Conf. on VLSI Design (VLSID)},
+  pages     = {7--8},
+  year      = {2016}
 }

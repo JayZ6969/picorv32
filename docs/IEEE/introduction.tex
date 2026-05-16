@@ -10,3 +10,11 @@ In order to mitigate the above limitations, this work proposes the optimization 
 This is because the proposed integration strategy based on the PCPI metric is designed as a modular approach, where the optimized architecture remains as a CPU core-level IP extension, allowing it to be plugged into various SoC scenarios (microcontroller, IoT sensing, or accelerative edge AI subsystems) without any changes to the pipeline.
 
 The paper is prepared based on the existing project outputs as baseline evidence, including architecture, implementation, and results in IEEE conference style.
+
+\textbf{Contributions.} The principal contributions of this work are:
+\begin{itemize}
+\item A 32-bit Kogge-Stone parallel-prefix adder integrated in the PicoRV32 ALU, reducing structural logic depth from 32 to 6 stages (5.3$\times$).
+\item A modular three-stage pipelined Vedic ($32\times32$) multiplier attached through the Pico Co-Processor Interface (PCPI), lowering MUL latency from 36 cycles to 3 cycles at 100~MHz (12.0$\times$).
+\item A combined functional and algebraic verification flow reporting zero failures across 70{,}598 simulation vectors and 13/13 successful GF(2) checks for the optimized arithmetic datapath.
+\item A non-invasive integration strategy that preserves PicoRV32 instruction-level compatibility, positioning the optimized core as a reusable compute IP for edge-AI SoCs.
+\end{itemize}
