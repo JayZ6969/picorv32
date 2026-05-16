@@ -1,0 +1,85 @@
+% main.tex - Minimal IEEEtran paper for PicoRV32 project
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{balance}
+\usepackage{float}
+\usepackage{placeins}
+
+\graphicspath{{figures/assets/}}
+\newcommand{\IEEEPaperFigure}[3]{%
+  \IfFileExists{figures/assets/#1.pdf}{%
+    \includegraphics[width=\linewidth]{#1}%
+  }{%
+    \IfFileExists{figures/assets/#1.png}{%
+      \includegraphics[width=\linewidth]{#1}%
+    }{%
+      \fbox{\parbox[c][1.35in][c]{0.92\linewidth}{\centering\footnotesize Missing \texttt{#1}}}%
+    }%
+  }%
+}
+
+\begin{document}
+
+\title{Performance Optimization of PicoRV32 RISC-V Processor Using Kogge-Stone Adder and Vedic Multiplier with Formal Verification}
+
+\author{\IEEEauthorblockN{1\textsuperscript{st} Dilip Chandra E}
+\IEEEauthorblockA{\textit{School of ECE} \\
+\textit{REVA University}\\
+Bengaluru, India \\
+dilipchandra.e@reva.edu.in}
+\and
+\IEEEauthorblockN{2\textsuperscript{nd} Jayasheel Vinay J}
+\IEEEauthorblockA{\textit{School of ECE} \\
+\textit{REVA University}\\
+Bengaluru, India \\
+ugcet220791@reva.edu.in}
+\and
+\IEEEauthorblockN{3\textsuperscript{rd} Jnanavi Nag}
+\IEEEauthorblockA{\textit{School of ECE} \\
+\textit{REVA University}\\
+Bengaluru, India \\
+ugcet220367@reva.edu.in}
+\and
+\IEEEauthorblockN{4\textsuperscript{th} Megharsha A Gowda}
+\IEEEauthorblockA{\textit{School of ECE} \\
+\textit{REVA University}\\
+Bengaluru, India \\
+ugcet220478@reva.edu.in}
+\and
+\IEEEauthorblockN{5\textsuperscript{th} Ramya R}
+\IEEEauthorblockA{\textit{School of ECE} \\
+\textit{REVA University}\\
+Bengaluru, India \\
+22030137993@reva.edu.in}
+}
+
+\maketitle
+
+\begin{abstract}
+\input{abstract.tex}
+\end{abstract}
+
+\begin{IEEEkeywords}
+PicoRV32, RISC-V, PCPI, Kogge-Stone adder, Vedic multiplier, edge AI, TinyML, hardware optimization, verification
+\end{IEEEkeywords}
+
+\input{introduction.tex}
+\input{related_work.tex}
+\input{system_architecture.tex}
+\input{hardware_implementation.tex}
+\input{results.tex}
+\input{conclusion.tex}
+
+\balance
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

@@ -2,5 +2,21 @@
     "chat.tools.terminal.autoApprove": {
         "make": true
     },
-    "CodeGPT.apiKey": "Groq"
+    "CodeGPT.apiKey": "Groq",
+    "latex-workshop.latex.rootFile.useSubFile": true,
+    "latex-workshop.latex.outDir": "%DIR%/build",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "IEEE build.sh",
+            "command": "sh",
+            "args": ["build.sh"]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "IEEE build.sh (docs/IEEE)",
+            "tools": ["IEEE build.sh"]
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "IEEE build.sh (docs/IEEE)"
 }

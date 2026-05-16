@@ -1,0 +1,12 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The instruction set architecture of RISC-V has been well accepted in both academic and industrial designs due to its openness and flexibility~\cite{riscv_spec}. PicoRV32 is a small RV32 core specifically targeted for FPGA implementation with low resource usage~\cite{picorv32_yosys}. Although the small core is highly desirable for embedded systems, the arithmetic units in the baseline cores are primarily area-optimized, causing increased latency in arithmetic-intensive execution paths.
+
+This is particularly relevant for edge-AI/TinyML workloads, which operate in close proximity to the sensor. In these cases, compact models still require a large number of integer-based multiply accumulate operations. In these systems, adder critical path and multiplication latency have a strong impact on inference latency as well as energy per inference. Always-on keyword spotting, anomaly detection in industrial sensoring, and low-resolution vision inference are a few examples of the relevant workloads where arithmetic acceleration is known to have a direct impact on system responsiveness and duty-cycled energy efficiency.
+
+In order to mitigate the above limitations, this work proposes the optimization of the PicoRV32 arithmetic datapath. To achieve this, two hardware modifications have been proposed: the first is the integration of a 32-bit Kogge-Stone parallel prefix adder in place of the standard ripple-carry adder, and the second is the integration of a $32\times32$ Vedic multiplier-based PCPI accelerator.
+
+This is because the proposed integration strategy based on the PCPI metric is designed as a modular approach, where the optimized architecture remains as a CPU core-level IP extension, allowing it to be plugged into various SoC scenarios (microcontroller, IoT sensing, or accelerative edge AI subsystems) without any changes to the pipeline.
+
+The paper is prepared based on the existing project outputs as baseline evidence, including architecture, implementation, and results in IEEE conference style.

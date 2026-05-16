@@ -1,0 +1,12 @@
+\section{System Architecture of the Optimized PicoRV32}
+\label{sec:architecture}
+
+The optimized architecture enhances baseline PicoRV32 with two arithmetic modules while preserving processor-level control and memory interfaces.
+
+The block diagram in Fig.~\ref{fig:soc_architecture} represents the architecture pointers, i.e., PicoRV32 core, 32-bit Kogge-Stone ALU adder, PCPI-based Vedic multiplier accelerator, register/control logic, and memory interface.
+
+\input{figures/fig01_soc_architecture.tex}
+
+The first enhancement involves replacing the ripple carry addition in the arithmetic path with the Kogge-Stone prefix addition. The second enhancement involves the pipelined multiplier instead of the PCPI, allowing the multiplication operations to be completed by the external accelerator logic within a fixed latency.
+
+This architecture improves the arithmetic path and maintains the lightweight design approach for the PicoRV32.

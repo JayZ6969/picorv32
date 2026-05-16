@@ -1,0 +1,17 @@
+\section{Related Work}
+\label{sec:related_work}
+
+\subsection{PicoRV32 Architecture and Baseline Trade-offs}
+The PicoRV32 is a small soft core RISC-V processor with low FPGA resource utilization and architectural simplicity as design objectives~\cite{picorv32_yosys,picorv32_clifford}. Its design generally prioritizes area efficiency over peak arithmetic throughput, which makes arithmetic-intensive instruction streams sensitive to ALU and multiplier latency. The RV32 user-level ISA context and compatibility constraints are well established in the RISC-V specification literature~\cite{riscv_spec,waterman2017}.
+
+\subsection{Vedic Multipliers and Adder Co-design}
+Vedic multiplication using the technique of Urdhva-Tiryakbhyam has been explored as an alternative to traditional multiplication with the objective of minimizing latency in programmable logic-based designs~\cite{mehta2014,sharma2024}. Various research works have also demonstrated the significant influence of the choice of internal adders on the latency, area, and power consumption of the multiplier circuit, with Han Carlson, modified CLA, and other variants showing significant improvements over traditional designs~\cite{kakde2014,anitha2013,priya2015}.
+
+\subsection{Parallel Prefix Kogge-Stone Addition}
+The Kogge-Stone adder is one of the fundamental parallel prefix structures, offering efficient carry computation through its structure, which has a logarithmic depth~\cite{kogge1973,kogge1973dup}. Modern research and comparative results verify its good delay performance compared to ripple-based counterparts, as well as its competitive nature compared to other efficient adder topologies for moderate or wide operand sizes~\cite{sundar2019,parhami2015}.
+
+\subsection{Algebraic and Formal Verification of Arithmetic Circuits}
+Formal verification of arithmetic circuits, specifically multipliers, has been performed through algebraic approaches, represented as polynomials, as part of the verification flow, together with traditional simulation-based methodologies~\cite{ciesielski2012}. Further research has verified its applicability to various scalable forms of arithmetic circuits, including finite field and multiplier circuits
+
+\subsection{Relevance to This Work}
+The design direction taken in this work is an amalgamation of the well-established paths by incorporating the Kogge-Stone addition, Vedic multiplication, and correctness-driven validation techniques into a single optimization flow for the PicoRV32 processor. This paper attempts to assess the effect of the combined optimization techniques at the processor integration level with PCPI-based acceleration and result summarization, making it more relevant to edge-based IoT and TinyML deployments where integer arithmetic and determinism are critical constraints.

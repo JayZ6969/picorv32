@@ -1,0 +1,27 @@
+\section{Hardware Implementation}
+\label{sec:implementation}
+
+\subsection{Kogge-Stone Parallel Prefix Adder}
+The 32-bit Kogge-Stone adder calculates the per-bit generate and propagate values:
+\begin{equation}
+G_i = A_i \cdot B_i,\quad P_i = A_i \oplus B_i.
+\label{eq:gp}
+\end{equation}
+The adder uses a parallel prefix adder, which reduces the logic depth from linear to logarithmic time complexity. The logic depth can be represented as:
+\begin{equation}
+D_{\mathrm{KSA}} = \lceil \log_2 N \rceil + 1.
+\label{eq:ksa_depth}
+\end{equation}
+When $N = 32$, the logic depth is 6 stages, whereas the RCA would take 32 stages.
+
+\subsection{Vedic Multiplier Architecture}
+The Vedic multiplier uses a hierarchical Urdhva-Tiryakbhyam method from $2 \times 2$ blocks to $32 \times 32$ blocks to achieve a 64-bit output. The architecture is suitable for parallel partial product computation and addition.
+
+\subsection{PCPI Integration}
+The Vedic multiplier is integrated using the Pico Co-Processor Interface (PCPI) as a three-stage pipeline:
+\begin{itemize}
+\item Stage 1 - Operand Capture
+\item Stage 2 - Multiplication and Sign Processing
+\item Stage 3 - Registered Output/Handshake
+\end{itemize}
+The implementation was run at 100~MHz, which corresponds to about 3 clock cycles total latency for multiplication completion.

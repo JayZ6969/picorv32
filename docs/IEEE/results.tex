@@ -1,0 +1,81 @@
+\section{Combined Results and Discussion}
+\label{sec:results}
+
+This section summarizes the project results based on the obtained figures and CSV data.
+
+\subsection{Multiplication Latency Comparison}
+The baseline PCPI multiplication latency is a sequence of shift and add operations, which requires 36 cycles, whereas the optimized Vedic PCPI method requires only 3 cycles.
+
+In Fig.~\ref{fig:pcpi_latency}, we can see the difference between the baseline and the optimized method in terms of cycles and actual time with a 100-MHz clock speed. It is also important to convert the time difference from cycles to actual time in terms of ns because firmware developers or SoC integrators usually prefer to reserve a certain amount of time in microseconds rather than cycles while developing firmware.
+
+What is interesting is that not only is the optimization beneficial for the peak performance of the multiplication, but it is also beneficial for the predictability of the multiplication in terms of the time window available to perform the multiplication. A small amount of time is available to perform the multiplication operation, which is useful while scheduling the kernels with control or edge-AI functions repeatedly calling the MAC functions.
+
+\input{figures/fig02_pcpi_latency.tex}
+\FloatBarrier
+
+\subsection{Latency Distribution}
+For the 64 vectors, the baseline latency remains the same at 36 cycles, and the optimized latency also remains the same at 3 cycles.
+
+From the latency distribution in Fig.~\ref{fig:latency_distribution} for the test case, it is clear that the implementations are deterministic. This is because there is no spread on the graph, which implies that the operand values have no impact on the timing in the code paths. The deterministic latency distribution for the implementations is as important as the average speedup for the implementations.
+
+\subsection{Functional Verification}
+The functional and formal verification have zero failures in the reported suites.
+
+Fig.~\ref{fig:verification_summary} shows a summary of the unit-level arithmetic tests, PCPI interaction tests, and algebraic verification. While there is a large number of passing tests, this provides us with confidence that the arithmetic acceleration is not inducing any regressions in the arithmetic functionality. This type of verification is important when we think about the placement of the design in edge-AI systems.
+
+\input{figures/fig03_latency_distribution.tex}
+\input{figures/fig04_verification.tex}
+\FloatBarrier
+
+\subsection{Adder Logic Depth Analysis}
+The Kogge-Stone adder offers a reduction in depth growth compared to ripple carry architecture.
+
+Fig.~\ref{fig:adder_depth} illustrates the growth rate of logic depth with respect to operand bit-width and demonstrates the logarithmic growth rate for KSA compared to a linear growth rate for RCA. The widening gap indicates that carry-propagation optimization grows more important with increasing bit-width.
+
+Although this section refers to structural depth rather than timing depth, it offers a first-order explanation for achieving higher $F_{\max}$ with carry replacement.
+
+\input{figures/fig05_adder_depth.tex}
+\FloatBarrier
+
+\subsection{Adder Logic Depth Analysis}
+Kogge-Stone Adder reduces the depth growth rate compared to the ripple carry architecture.
+
+In Fig.~\ref{fig:adder_depth}, we can see the growth rate of logic depth with respect to the bit-width of the operands and how it shows a logarithmic growth rate for the KSA compared to a linear growth rate for the RCA. This shows how the gap is widening, and therefore, the optimization of carry propagation becomes more significant as the bit-width grows.
+
+Although this is about structural depth and not timing depth, it is a first-order explanation for achieving a greater $F_{\max}$ with carry replacement.
+
+\input{figures/fig06_vedic_hierarchy.tex}
+\FloatBarrier
+
+\subsection{Overall Performance Summary}
+Table~\ref{tab:performance} offers a summary of the baseline-to-optimized performance.
+
+The table and Fig.~\ref{fig:summary_gains} together provide a compact representation of the trade-off. The most significant acceleration occurs in multiplication latency; however, the reduction in adder depth contributes to a more general timing acceleration of all arithmetic operations.
+
+The dual representation of these results is helpful in relating them to end-application mapping. For example, an application with many loops dominated by multiplication will directly benefit from acceleration, while a more mixed computation and control workload will also benefit from the reduction in adder carry depth.
+
+\begin{table}[!htbp]
+\caption{Performance Comparison: Baseline vs Optimized}
+\label{tab:performance}
+\centering
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Metric} & \textbf{Baseline} & \textbf{Optimized} & \textbf{Gain} \\
+\midrule
+PCPI MUL latency (cycles) & 36 & 3 & 12.0$\times$ \\
+PCPI MUL latency (ns @100MHz) & 360 & 30 & 12.0$\times$ \\
+KSA logic depth (32-bit) & 32 & 6 & 5.3$\times$ \\
+Adder critical path & $O(N)$ & $O(\log_2 N)$ & -- \\
+Multiplier completion & $O(N)$ cycles & $O(1)$ cycles & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The measured 12.0$\times$ multiplier acceleration is the major performance boost reported by this work. This is also because the optimized path is integrated via PCPI rather than intrusive cores. This way, architectural risks are kept under control while maintaining instruction-level compatibility.
+
+The replacement of KSA also improves adder logic depth. This should help in achieving timing closure margins for higher-frequency synthesis targets. Although this paper demonstrates this at a simulation and complexity level, FPGA post-place-and-route timing and area characterization can be included in future extensions.
+
+\input{figures/fig07_summary_gains.tex}
+\FloatBarrier
+
+From an SoC application perspective, this arithmetic acceleration opportunity directly maps to edge AI software kernels with integer MAC-dominated execution profiles. Reducing multiply latency and improving adder depth can result in lower inference times at a given clock rate or equivalent throughput at lower clock and/or power operating points. Thus, this optimized PicoRV32 core can be a good candidate for a digital compute platform for SoCs that aim to integrate edge AI capabilities.
