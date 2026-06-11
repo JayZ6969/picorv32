@@ -11,7 +11,6 @@ In Fig.~\ref{fig:pcpi_latency}, we can see the difference between the baseline a
 What is interesting is that not only is the optimization beneficial for the peak performance of the multiplication, but it is also beneficial for the predictability of the multiplication in terms of the time window available to perform the multiplication. A small amount of time is available to perform the multiplication operation, which is useful while scheduling the kernels with control or edge-AI functions repeatedly calling the MAC functions.
 
 \input{figures/fig02_pcpi_latency.tex}
-\FloatBarrier
 
 \subsection{Latency Distribution}
 For the 64 vectors, the baseline latency remains the same at 36 cycles, and the optimized latency also remains the same at 3 cycles.
@@ -25,7 +24,6 @@ Fig.~\ref{fig:verification_summary} shows a summary of the unit-level arithmetic
 
 \input{figures/fig03_latency_distribution.tex}
 \input{figures/fig04_verification.tex}
-\FloatBarrier
 
 \subsection{Adder Logic Depth Analysis}
 The Kogge-Stone adder offers a reduction in depth growth compared to ripple carry architecture.
@@ -35,7 +33,6 @@ Fig.~\ref{fig:adder_depth} illustrates the growth rate of logic depth with respe
 Although this section refers to structural depth rather than timing depth, it offers a first-order explanation for achieving higher $F_{\max}$ with carry replacement.
 
 \input{figures/fig05_adder_depth.tex}
-\FloatBarrier
 
 \subsection{Adder Logic Depth Analysis}
 Kogge-Stone Adder reduces the depth growth rate compared to the ripple carry architecture.
@@ -45,7 +42,6 @@ In Fig.~\ref{fig:adder_depth}, we can see the growth rate of logic depth with re
 Although this is about structural depth and not timing depth, it is a first-order explanation for achieving a greater $F_{\max}$ with carry replacement.
 
 \input{figures/fig06_vedic_hierarchy.tex}
-\FloatBarrier
 
 \subsection{Overall Performance Summary}
 Table~\ref{tab:performance} offers a summary of the baseline-to-optimized performance.
@@ -54,7 +50,7 @@ The table and Fig.~\ref{fig:summary_gains} together provide a compact representa
 
 The dual representation of these results is helpful in relating them to end-application mapping. For example, an application with many loops dominated by multiplication will directly benefit from acceleration, while a more mixed computation and control workload will also benefit from the reduction in adder carry depth.
 
-\begin{table}[!htbp]
+\begin{table}[htbp]
 \caption{Performance Comparison: Baseline vs Optimized}
 \label{tab:performance}
 \centering
@@ -76,7 +72,6 @@ The measured 12.0$\times$ multiplier acceleration is the major performance boost
 The replacement of KSA also improves adder logic depth. This should help in achieving timing closure margins for higher-frequency synthesis targets. Although this paper demonstrates this at a simulation and complexity level, FPGA post-place-and-route timing and area characterization can be included in future extensions.
 
 \input{figures/fig07_summary_gains.tex}
-\FloatBarrier
 
 \subsection{Scalability and Extensibility}
 The hierarchical Urdhva-Tiryakbhyam construction used for the multiplier scales naturally beyond 32 bits: a $64\times64$ datapath can be obtained by composing four $32\times32$ instances with a final reduction stage, and the same PCPI handshake remains valid, only the operand and result widths change. The Kogge-Stone adder likewise grows in depth as $\lceil \log_2 N\rceil + 1$, so wider operands keep the same logarithmic advantage over a ripple-carry baseline. For multi-core scenarios, each core can either embed a private PCPI accelerator -- preserving the deterministic 3-cycle latency reported here -- or share a single arbiter-fronted Vedic unit across cores when area is the dominant constraint. These extensions reuse the verified arithmetic blocks unchanged and therefore do not invalidate the formal-verification results presented above.

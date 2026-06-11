@@ -1,26 +1,26 @@
-% main.tex - Minimal IEEEtran paper for PicoRV32 project
+% main.tex - IEEE conference paper for PicoRV32 project
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
 \usepackage{cite}
-\usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{url}
 \usepackage{booktabs}
 \usepackage{balance}
-\usepackage{float}
-\usepackage{placeins}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \graphicspath{{figures/assets/}}
 \DeclareGraphicsExtensions{.pdf,.png}
 \newcommand{\IEEEPaperFigure}[3]{%
   \IfFileExists{figures/assets/#1.pdf}{%
-    \includegraphics[width=\linewidth,keepaspectratio]{#1}%
+    \centerline{\includegraphics[width=\linewidth,keepaspectratio]{#1}}%
   }{%
     \IfFileExists{figures/assets/#1.png}{%
-      \includegraphics[width=\linewidth,keepaspectratio]{#1}%
+      \centerline{\includegraphics[width=\linewidth,keepaspectratio]{#1}}%
     }{%
       \fbox{\parbox[c][1.35in][c]{0.92\linewidth}{\centering\footnotesize Missing \texttt{#1}}}%
     }%
@@ -29,33 +29,33 @@
 
 \begin{document}
 
-\title{Performance Optimization of PicoRV32 RISC-V Processor Using Kogge-Stone Adder and Vedic Multiplier with Formal Verification}
+\title{Performance optimization of PicoRV32 RISC-V processor using Kogge-Stone adder and Vedic multiplier with formal verification}
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Dilip Chandra E}
+\author{\IEEEauthorblockN{Dilip Chandra E}
 \IEEEauthorblockA{\textit{School of ECE} \\
 \textit{REVA University}\\
 Bengaluru, India \\
 dilipchandra.e@reva.edu.in}
 \and
-\IEEEauthorblockN{2\textsuperscript{nd} Jayasheel Vinay J}
+\IEEEauthorblockN{Jayasheel Vinay J}
 \IEEEauthorblockA{\textit{School of ECE} \\
 \textit{REVA University}\\
 Bengaluru, India \\
 ugcet220791@reva.edu.in}
 \and
-\IEEEauthorblockN{3\textsuperscript{rd} Jnanavi Nag}
+\IEEEauthorblockN{Jnanavi Nag}
 \IEEEauthorblockA{\textit{School of ECE} \\
 \textit{REVA University}\\
 Bengaluru, India \\
 ugcet220367@reva.edu.in}
 \and
-\IEEEauthorblockN{4\textsuperscript{th} Megharsha A Gowda}
+\IEEEauthorblockN{Megharsha A Gowda}
 \IEEEauthorblockA{\textit{School of ECE} \\
 \textit{REVA University}\\
 Bengaluru, India \\
 ugcet220478@reva.edu.in}
 \and
-\IEEEauthorblockN{5\textsuperscript{th} Ramya R}
+\IEEEauthorblockN{Ramya R}
 \IEEEauthorblockA{\textit{School of ECE} \\
 \textit{REVA University}\\
 Bengaluru, India \\
